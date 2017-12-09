@@ -7,8 +7,8 @@
     <ProjectGuid>{B0FC5D4E-723E-4F9B-9E0D-3FC711B1FF45}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>lab420</RootNamespace>
-    <AssemblyName>lab420</AssemblyName>
+    <RootNamespace>l420</RootNamespace>
+    <AssemblyName>l420</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

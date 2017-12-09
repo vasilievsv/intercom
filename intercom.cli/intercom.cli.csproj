@@ -55,8 +55,7 @@
     <StartupObject>main</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>security-10-512.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CSCore, Version=1.2.6316.27516, Culture=neutral, PublicKeyToken=5a08f2b6f4415dea, processorArchitecture=MSIL">
@@ -124,9 +123,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\intercom.dll\intercom.dll.csproj">
+    <ProjectReference Include="..\intercom.cli.dll\intercom.cli.dll.csproj">
       <Project>{b0fc5d4e-723e-4f9b-9e0d-3fc711b1ff45}</Project>
-      <Name>intercom.dll</Name>
+      <Name>intercom.lib</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -169,6 +168,9 @@
     <None Include="assets\24x8_res04.bmp" />
     <None Include="assets\24x8_res05.bmp" />
     <None Include="assets\24x8_res06.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="security-10-512.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
