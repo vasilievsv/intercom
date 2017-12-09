@@ -69,7 +69,7 @@ namespace l420
         {
             if(_buff == string.Empty)
             { 
-                l420.micro.print("WARNING - EMPTY_STREAM");
+                //l420.micro.print("WARNING - EMPTY_STREAM");
                 return _dummy;
             }
 

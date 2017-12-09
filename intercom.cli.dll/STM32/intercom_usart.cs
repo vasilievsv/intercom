@@ -135,7 +135,7 @@ namespace l420
                     var T = _createPort(_names[i]);
                     T.Open();
                     
-                    _serial = T; // hack: переключаем для отправки в текущий порт
+                    _serial = T; // hack: for OPENGL like style 
                     FRAME_BEGIN();
                         WRITE = PROTO_CONNECT;
                     FRAME_END();

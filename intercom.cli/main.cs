@@ -42,10 +42,10 @@ public partial class main
             l420.intercom.use_debug         = argv.get_touch( KEY_DEBUG );
 
             l420.intercom.eventPinChangned  += delegate(){micro.print("IRQ_PinChanged");};
-            l420.intercom.eventIRQError     += delegate(){micro.print("IRQ_Error" );    };
-            l420.intercom.eventPortNotFound += delegate(){ };
-            l420.intercom.eventConnect      += delegate(){ };
-            l420.intercom.eventDataIncoming += delegate(){ };
+            l420.intercom.eventIRQError     += delegate(){micro.print("IRQ_Error");};
+            l420.intercom.eventPortNotFound += delegate(){micro.print("PortNotFound");};
+            l420.intercom.eventConnect      += delegate(){};
+            l420.intercom.eventDataIncoming += delegate(){};
 
             l420.intercom.usart_Open( argv.get_str( KEY_PORT, "auto" ) );
         }
