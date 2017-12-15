@@ -137,9 +137,9 @@ namespace l420
                     T.Open();
                     
                     _serial = T; // hack: for OPENGL like style 
-                    FRAME_BEGIN();
+                    PACK_BEGIN();
                         WRITE = PROTO_CONNECT;
-                    FRAME_END();
+                    PACK_END();
                     _list [i] = T;
                 }
                 micro.end();
@@ -169,25 +169,26 @@ namespace l420
                     // четыре байта под crc
                     // два байта под size
                     // Последние два зарезервированы
-                    for(int i = 0; i != (value as byte [ ]).Length; i++)
-                    {
-                        if(i >=26) continue;
-                        _frameTX [4+1+i] = (value as byte [ ]) [i];
-                    }
+                    var buff = (value as byte [ ]);
+
+                    Buffer.BlockCopy( buff, 0, _frameTX, 7, buff.Length );
+
+                    _frameTX [4] = (byte)(buff.Length + 7);
+                    _frameTX [5] = 0x00;
+                    _frameTX [6] = 0xFF;
 
                     //
                     // CRC32
                     //
-                    var  decoded = new uint [(_frameTX.Length - 4) / 4]; // get 28 byte's
-                    Buffer.BlockCopy( _frameTX, 4, decoded, 0, _frameTX.Length - 4 );
-                    var crc = crc_stm32.fromArray( init_value:0xFFFFFFFF, buffer:decoded );
+                    var decoded = new uint [ (buff.Length+3) / 4 ];
+                    Buffer.BlockCopy( _frameTX, 4, decoded, 0, buff.Length - 4 );
+                    var crc = crc_stm32.fromArray( init_value: 0xFFFFFFFF, buffer: decoded );
 
                     _frameTX [0] = (byte)crc;
                     _frameTX [1] = (byte)(crc >> 8);
                     _frameTX [2] = (byte)(crc >> 0x10);
                     _frameTX [3] = (byte)(crc >> 0x18);
 
-                    _frameTX [4] = (byte)(_frameTX.Length);
 
                     if(_serial != null && _serial.IsOpen)
                     {

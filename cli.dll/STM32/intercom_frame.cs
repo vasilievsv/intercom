@@ -24,7 +24,7 @@ namespace l420
         ///
         ///
         ///
-        static public void FRAME_BEGIN()
+        static public void PACK_BEGIN()
         {
             Array.Clear( _frame32, 0, FRAME_SIZE );
             _cursor = 0;
@@ -32,7 +32,7 @@ namespace l420
         ///
         ///
         ///
-        static public void FRAME_END()
+        static public void PACK_END()
         {
             _cursor = FRAME_SIZE;
             //CRC IMPLEMENT

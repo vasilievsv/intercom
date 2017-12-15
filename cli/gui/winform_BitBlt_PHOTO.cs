@@ -24,13 +24,13 @@ namespace intercom
         {
             InitializeComponent();
 
-            l420.intercom.FRAME_BEGIN();
+            l420.intercom.PACK_BEGIN();
             l420.intercom.WRITE = l420.intercom.CG_CLEAR;
             l420.intercom.WRITE = l420.intercom._NOP;
             l420.intercom.WRITE = (byte)0x00;
             l420.intercom.WRITE = (byte)0x00;
             l420.intercom.WRITE = (byte)0x00;
-            l420.intercom.FRAME_END();
+            l420.intercom.PACK_END();
         }
 
         #region DRAG_AND_DROP
