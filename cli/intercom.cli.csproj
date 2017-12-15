@@ -123,7 +123,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\intercom.cli.dll\intercom.cli.dll.csproj">
+    <ProjectReference Include="..\cli.dll\intercom.cli.dll.csproj">
       <Project>{b0fc5d4e-723e-4f9b-9e0d-3fc711b1ff45}</Project>
       <Name>intercom.lib</Name>
     </ProjectReference>

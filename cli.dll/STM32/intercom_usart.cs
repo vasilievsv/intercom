@@ -1,6 +1,6 @@
 ﻿/**
   ******************************************************************************
-   *@date    Sep-2017
+  * @date    Sep-2017
   * @version V0.0.3
   * @author  Vasiliev Sergey 
   * @brief   
@@ -61,8 +61,9 @@ namespace l420
             var size= BitConverter.ToUInt16( usart_RX, 4 );
 
             //читаем остальной кусок
-           if(size > 32) _port.Read(usart_RX, 32, size-32 );
- 
+            if(size > 32) _port.Read(usart_RX, 32, size-32 );
+            if(size == 0) size = 32;
+
             if(use_debug==true)
             {
                 Console.ForegroundColor = ConsoleColor.Magenta;
@@ -156,7 +157,6 @@ namespace l420
         ///
         ///
         ///
-        
         static public object usart_TX
         {
             get { return _frameTX; }

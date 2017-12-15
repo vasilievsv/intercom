@@ -34,14 +34,16 @@ namespace l420
         static public string    _buff   = ""; // буфер для GUI
         static int              _lcount = 0;
 
+        ///
+        ///
+        ///
         static public void print(string[] type)
         {
-                foreach(var p in type)
-                {
-                    micro.print( p );
-                }
+            foreach(var p in type)
+            {
+                micro.print( p );
+            }
         }
-
         ///
         ///
         ///
@@ -59,6 +61,9 @@ namespace l420
                 _stream.WriteLine( txt );
                 _stream.Flush();
             }
+
+            if(_lcount > 5)
+                micro.wipe();
             
             //single.dispatchEvent(new Xevent(Xevent.TRACE,txt))
         }
