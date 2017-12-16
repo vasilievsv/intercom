@@ -17,7 +17,7 @@ namespace l420
 {
     sealed public partial class intercom
     {
-        public const byte       FRAME_SIZE  = 32;
+        public const byte       FRAME_SIZE  = 255;
         static public byte[]    _frame32    = new byte[FRAME_SIZE];
         static public byte      _cursor     = 0;
 

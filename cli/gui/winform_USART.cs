@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Windows.Forms;
 using l420;
 
@@ -20,21 +21,24 @@ namespace app
             
             intercom.eventDataEncoded += IRQ_PackEncoded;
             
-            intercom.usart_TX = intercom._parse( "MEMREAD-@"+ADDR_SR    +"-4");
-            intercom.usart_TX = intercom._parse( "MEMREAD-@"+ADDR_DR    +"-4");
-            intercom.usart_TX = intercom._parse( "MEMREAD-@"+ADDR_BRR   +"-4");
-            intercom.usart_TX = intercom._parse( "MEMREAD-@"+ADDR_CR1   +"-4");
-            intercom.usart_TX = intercom._parse( "MEMREAD-@"+ADDR_CR2   +"-4");
-            intercom.usart_TX = intercom._parse( "MEMREAD-@"+ADDR_CR3   +"-4");
-            intercom.usart_TX = intercom._parse( "MEMREAD-@"+ADDR_GTPR  +"-4");
+
+            intercom.usart_TX = intercom._parse( "MEMREAD-@"+ADDR_SR    +"-4");Thread.Sleep( 50 );
+            intercom.usart_TX = intercom._parse( "MEMREAD-@"+ADDR_DR    +"-4");Thread.Sleep( 50 );
+            intercom.usart_TX = intercom._parse( "MEMREAD-@"+ADDR_BRR   +"-4");Thread.Sleep( 50 );
+            intercom.usart_TX = intercom._parse( "MEMREAD-@"+ADDR_CR1   +"-4");Thread.Sleep( 50 );
+            intercom.usart_TX = intercom._parse( "MEMREAD-@"+ADDR_CR2   +"-4");Thread.Sleep( 50 );
+            intercom.usart_TX = intercom._parse( "MEMREAD-@"+ADDR_CR3   +"-4");Thread.Sleep( 50 );
+            intercom.usart_TX = intercom._parse( "MEMREAD-@"+ADDR_GTPR  +"-4");Thread.Sleep( 50 );
         }
         
         public void IRQ_PackEncoded(byte opcode, byte[] data)
         {
+            micro.print( BitConverter.ToString(data,0,data.Length) );
+
             var _iaddr = BitConverter.ToInt32( data, 0);
             var _idata = BitConverter.ToString( data, 4, data.Length - 4 );
 
-            
+
             if(opcode == intercom.MEMREAD)
             {
                 switch(_iaddr.ToString("X"))

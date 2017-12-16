@@ -25,7 +25,7 @@ namespace l420
         static public event System.Action   eventIRQError;
 
         static public byte[]      usart_RX = new byte[1024]; // Recieve Buffer
-        static public byte[]      _frameTX = new byte[32];
+        static public byte[]      _frameTX = new byte[1024];
 
         static public bool   usart_online   = false;
         static public bool   use_debug      = false;
@@ -174,6 +174,7 @@ namespace l420
                     // Последние два зарезервированы
                     var buff = (value as byte [ ]);
 
+
                     Buffer.BlockCopy( buff, 0, _frameTX, 7, buff.Length );
 
                     _frameTX [4] = (byte)(buff.Length + 7);
@@ -192,16 +193,16 @@ namespace l420
                     _frameTX [2] = (byte)(crc >> 0x10);
                     _frameTX [3] = (byte)(crc >> 0x18);
 
-
+                     var cnt = (buff.Length < (32-7)) ? 32 : (buff.Length+7);
                     if(_serial != null && _serial.IsOpen)
                     {
-                        _serial.Write( _frameTX, 0, 32 );
+                        _serial.Write( _frameTX, 0, cnt);
                     }
                     
                     if(use_debug == true)
                     {
                         Console.ForegroundColor = ConsoleColor.Green;
-                        l420.micro.print( BitConverter.ToString( _frameTX, 0, _frameTX.Length ) );
+                        l420.micro.print( BitConverter.ToString( _frameTX, 0, cnt) );
                         Console.ResetColor();
                     }
                     
