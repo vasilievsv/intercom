@@ -33,7 +33,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;/unsafe</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
@@ -123,9 +123,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\cli.dll\intercom.cli.dll.csproj">
+    <ProjectReference Include="..\cli.dll\cli.dll.csproj">
       <Project>{b0fc5d4e-723e-4f9b-9e0d-3fc711b1ff45}</Project>
-      <Name>intercom.lib</Name>
+      <Name>cli.dll</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

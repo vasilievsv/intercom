@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using l420;
 
-namespace intercom
+namespace app
 {
     public partial class winform_BitBlt_BOOT : Form
     {

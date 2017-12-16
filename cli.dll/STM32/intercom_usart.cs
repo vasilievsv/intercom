@@ -16,14 +16,16 @@ namespace l420
     {
         public const string ERROR_DEVICE_NOT_FOUND = "ERROR_DEVICE_NOT_FOUND";
 
+        static public event System.Action<byte,byte[]> eventDataEncoded;
+
         static public event System.Action   eventDataIncoming;
         static public event System.Action   eventConnect;
         static public event System.Action   eventPortNotFound;
         static public event System.Action   eventPinChangned;
         static public event System.Action   eventIRQError;
 
-        static public byte [ ]      usart_RX = new byte[256]; // Recieve Buffer
-        static public byte[]        _frameTX = new byte[32];
+        static public byte[]      usart_RX = new byte[1024]; // Recieve Buffer
+        static public byte[]      _frameTX = new byte[32];
 
         static public bool   usart_online   = false;
         static public bool   use_debug      = false;
@@ -41,51 +43,51 @@ namespace l420
                     T.Handshake   = Handshake.None;
                     T.Encoding    = Encoding.ASCII;
                     
-                    T.DataReceived += IRQ_DataIncoming;
                     T.ErrorReceived+= IRQ_Error;
+                    T.DataReceived += IRQ_DataIncoming;
                     T.PinChanged   += IRQ_PinChanged;
             return T;
         }
-
-
+        
         ///
+        /// FF-FF-FF-FF FF-FF-12 A1-03-FF-FF-FF
+        ///  ^           ^  ^     ^  ^
         ///
-        ///
-        static private void IRQ_DataIncoming(object sender, SerialDataReceivedEventArgs e)
+        unsafe static private void IRQ_DataIncoming(object sender, SerialDataReceivedEventArgs e)
         {
             var _port = (sender as SerialPort);
             
-            _port.Read( usart_RX, 0, 32 );
-
-            var crc = BitConverter.ToInt32 ( usart_RX, 0 );
-            var size= BitConverter.ToUInt16( usart_RX, 4 );
-
-            //читаем остальной кусок
-            if(size > 32) _port.Read(usart_RX, 32, size-32 );
-            if(size == 0) size = 32;
+            _port.Read( usart_RX, 0, 512 );
+            
+            var pack_crc = BitConverter.ToInt32 ( usart_RX, 0 );
+            var pack_size= BitConverter.ToUInt16( usart_RX, 4 );
+            var pack_cfg = BitConverter.ToChar  ( usart_RX, 6 );
 
             if(use_debug==true)
             {
                 Console.ForegroundColor = ConsoleColor.Magenta;
-                micro.print(BitConverter.ToString( usart_RX, 0, size ) );
+                micro.print(BitConverter.ToString( usart_RX, 0, pack_size ) );
                 Console.ResetColor();
             }
 
-            //
-            // TODO: simple discovery proto 
-            //if(usart_RX [0] == PROTO_CONNECT)
-            //{
-            //    usart_online = true;
-            //    _serial      = _port;
-            //
-            //    if(eventConnect != null)
-            //        eventConnect();
-            //}
-
-            if(eventDataIncoming != null)
+            // Разбираем массив в соответсвии с описанием формата пакета
+            // и генерируем event'ы
+            int _cursor = 7; // с седьмого байта
+            while(_cursor <= (pack_size))
             {
-                eventDataIncoming();
-            }
+                var _opcode = (byte)BitConverter.ToChar( usart_RX, _cursor );
+                var _size   = (byte)BitConverter.ToChar( usart_RX, _cursor + 1 );
+                var _buff   = new byte [_size];
+                
+                Array.Copy( usart_RX, _cursor+2, _buff, 0, _size );
+                _cursor += _size+3;
+                
+                //micro.print(BitConverter.ToString( _buff, 0, _buff.Length) );
+                if(eventDataEncoded != null)
+                    eventDataEncoded( _opcode, _buff );
+
+            };
+            
         }
         /// 
         /// 
@@ -164,7 +166,8 @@ namespace l420
             {
                 var _type = value.GetType();
                 
-                if(object.Equals( _type, typeof( byte [ ] ) ))
+                if(object.Equals( _type, typeof( byte [ ] ) ) 
+                    && (value as byte [ ]).Length>0)
                 {
                     // четыре байта под crc
                     // два байта под size

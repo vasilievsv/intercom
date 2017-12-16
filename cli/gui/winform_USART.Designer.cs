@@ -1,4 +1,4 @@
-﻿namespace intercom
+﻿namespace app
 {
     partial class winform_USART
     {
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_SR = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -38,25 +38,25 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txt_DR = new System.Windows.Forms.TextBox();
+            this.txt_BRR = new System.Windows.Forms.TextBox();
+            this.txt_CR1 = new System.Windows.Forms.TextBox();
+            this.txt_CR2 = new System.Windows.Forms.TextBox();
+            this.txt_CR3 = new System.Windows.Forms.TextBox();
+            this.txt_GTPR = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txt_SR
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Quartz MS", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.Blue;
-            this.textBox1.Location = new System.Drawing.Point(376, 123);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(445, 59);
-            this.textBox1.TabIndex = 5;
-            this.textBox1.Text = "0-0-0-0-0-0-0-0";
-            this.textBox1.WordWrap = false;
+            this.txt_SR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_SR.Font = new System.Drawing.Font("Quartz MS", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_SR.ForeColor = System.Drawing.Color.Blue;
+            this.txt_SR.Location = new System.Drawing.Point(376, 123);
+            this.txt_SR.Name = "txt_SR";
+            this.txt_SR.Size = new System.Drawing.Size(445, 59);
+            this.txt_SR.TabIndex = 5;
+            this.txt_SR.Text = "0-0-0-0-0-0-0-0";
+            this.txt_SR.WordWrap = false;
             // 
             // label1
             // 
@@ -157,77 +157,77 @@
             this.label16.Text = "GTPR";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox2
+            // txt_DR
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Quartz MS", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.Blue;
-            this.textBox2.Location = new System.Drawing.Point(376, 186);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(445, 59);
-            this.textBox2.TabIndex = 23;
-            this.textBox2.Text = "0-0-0-0-0-0-0-0";
-            this.textBox2.WordWrap = false;
+            this.txt_DR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_DR.Font = new System.Drawing.Font("Quartz MS", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_DR.ForeColor = System.Drawing.Color.Blue;
+            this.txt_DR.Location = new System.Drawing.Point(376, 186);
+            this.txt_DR.Name = "txt_DR";
+            this.txt_DR.Size = new System.Drawing.Size(445, 59);
+            this.txt_DR.TabIndex = 23;
+            this.txt_DR.Text = "0-0-0-0-0-0-0-0";
+            this.txt_DR.WordWrap = false;
             // 
-            // textBox3
+            // txt_BRR
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Font = new System.Drawing.Font("Quartz MS", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.Blue;
-            this.textBox3.Location = new System.Drawing.Point(376, 241);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(445, 59);
-            this.textBox3.TabIndex = 24;
-            this.textBox3.Text = "0-0-0-0-0-0-0-0";
-            this.textBox3.WordWrap = false;
+            this.txt_BRR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_BRR.Font = new System.Drawing.Font("Quartz MS", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_BRR.ForeColor = System.Drawing.Color.Blue;
+            this.txt_BRR.Location = new System.Drawing.Point(376, 241);
+            this.txt_BRR.Name = "txt_BRR";
+            this.txt_BRR.Size = new System.Drawing.Size(445, 59);
+            this.txt_BRR.TabIndex = 24;
+            this.txt_BRR.Text = "0-0-0-0-0-0-0-0";
+            this.txt_BRR.WordWrap = false;
             // 
-            // textBox4
+            // txt_CR1
             // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Font = new System.Drawing.Font("Quartz MS", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.Color.Blue;
-            this.textBox4.Location = new System.Drawing.Point(376, 304);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(445, 59);
-            this.textBox4.TabIndex = 25;
-            this.textBox4.Text = "0-0-0-0-0-0-0-0";
-            this.textBox4.WordWrap = false;
+            this.txt_CR1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_CR1.Font = new System.Drawing.Font("Quartz MS", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_CR1.ForeColor = System.Drawing.Color.Blue;
+            this.txt_CR1.Location = new System.Drawing.Point(376, 304);
+            this.txt_CR1.Name = "txt_CR1";
+            this.txt_CR1.Size = new System.Drawing.Size(445, 59);
+            this.txt_CR1.TabIndex = 25;
+            this.txt_CR1.Text = "0-0-0-0-0-0-0-0";
+            this.txt_CR1.WordWrap = false;
             // 
-            // textBox5
+            // txt_CR2
             // 
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Font = new System.Drawing.Font("Quartz MS", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.ForeColor = System.Drawing.Color.Blue;
-            this.textBox5.Location = new System.Drawing.Point(376, 365);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(445, 59);
-            this.textBox5.TabIndex = 26;
-            this.textBox5.Text = "0-0-0-0-0-0-0-0";
-            this.textBox5.WordWrap = false;
+            this.txt_CR2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_CR2.Font = new System.Drawing.Font("Quartz MS", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_CR2.ForeColor = System.Drawing.Color.Blue;
+            this.txt_CR2.Location = new System.Drawing.Point(376, 365);
+            this.txt_CR2.Name = "txt_CR2";
+            this.txt_CR2.Size = new System.Drawing.Size(445, 59);
+            this.txt_CR2.TabIndex = 26;
+            this.txt_CR2.Text = "0-0-0-0-0-0-0-0";
+            this.txt_CR2.WordWrap = false;
             // 
-            // textBox6
+            // txt_CR3
             // 
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Font = new System.Drawing.Font("Quartz MS", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.ForeColor = System.Drawing.Color.Blue;
-            this.textBox6.Location = new System.Drawing.Point(376, 428);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(445, 59);
-            this.textBox6.TabIndex = 27;
-            this.textBox6.Text = "0-0-0-0-0-0-0-0";
-            this.textBox6.WordWrap = false;
+            this.txt_CR3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_CR3.Font = new System.Drawing.Font("Quartz MS", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_CR3.ForeColor = System.Drawing.Color.Blue;
+            this.txt_CR3.Location = new System.Drawing.Point(376, 428);
+            this.txt_CR3.Name = "txt_CR3";
+            this.txt_CR3.Size = new System.Drawing.Size(445, 59);
+            this.txt_CR3.TabIndex = 27;
+            this.txt_CR3.Text = "0-0-0-0-0-0-0-0";
+            this.txt_CR3.WordWrap = false;
             // 
-            // textBox7
+            // txt_GTPR
             // 
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox7.Font = new System.Drawing.Font("Quartz MS", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.ForeColor = System.Drawing.Color.Blue;
-            this.textBox7.Location = new System.Drawing.Point(376, 482);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(445, 59);
-            this.textBox7.TabIndex = 28;
-            this.textBox7.Text = "0-0-0-0-0-0-0-0";
-            this.textBox7.WordWrap = false;
+            this.txt_GTPR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_GTPR.Font = new System.Drawing.Font("Quartz MS", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_GTPR.ForeColor = System.Drawing.Color.Blue;
+            this.txt_GTPR.Location = new System.Drawing.Point(376, 482);
+            this.txt_GTPR.Name = "txt_GTPR";
+            this.txt_GTPR.Size = new System.Drawing.Size(445, 59);
+            this.txt_GTPR.TabIndex = 28;
+            this.txt_GTPR.Text = "0-0-0-0-0-0-0-0";
+            this.txt_GTPR.WordWrap = false;
             // 
             // winform_USART
             // 
@@ -235,12 +235,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1055, 861);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txt_GTPR);
+            this.Controls.Add(this.txt_CR3);
+            this.Controls.Add(this.txt_CR2);
+            this.Controls.Add(this.txt_CR1);
+            this.Controls.Add(this.txt_BRR);
+            this.Controls.Add(this.txt_DR);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
@@ -249,12 +249,11 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_SR);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Quartz MS", 16F, System.Drawing.FontStyle.Bold);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "winform_USART";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "USART: Configure and Control";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -263,7 +262,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_SR;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
@@ -273,11 +272,11 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txt_DR;
+        private System.Windows.Forms.TextBox txt_BRR;
+        private System.Windows.Forms.TextBox txt_CR1;
+        private System.Windows.Forms.TextBox txt_CR2;
+        private System.Windows.Forms.TextBox txt_CR3;
+        private System.Windows.Forms.TextBox txt_GTPR;
     }
 }

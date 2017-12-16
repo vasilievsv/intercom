@@ -1,4 +1,4 @@
-﻿namespace intercom
+﻿namespace app
 {
     partial class winform_NRF
     {

@@ -24,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
     <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
     <UseVSHostingProcess>false</UseVSHostingProcess>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -48,7 +49,7 @@
     <Compile Include="L420\json.cs" />
     <Compile Include="L420\micro.cs" />
     <Compile Include="L420\profiler.cs" />
-    <Compile Include="STM32\intercom_frame.cs" />
+    <Compile Include="STM32\intercom_pack.cs" />
     <Compile Include="STM32\intercom_opcode.cs" />
     <Compile Include="STM32\intercom_usart.cs" />
     <Compile Include="L420\utils.cs" />

@@ -55,9 +55,9 @@ public partial class main
             switch(argv.get_num(KEY_GUI,0))
             {
                 case 0:break;
-                case 1: Application.Run(new intercom.winform_NRF());    break;
-                case 2: Application.Run(new intercom.winform_SPI());    break;
-                case 3: Application.Run(new intercom.winform_USART());  break;
+                case 1: Application.Run(new app.winform_NRF());    break;
+                case 2: Application.Run(new app.winform_SPI());    break;
+                case 3: Application.Run(new app.winform_USART());  break;
             }
         }
         else if(argv.get_touch( KEY_LOOP ))
@@ -65,12 +65,12 @@ public partial class main
             while(true)
             {
                 Thread.Sleep( argv.get_num( KEY_LOOP, 150 ) );
-                l420.intercom.usart_TX = l420.intercom._parse2frame( argv.get_str( KEY_HEX ) );
+                l420.intercom.usart_TX = l420.intercom._parse( argv.get_str( KEY_HEX ) );
             }
         }
         else
         {
-            l420.intercom.usart_TX = l420.intercom._parse2frame( argv.get_str( KEY_HEX ) );
+            l420.intercom.usart_TX = l420.intercom._parse( argv.get_str( KEY_HEX ) );
         }
         
         Thread.Sleep( 250 );

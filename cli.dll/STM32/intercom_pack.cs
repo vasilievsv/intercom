@@ -43,6 +43,33 @@ namespace l420
         ///
         ///
         ///
+        static public object WRITE
+        {
+            set
+            {
+                var _type = value.GetType().Name.ToString();
+
+                switch(_type)
+                {
+                    case "Byte": _frame32 [_cursor++] = (byte)value; break;
+
+                    case "Byte[]":
+                    {
+                        byte [ ] T = (byte [ ])value;
+                        var _len   = (byte)T.Length;
+
+                        Array.Copy( T, 0, _frame32, _cursor, _len );
+                        _cursor += _len; // передвинули курсор
+                    }
+                    break;
+                }// switch
+
+            }
+        }
+
+        ///
+        ///
+        ///
         static Bitmap bmp_24rgb = new Bitmap( 24, 8, PixelFormat.Format24bppRgb);
         static public void frame32_CG_BITBLT(Bitmap src_bmp)
         {
@@ -85,32 +112,6 @@ namespace l420
         static public byte [ ] pack_int  (int value)    { return BitConverter.GetBytes( value ); }
         static public byte [ ] pack_float(float value)  { return BitConverter.GetBytes( value ); }
 
-        ///
-        ///
-        ///
-        static public object WRITE
-        {
-            set
-            {
-                var _type = value.GetType().Name.ToString();
-
-                switch(_type)
-                {
-                    case "Byte": _frame32 [_cursor++] = (byte)value; break;
-
-                    case "Byte[]":
-                    {
-                        byte [ ] T = (byte [ ])value;
-                        var _len   = (byte)T.Length;
-
-                        Array.Copy( T, 0, _frame32, _cursor, _len );
-                        _cursor += _len; // передвинули курсор
-                    }
-                    break;
-                }// switch
-
-            }
-        }
 
         ///
         /// Blitting means bit-boundary block transfer 

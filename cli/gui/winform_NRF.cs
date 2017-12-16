@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace intercom
+namespace app
 {
     public partial class winform_NRF :Form
     {

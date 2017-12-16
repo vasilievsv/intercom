@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.Drawing.Imaging;
 
-namespace intercom
+namespace app
 {
     partial class winform_BitBlt_BOOT
     {

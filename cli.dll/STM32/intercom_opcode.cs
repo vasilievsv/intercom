@@ -65,7 +65,7 @@ namespace l420
         /// Заменяем строку с опкодом на значение константы
         /// 
         static byte[ ] _dummy = { };
-        static public byte[] _parse2frame(string _buff)
+        static public byte[] _parse(string _buff)
         {
             if(_buff == string.Empty)
             { 
