@@ -96,5 +96,14 @@ public static partial class Utils
         Array.Reverse( bytes, 0, bytes.Length );
         return bytes;
     }
+    //
+    //
+    //https://dmadan.wordpress.com/2011/08/17/c-convert-hexadecimal-to-binary-string-conversion/
+    public static string hex2binary(string hexvalue)
+    {
+        string binaryval = string.Empty;
+        binaryval = Convert.ToString(Convert.ToInt32(hexvalue, 16), 2);
+        return binaryval;
+    }
 
 }

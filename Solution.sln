@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cli", "cli\cli.csproj", "{F5D3931F-67C8-44AE-B456-F1ADA6BB8846}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hostx.cli", "cli\hostx.cli.csproj", "{F5D3931F-67C8-44AE-B456-F1ADA6BB8846}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cli.dll", "cli.dll\cli.dll.csproj", "{B0FC5D4E-723E-4F9B-9E0D-3FC711B1FF45}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "l420.dll", "cli.dll\l420.dll.csproj", "{B0FC5D4E-723E-4F9B-9E0D-3FC711B1FF45}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "abstract", "abstract", "{FC239FAE-CD75-4EC0-BEA4-2BB7880ACDF5}"
 	ProjectSection(SolutionItems) = preProject
