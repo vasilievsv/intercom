@@ -8,9 +8,10 @@
 */
 using System;
 using System.Threading;
-
 using System.Windows.Forms;
 using l420;
+
+using micro.sdk;
 
 public partial class main
 {
@@ -27,58 +28,57 @@ public partial class main
     [STAThread]
     static void Main()
     {
-        micro.begin( ConsoleColor.White );
-        if( argv.get_touch(KEY_BANNER)  || argv.count == 0) micro.print_banner();
-        if( argv.get_touch(KEY_HELP)    || argv.count == 0) micro.print( _help );
-        micro.end();
+        log.begin( ConsoleColor.White );
+        if( argv.check_key(KEY_BANNER)  || argv.count == 0) log.print_banner();
+        if( argv.check_key(KEY_HELP)    || argv.count == 0) log.print( _help );
+        log.end();
         
    
-        if(argv.get_touch( KEY_PORT_LIST ))
+        if(argv.check_key( KEY_PORT_LIST ))
         {
-            micro.print( l420.intercom.usart_EnumPort() );
+            log.print( intercom.usart_EnumPort() );
         }
         
-        if(argv.get_touch( KEY_PORT ))
+        if(argv.check_key( KEY_PORT ))
         {
-            l420.intercom.use_debug         = argv.get_touch( KEY_DEBUG );
+            intercom.use_debug         = argv.check_key( KEY_DEBUG );
 
-            l420.intercom.eventPinChangned  += delegate(){micro.print("IRQ_PinChanged");};
-            l420.intercom.eventIRQError     += delegate(){micro.print("IRQ_Error");};
-            l420.intercom.eventPortNotFound += delegate(){micro.print("PortNotFound");};
-            l420.intercom.eventConnect      += delegate(){};
-            l420.intercom.eventDataIncoming += delegate(){};
+            intercom.eventPinChangned  += delegate(){log.print("IRQ_PinChanged");};
+            intercom.eventIRQError     += delegate(){log.print("IRQ_Error");};
+            intercom.eventPortNotFound += delegate(){log.print("PortNotFound");};
+            intercom.eventConnect      += delegate(){};
+            intercom.eventDataIncoming += delegate(){};
 
-            l420.intercom.usart_Open( argv.get_str( KEY_PORT, "auto" ) );
+            intercom.usart_Open( argv.get_str( KEY_PORT, _bydefault:"auto" ) );
         }
         
-        if(argv.get_touch(KEY_GUI))
+        if(argv.check_key(KEY_GUI))
         { 
-            switch(argv.get_num(KEY_GUI,0))
+            switch(argv.get_num(KEY_GUI, _bydefault:0))
             {
-                case 0:break;
                 case 1: Application.Run(new app.winform_NRF());    break;
                 case 2: Application.Run(new app.winform_SPI());    break;
                 case 3: Application.Run(new app.winform_USART());  break;
             }
         }
-        else if(argv.get_touch( KEY_LOOP ))
+        else if(argv.check_key( KEY_LOOP ))
         {
             while(true)
             {
-                Thread.Sleep( argv.get_num( KEY_LOOP, 150 ) );
-                l420.intercom.usart_TX = l420.intercom._parse( argv.get_str( KEY_HEX ) );
+                Thread.Sleep( argv.get_num( KEY_LOOP, _bydefault:150 ) );
+                intercom.usart_TX = intercom._parse( argv.get_str( KEY_HEX ) );
             }
         }
         else
         {
-            l420.intercom.usart_TX = l420.intercom._parse( argv.get_str( KEY_HEX ) );
+            intercom.usart_TX = intercom._parse( argv.get_str( KEY_HEX ) );
         }
         
         Thread.Sleep( 250 );
         
-        if(argv.get_touch( KEY_DEBUG ))
+        if(argv.check_key( KEY_DEBUG ))
         {
-            l420.intercom.usart_DumpLast(ref l420.intercom.usart_RX);
+            intercom.usart_DumpLast(ref intercom.usart_RX);
         }
     }
 

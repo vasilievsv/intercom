@@ -81,9 +81,9 @@ namespace l420
         ////
         ///
         //
-        static public string get_str(string key, string _default="")
+        static public string get_str(string key, string _bydefault="")
         {
-            string T    = _default;
+            string T    = _bydefault;
             string raw  = get_raw( key );
             
             if (raw.Length > 0)
@@ -100,9 +100,9 @@ namespace l420
         ////
         ///
         //
-        static public int get_num( string key, int _default)
+        static public int get_num( string key, int _bydefault)
         {
-            int T = _default;
+            int T = _bydefault;
         
             var raw = get_raw( key );
         
@@ -111,7 +111,7 @@ namespace l420
             if(isValid == false)
             {
                 //micro.print( NOTICE_USE_DEFAULT_VALUE+ " "+ key +" " + _default );
-                T = _default;
+                T = _bydefault;
             }
             else
             {
@@ -123,15 +123,15 @@ namespace l420
         ////
         ///
         //
-        static public bool get_bool( string key, int _default)
+        static public bool get_bool( string key, int _bydefault)
         {
-            int T = get_num( key, _default);
+            int T = get_num( key, _bydefault);
             return int2bool(T);
         }
         ///
         /// Проверка наличия параметра
         ///
-        static public bool get_touch( string key )
+        static public bool check_key( string key )
         {
             var T = Array.FindAll(argv.safe_arv, s => s.Equals(key));
 

@@ -2,6 +2,7 @@
 using System.Threading;
 using System.Windows.Forms;
 using l420;
+using micro.sdk;
 
 namespace app
 {
@@ -33,7 +34,7 @@ namespace app
         
         public void IRQ_PackEncoded(byte opcode, byte[] data)
         {
-            micro.print( BitConverter.ToString(data,0,data.Length) );
+            log.print( BitConverter.ToString(data,0,data.Length) );
 
             var _iaddr = BitConverter.ToInt32( data, 0);
             var _idata = BitConverter.ToString( data, 4, data.Length - 4 );

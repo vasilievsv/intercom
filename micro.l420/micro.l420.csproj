@@ -42,14 +42,14 @@
     <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="L420\argv.cs" />
+    <Compile Include="argv.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="L420\file.cs" />
-    <Compile Include="L420\json.cs" />
-    <Compile Include="L420\micro.cs" />
-    <Compile Include="L420\profiler.cs" />
-    <Compile Include="L420\utils.cs" />
-    <Compile Include="L420\win32.cs" />
+    <Compile Include="file.cs" />
+    <Compile Include="json.cs" />
+    <Compile Include="log.cs" />
+    <Compile Include="profiler.cs" />
+    <Compile Include="utils.cs" />
+    <Compile Include="win32.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

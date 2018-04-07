@@ -13,7 +13,7 @@ using System.IO.Ports;
 using System.Reflection;
 using System.Threading;
 
-namespace l420
+namespace micro.sdk
 {
     sealed public partial class intercom
     {

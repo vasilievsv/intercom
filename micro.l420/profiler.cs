@@ -87,7 +87,7 @@ namespace l420
                 _probes.Remove( pid );
 
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
-                micro.print
+                log.print
                 (
                     ""
                     + "@"+ probe.tag + ""

@@ -10,7 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace l420
+namespace micro.sdk
 {
     class crc_stm32
     {

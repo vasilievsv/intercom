@@ -13,6 +13,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using l420;
+using micro.sdk;
 
 namespace app
 {
@@ -24,13 +25,13 @@ namespace app
         {
             InitializeComponent();
 
-            l420.intercom.PACK_BEGIN();
-            l420.intercom.WRITE = l420.intercom.CG_CLEAR;
-            l420.intercom.WRITE = l420.intercom._NOP;
-            l420.intercom.WRITE = (byte)0x00;
-            l420.intercom.WRITE = (byte)0x00;
-            l420.intercom.WRITE = (byte)0x00;
-            l420.intercom.PACK_END();
+            intercom.PACK_BEGIN();
+            intercom.WRITE = intercom.CG_CLEAR;
+            intercom.WRITE = intercom._NOP;
+            intercom.WRITE = (byte)0x00;
+            intercom.WRITE = (byte)0x00;
+            intercom.WRITE = (byte)0x00;
+            intercom.PACK_END();
         }
 
         #region DRAG_AND_DROP
@@ -49,14 +50,14 @@ namespace app
             { 
                 Console.WriteLine( file );
                 Console.ForegroundColor = ConsoleColor.Green;
-                micro.print( "CATCH.DragDrop " + file );
+                log.print( "CATCH.DragDrop " + file );
                 _image = Image.FromFile( file );
 
                 var gr = pictureBox2.CreateGraphics();
                 gr.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor;
                 gr.DrawImage( _image, new Rectangle( 0, 0, pictureBox2.Width, pictureBox2.Height ), 0, 0, _image.Width, _image.Height, GraphicsUnit.Pixel );
 
-                l420.intercom.frame32_CG_BITBLT(new Bitmap( _image ) );
+                intercom.frame32_CG_BITBLT(new Bitmap( _image ) );
             }
         }
         #endregion

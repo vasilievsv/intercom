@@ -28,7 +28,7 @@ using System.IO;
 
 namespace l420
 {
-    public class micro
+    public class log
     {
         static StreamWriter     _stream = null;
         static public string    _buff   = ""; // буфер для GUI
@@ -41,7 +41,7 @@ namespace l420
         {
             foreach(var p in type)
             {
-                micro.print( p );
+                log.print( p );
             }
         }
         ///
@@ -63,7 +63,7 @@ namespace l420
             }
 
             if(_lcount > 5)
-                micro.wipe();
+                log.wipe();
             
             //single.dispatchEvent(new Xevent(Xevent.TRACE,txt))
         }
@@ -121,7 +121,7 @@ namespace l420
 
 
             banner2:
-            micro.print( @"
+            log.print( @"
                   _,----. 
                ,-'     __`. 
               /    .  /--\`) 
@@ -148,7 +148,7 @@ namespace l420
             return;
 
             banner4:
-            micro.print( @"
+            log.print( @"
              , 
             (                          ) 
              \                        / 
@@ -172,7 +172,7 @@ namespace l420
             return;
 
             banner5:
-            micro.print( @"
+            log.print( @"
                            _,..__,
                        ,.'''      `'-,_
                      ,'                '.
@@ -196,7 +196,7 @@ namespace l420
             return;
 
             banner6:
-            micro.print( @"
+            log.print( @"
 ───────▄▄▄
  ────▄▀░▄░▀▄
   ───█░█▄▀░█
@@ -206,7 +206,7 @@ namespace l420
             return;
 
             banner7:
-            micro.print( @"
+            log.print( @"
  ▄            ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄   ▄         ▄  ▄▄▄▄▄▄▄▄▄▄▄   ▄▄▄▄▄▄▄▄▄  
 ▐░▌          ▐░░░░░░░░░░░▌▐░░░░░░░░░░▌ ▐░▌       ▐░▌▐░░░░░░░░░░░▌ ▐░░░░░░░░░▌ 
 ▐░▌          ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░▌       ▐░▌ ▀▀▀▀▀▀▀▀▀█░▌▐░█░█▀▀▀▀▀█░▌
@@ -223,7 +223,7 @@ namespace l420
 
 
             banner9:
-            micro.print(@"
+            log.print(@"
         .o oOOOOOOOo                                            OOOo
         Ob.OOOOOOOo  OOOo.      oOOo.                      .adOOOOOOO
         OboO''''''''''''.OOo. .oOOOOOo.    OOOo.oOOOOOo..'''''''''OO

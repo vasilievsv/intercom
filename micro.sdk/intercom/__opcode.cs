@@ -14,7 +14,7 @@ using System.Drawing.Imaging;
 using System.Reflection;
 using System.Text.RegularExpressions;
 
-namespace l420
+namespace micro.sdk
 {
     sealed public partial class intercom
     {

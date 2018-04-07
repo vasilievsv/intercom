@@ -9,8 +9,9 @@
 using System;
 using System.IO.Ports;
 using System.Text;
+using l420;
 
-namespace l420
+namespace micro.sdk
 {
     sealed public partial class intercom
     {
@@ -66,7 +67,7 @@ namespace l420
             if(use_debug==true)
             {
                 Console.ForegroundColor = ConsoleColor.Magenta;
-                micro.print(BitConverter.ToString( usart_RX, 0, pack_size ) );
+                log.print(BitConverter.ToString( usart_RX, 0, pack_size ) );
                 Console.ResetColor();
             }
 
@@ -114,25 +115,25 @@ namespace l420
         ///
         static public void usart_Open(string _port = "auto")
         {
-            l420.micro.print( "" );
+            l420.log.print( "" );
 
             var _names = usart_EnumPort();
 
             if(_names.Length == 0)
             {
-                l420.micro.begin( ConsoleColor.Yellow );
+                l420.log.begin( ConsoleColor.Yellow );
                 
-                l420.micro.end();
+                l420.log.end();
 
                 if(eventPortNotFound != null)
                    eventPortNotFound( );
             }
             else if(_port == "auto")
             {
-                micro.begin( ConsoleColor.White );
+                l420.log.begin( ConsoleColor.White );
                 _list = new SerialPort [_names.Length];
 
-                l420.micro.print( "Start Discovery (devices "+ _list.Length +")" );
+                l420.log.print( "Start Discovery (devices "+ _list.Length +")" );
                 for(int i = 0; i != _list.Length; i++)
                 {
                     var T = _createPort(_names[i]);
@@ -144,7 +145,7 @@ namespace l420
                     PACK_END();
                     _list [i] = T;
                 }
-                micro.end();
+                log.end();
 
             }
             else
@@ -202,7 +203,7 @@ namespace l420
                     if(use_debug == true)
                     {
                         Console.ForegroundColor = ConsoleColor.Green;
-                        l420.micro.print( BitConverter.ToString( _frameTX, 0, cnt) );
+                        l420.log.print( BitConverter.ToString( _frameTX, 0, cnt) );
                         Console.ResetColor();
                     }
                     
@@ -243,10 +244,10 @@ namespace l420
         static public void usart_DumpLast(ref byte[] _ref)
         {
 
-            micro.begin( ConsoleColor.White );
-            micro.print( ">> crc\t:"    + BitConverter.ToInt32( _ref, 0 ).ToString("X"));
-            micro.print( ">> size\t:"   + BitConverter.ToUInt16( intercom.usart_RX, 4 ) );
-            micro.end();
+            log.begin( ConsoleColor.White );
+            log.print( ">> crc\t:"    + BitConverter.ToInt32( _ref, 0 ).ToString("X"));
+            log.print( ">> size\t:"   + BitConverter.ToUInt16( intercom.usart_RX, 4 ) );
+            log.end();
         }
 
     }// class end

@@ -123,11 +123,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\cli.dll\l420.csproj">
+    <ProjectReference Include="..\micro.l420\micro.l420.csproj">
       <Project>{b0fc5d4e-723e-4f9b-9e0d-3fc711b1ff45}</Project>
-      <Name>l420</Name>
+      <Name>micro.l420</Name>
     </ProjectReference>
-    <ProjectReference Include="..\micro.hostapi\micro.sdk.csproj">
+    <ProjectReference Include="..\micro.sdk\micro.sdk.csproj">
       <Project>{a5028586-4006-4601-be73-6d3eb18806e6}</Project>
       <Name>micro.sdk</Name>
     </ProjectReference>

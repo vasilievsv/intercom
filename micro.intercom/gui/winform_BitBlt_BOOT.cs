@@ -13,6 +13,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using l420;
+using micro.sdk;
 
 namespace app
 {
@@ -126,7 +127,7 @@ namespace app
                     }
 
                     //profiler.start( "cg_bitblt", 200);
-                    l420.intercom.frame32_CG_BITBLT( cg_canvas );
+                    micro.sdk.intercom.frame32_CG_BITBLT( cg_canvas );
                     //profiler.stop( 200 );
 
                     // TODO: Object is currently in use elsewhere
