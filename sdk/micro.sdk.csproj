@@ -46,7 +46,7 @@
     <Compile Include="intercom\__usart.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\micro.l420\micro.l420.csproj">
+    <ProjectReference Include="..\l420\micro.l420.csproj">
       <Project>{b0fc5d4e-723e-4f9b-9e0d-3fc711b1ff45}</Project>
       <Name>micro.l420</Name>
     </ProjectReference>
