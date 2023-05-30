@@ -7,6 +7,7 @@
   ******************************************************************************
   
     https://social.msdn.microsoft.com/Forums/vstudio/en-US/45a89532-b01c-4ef8-aa46-532882cec004/serialport-class-and-rtscontroltoggle?forum=csharpgeneral
+    https://referencesource.microsoft.com/#system/compmod/microsoft/win32/NativeMethods.cs,ceeda2a57dec1eba,references
 
 */
 using Microsoft.Win32.SafeHandles;
@@ -16,6 +17,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 
 using System.IO.Ports;
+using System.Runtime.Versioning;
 
 namespace utils
 {
@@ -23,20 +25,30 @@ namespace utils
     {
         [DllImport("kernel32.dll", SetLastError = true)] private static extern bool SetCommState(SafeFileHandle hFile, IntPtr lpDCB);
 
+        [DllImport("kernel32.dll", SetLastError = true)]
+        [ResourceExposure(ResourceScope.None)]
+        internal static extern bool EscapeCommFunction(
+                SafeFileHandle hFile, // handle to communications device
+                int dwFunc      // extended function to perform
+                );
+
+        public const int SETRTS = 3;       // Set RTS high
+        public const int CLRRTS = 4;       // Set RTS low
+        public const int SETDTR = 5;       // Set DTR high
+        public const int CLRDTR = 6;
 
         static public void SetRtsControlToggle(SerialPort port)
         {
-            SetDcbFlag(port, 12, 3); // flag 12 is fRtsControl, value 3 is RTS_CONTROL_TOGGLE
+            SetCommFlag(port, SETRTS);
         }
 
         static public void ClearRtsControlToggle(SerialPort port)
         {
-            SetDcbFlag(port, 12, 0); // flag 12 is fRtsControl, value 0 is RTS_CONTROL_DISABLE
+            SetCommFlag(port, CLRRTS);
         }
 
-        static public void SetDcbFlag(SerialPort port, int flag, int value)
+        static public void SetCommFlag(SerialPort port, int value)
         {
-
             // Get the base stream and its type
             object baseStream = port.BaseStream;
             Type baseStreamType = baseStream.GetType();
@@ -46,25 +58,7 @@ namespace utils
                 // Get the Win32 file handle for the port
                 SafeFileHandle _handle = (SafeFileHandle)baseStreamType.GetField("_handle", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(baseStream);
 
-                // Box the private DCB field
-                object dcb = baseStreamType.GetField("dcb", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(baseStream);
-
-                // Create unmanaged memory to copy dcb field into
-                IntPtr hGlobal = Marshal.AllocHGlobal(Marshal.SizeOf(dcb));
-                try
-                {
-                    // Copy dcb field to unmanaged memory
-                    Marshal.StructureToPtr(dcb, hGlobal, false);
-
-                    // Call SetCommState
-                    if (!SetCommState(_handle, hGlobal))
-                        throw new Win32Exception(Marshal.GetLastWin32Error());
-                }
-                finally
-                {
-                    // Free the unmanaged memory
-                    Marshal.FreeHGlobal(hGlobal);
-                }
+                EscapeCommFunction(_handle, value);
             }
             catch
             {

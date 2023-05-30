@@ -43,6 +43,7 @@ namespace micro.sdk
                     T.DataBits    = 8;
                     T.StopBits    = StopBits.One;
                     T.Encoding    = Encoding.Default;
+            T.Handshake = Handshake.None;
 
             T.ErrorReceived += IRQ_Error;
             T.DataReceived += IRQ_DataIncoming;
@@ -85,7 +86,7 @@ namespace micro.sdk
                 intercom._serial.DataBits = (0 >= _buff.Length) ? 8 : intercom.GetDataBit(_buff[0]);
                 intercom._serial.Parity = (1 >= _buff.Length) ? Parity.Even : intercom.GetParityFrom(_buff[1]);
                 intercom._serial.StopBits = (2 >= _buff.Length) ? StopBits.One : intercom.GetStopBit(_buff[2]);
-
+               // intercom._serial.Handshake = Handshake.RequestToSend;
                 intercom._serial.Open();
             }
         }

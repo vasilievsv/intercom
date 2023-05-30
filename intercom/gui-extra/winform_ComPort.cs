@@ -108,10 +108,12 @@ namespace app
   
         private void pin_group(object sender, EventArgs e)
         {
-            win32_serial.SetRtsControlToggle(intercom._serial);
-            Thread.Sleep( 50 );
-            win32_serial.ClearRtsControlToggle(intercom._serial);
+            win32_serial.SetCommFlag(intercom._serial,win32_serial.SETRTS);
+            Thread.Sleep( 150 );
+            win32_serial.SetCommFlag(intercom._serial, win32_serial.CLRRTS);
 
+            //intercom._serial.RtsEnable = true;
+            //intercom._serial.DtrEnable = true;
             //Button btn = (Button)sender;
             //int pin_num = Int32.Parse( btn.Text );
 
