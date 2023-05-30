@@ -11,7 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace l420
+namespace utils
 {
     sealed public class argv
     {
@@ -45,6 +45,7 @@ namespace l420
             return (value > 0) ? true : false;
         }
 
+
         // гарантировано возвращает строку
         // 
         //   
@@ -59,7 +60,7 @@ namespace l420
                 string [ ] _raw      = Environment.GetCommandLineArgs();
                 string _args_v1_raw  = string.Join( " ", _raw );
                 string _args_v2_safe = _args_v1_raw.Replace( '=', ' ' ); // конфиг от J475
-                _safe_argv          = _args_v2_safe.Split( ' ' );       // разбиваем обратно на элементы
+                _safe_argv           = _args_v2_safe.Split( ' ' );       // разбиваем обратно на элементы
             }
             
             if (_safe_argv.Contains(key) == true)

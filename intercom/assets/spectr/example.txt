@@ -1,0 +1,4 @@
+[
+	{ "fx_name": "vibro"  ,"bar": "5", "alarm_delta":"0", "alarm": "75", "fx_ch": "0",  "magic": false, "power":"0.725"},
+	{ "fx_name": "wind" , "bar": "20", "alarm_delta":"0", "alarm": "165", "fx_ch": "0",  "magic": false, "power":"0.725"},
+]

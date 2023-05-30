@@ -26,7 +26,7 @@
 using System;
 using System.IO;
 
-namespace l420
+namespace utils
 {
     public class log
     {
@@ -107,20 +107,45 @@ namespace l420
             //micro.print("ARG :\n "  + String.Join(" ", Environment.GetCommandLineArgs()));
         }
 
-        static public void print_banner(string _msg="")
+        static public void print_random_banner(string _msg = "")
         {
-            switch(DateTime.Now.Second % 8)
+            switch (DateTime.Now.Second % 8)
             {
-                case 1: goto banner2;
-                case 3: goto banner4;
-                case 4: goto banner5;
-                case 5: goto banner6;
-                case 6: goto banner7;
-                case 8: goto banner9;
+                case 1: print_banner(0); break;
+                case 3: print_banner(1); break;
+                case 4: print_banner(2); break;
+                case 5: print_banner(3); break;
+                case 6: print_banner(4); break;
+                case 8: print_banner(5); break;
+                case 2: print_banner(6); break;
+                default: print_banner(2); break;
+            }
+        }
+
+
+
+
+
+
+
+        static public void print_banner(int num)
+        {
+            switch(num)
+            {
+                case 0: goto banner0;
+                case 1: goto banner1;
+                case 2: goto banner2;
+                case 3: goto banner3;
+
+                case 5: goto banner5;
+                case 6: goto banner6;
+                case 7: goto banner7;
+
+                default: goto banner2;
             }
 
 
-            banner2:
+            banner0:
             log.print( @"
                   _,----. 
                ,-'     __`. 
@@ -147,7 +172,7 @@ namespace l420
 " );
             return;
 
-            banner4:
+            banner1:
             log.print( @"
              , 
             (                          ) 
@@ -171,7 +196,7 @@ namespace l420
 " );
             return;
 
-            banner5:
+            banner2:
             log.print( @"
                            _,..__,
                        ,.'''      `'-,_
@@ -195,7 +220,7 @@ namespace l420
             `'-- ''`" );
             return;
 
-            banner6:
+            banner3:
             log.print( @"
 ───────▄▄▄
  ────▄▀░▄░▀▄
@@ -205,24 +230,10 @@ namespace l420
 " );
             return;
 
-            banner7:
-            log.print( @"
- ▄            ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄   ▄         ▄  ▄▄▄▄▄▄▄▄▄▄▄   ▄▄▄▄▄▄▄▄▄  
-▐░▌          ▐░░░░░░░░░░░▌▐░░░░░░░░░░▌ ▐░▌       ▐░▌▐░░░░░░░░░░░▌ ▐░░░░░░░░░▌ 
-▐░▌          ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░▌       ▐░▌ ▀▀▀▀▀▀▀▀▀█░▌▐░█░█▀▀▀▀▀█░▌
-▐░▌          ▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌          ▐░▌▐░▌▐░▌    ▐░▌
-▐░▌          ▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄█░▌          ▐░▌▐░▌ ▐░▌   ▐░▌
-▐░▌          ▐░░░░░░░░░░░▌▐░░░░░░░░░░▌ ▐░░░░░░░░░░░▌ ▄▄▄▄▄▄▄▄▄█░▌▐░▌  ▐░▌  ▐░▌
-▐░▌          ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌ ▀▀▀▀▀▀▀▀▀█░▌▐░░░░░░░░░░░▌▐░▌   ▐░▌ ▐░▌
-▐░▌          ▐░▌       ▐░▌▐░▌       ▐░▌          ▐░▌▐░█▀▀▀▀▀▀▀▀▀ ▐░▌    ▐░▌▐░▌
-▐░█▄▄▄▄▄▄▄▄▄ ▐░▌       ▐░▌▐░█▄▄▄▄▄▄▄█░▌          ▐░▌▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄█░█░▌
-▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░▌           ▐░▌▐░░░░░░░░░░░▌ ▐░░░░░░░░░▌ 
- ▀▀▀▀▀▀▀▀▀▀▀  ▀         ▀  ▀▀▀▀▀▀▀▀▀▀             ▀  ▀▀▀▀▀▀▀▀▀▀▀   ▀▀▀▀▀▀▀▀▀  
-                                                                   [Nice job.]" );
-            return;
 
 
-            banner9:
+
+            banner5:
             log.print(@"
         .o oOOOOOOOo                                            OOOo
         Ob.OOOOOOOo  OOOo.      oOOo.                      .adOOOOOOO
@@ -245,6 +256,44 @@ namespace l420
                                   .
 ");
             return;
+
+            banner6:
+            log.print(@"
+ #####  ####### #     # ####### ######     #    ####### ####### ######  
+#     # #       ##    # #       #     #   # #      #    #     # #     # 
+#       #       # #   # #       #     #  #   #     #    #     # #     # 
+#  #### #####   #  #  # #####   ######  #     #    #    #     # ######  
+#     # #       #   # # #       #   #   #######    #    #     # #   #   
+#     # #       #    ## #       #    #  #     #    #    #     # #    #  
+ #####  ####### #     # ####### #     # #     #    #    ####### #     # 
+");
+            return;
+
+
+
+            banner7:
+            log.print(@"
+  ____                           _             
+ / ___| ___ _ __   ___ _ __ __ _| |_ ___  _ __ 
+| |  _ / _ \ '_ \ / _ \ '__/ _` | __/ _ \| '__|
+| |_| |  __/ | | |  __/ | | (_| | || (_) | |   
+ \____|\___|_| |_|\___|_|  \__,_|\__\___/|_|   
+ ");
+            return;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
-    }//class end
+}//class end
 }

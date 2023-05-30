@@ -1,0 +1,56 @@
+##
+## ZC - API
+##
+
+{"act":"dev.run"  ,"did":"root.ctrl.zero-cross"}
+{"act":"dev.stop" ,"did":"root.ctrl.zero-cross"}
+{"act":"dev.write","did":"root.ctrl.zero-cross", "target":"table_var", "data":{ "dimming" :3000 }}
+{"act":"dev.read" ,"did":"root.ctrl.zero-cross", "target":"table_var"}
+
+
+##
+## OTA - API
+##
+
+{"act":"dev.run"  ,"did":"root.ctrl.ota"}
+{"act":"clock.add","did":"root.ctrl.ota:on" , "target":"event.minute"}
+{"act":"dev.save" ,"did":"root.ctrl.ota"}
+{"act":"dev.write","did":"root.ctrl.ota","target":"table_var","data":{"host":"192.168.64.17","host_port":"8070","host_file":"firmware.bin"}}
+
+
+
+
+
+
+
+##
+## CLOCK - API
+##
+
+{"act":"clock.enum"}
+{"act":"clock.save"}
+{"act":"clock.load"}
+{"act":"clock.add","did":"root.sys.memstat:*","target":"00:03"}
+{"act":"clock.del","did":"root.sys.memstat:*","target":"00:03"}
+
+
+
+
+
+##
+## UART- API
+##
+
+{"act":"uart.enum"}
+{"act":"uart.apply","data":{"port2":{ "enabled" : true,"params": "8E1","baudrate" : 115200}} }
+
+
+
+
+
+{"act":"dev.enum","did":"*"}
+{"act":"dev.list_pid"}
+{"act":"dev.run" ,"did":"root.sys.screen"}
+
+
+{"act":"dev.write","did":"root.ctrl.ota"       , "target":"table_var"  , "data":{ "url" : "http://localhost:8070/firmware.bin"}} 

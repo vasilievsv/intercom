@@ -23,7 +23,7 @@ namespace micro.sdk
         private const byte __VM             = 0xB0;
         private const byte __CG             = 0xC0;
         private const byte __DATA           = 0xD0;
-        private const byte __USER           = 0xF0;
+        private const byte __USER           = 0xE0;
         
         public const byte _NOP              = __RESERVED+0x00; //must be zero
         public const byte _END              = __RESERVED+0x0D;
@@ -59,7 +59,7 @@ namespace micro.sdk
         public const byte DATA_LED          = __DATA+0x04;
         public const byte DATA_LIGHT        = __DATA+0x05;
         public const byte DATA_BUTTON       = __DATA+0x06;
-        
+
         /// 
         /// Убираем пробелы переводим все в верхний регистр
         /// Заменяем строку с опкодом на значение константы
@@ -134,9 +134,10 @@ namespace micro.sdk
 
                         default: //default byte $
 
-                            _value = new byte [ ] 
+                            _value = new byte[]
                             {
-                                Byte.Parse( key )
+                                Convert.ToByte(key,16)
+                              
                             };
 
                         break;

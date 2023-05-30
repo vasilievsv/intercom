@@ -8,7 +8,9 @@
 */
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace l420
 {
@@ -59,6 +61,32 @@ namespace l420
             stream.Flush();
             stream.Close();
         }
-		
-	}
+
+        static public List<string> ReadLineToList(string file_name)
+        {
+            var buff     = new List<string>();
+
+            var work_dir = Path.GetDirectoryName(Environment.CurrentDirectory);
+            var path     = work_dir + @"\" + file_name;
+
+            if (System.IO.File.Exists(path))
+            {
+                using (var stream = new StreamReader(path))
+                {
+                    var line = stream.ReadLine();
+
+                    while (line != null)
+                    {
+                        if (!Regex.IsMatch(line, @"\b[#]\w+"     , RegexOptions.IgnoreCase)) continue;
+                        if (!Regex.IsMatch(line, "^((?!\r\n).)*$", RegexOptions.IgnoreCase)) continue;
+
+                        buff.Add(line);
+                    }
+                }
+            }
+
+            return buff;
+        }
+
+    }
 }
