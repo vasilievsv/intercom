@@ -20,14 +20,14 @@ using utils;
 
 namespace app
 {
-    public partial class winform_ComPort : Form
+    public partial class winform_ESP32_AutoProgram : Form
     {
         Button _prev_pin = null;
         Button _prev_gnd = null;
 
         string frw_mode = "";
 
-        public winform_ComPort()
+        public winform_ESP32_AutoProgram()
         {
             InitializeComponent();
             
@@ -138,6 +138,16 @@ namespace app
         }
 
         private void groupBox7_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }

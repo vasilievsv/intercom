@@ -86,11 +86,11 @@
     <Compile Include="embedded\intercom\__pack.cs" />
     <Compile Include="embedded\intercom\__serial.cs" />
     <Compile Include="embedded\intercom\__socket.cs" />
-    <Compile Include="gui-extra\winform_ComPort.cs">
+    <Compile Include="gui-extra\winform_ESP32_AutoProgram.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="gui-extra\winform_ComPort.Designer.cs">
-      <DependentUpon>winform_ComPort.cs</DependentUpon>
+    <Compile Include="gui-extra\winform_ESP32_AutoProgram.Designer.cs">
+      <DependentUpon>winform_ESP32_AutoProgram.cs</DependentUpon>
     </Compile>
     <Compile Include="main.cs" />
     <Compile Include="embedded\micro.utils\argv.cs" />
@@ -114,8 +114,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="gui-extra\winform_ComPort.resx">
-      <DependentUpon>winform_ComPort.cs</DependentUpon>
+    <EmbeddedResource Include="gui-extra\winform_ESP32_AutoProgram.resx">
+      <DependentUpon>winform_ESP32_AutoProgram.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

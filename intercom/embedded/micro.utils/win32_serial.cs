@@ -25,12 +25,8 @@ namespace utils
     {
         [DllImport("kernel32.dll", SetLastError = true)] private static extern bool SetCommState(SafeFileHandle hFile, IntPtr lpDCB);
 
-        [DllImport("kernel32.dll", SetLastError = true)]
-        [ResourceExposure(ResourceScope.None)]
-        internal static extern bool EscapeCommFunction(
-                SafeFileHandle hFile, // handle to communications device
-                int dwFunc      // extended function to perform
-                );
+        [DllImport("kernel32.dll", SetLastError = true)] 
+        [ResourceExposure(ResourceScope.None)]    internal static extern bool EscapeCommFunction( SafeFileHandle hFile, int dwFunc);
 
         public const int SETRTS = 3;       // Set RTS high
         public const int CLRRTS = 4;       // Set RTS low
