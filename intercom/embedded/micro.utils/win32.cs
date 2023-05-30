@@ -11,7 +11,10 @@
 
   https://winaero.com/blog/how-to-turn-off-and-disable-uac-in-windows-10/
 */
+using Microsoft.Win32.SafeHandles;
 using System;
+using System.ComponentModel;
+using System.Reflection;
 using System.Runtime.InteropServices;
 
 namespace utils

@@ -9,32 +9,25 @@
 */
 using System;
 using System.Collections;
-using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Imaging;
-using System.IO.Ports;
-using System.Reflection;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using utils;
 using micro.sdk;
 
-using System.Text.RegularExpressions;
-using System.Timers;
-using SQLite;
+
+using Microsoft.Win32.SafeHandles;
+using utils;
 
 namespace app
 {
-    public partial class winform_ESP32_GPIO : Form
+    public partial class winform_ComPort : Form
     {
         Button _prev_pin = null;
         Button _prev_gnd = null;
 
         string frw_mode = "";
 
-        public winform_ESP32_GPIO()
+        public winform_ComPort()
         {
             InitializeComponent();
             
@@ -82,7 +75,7 @@ namespace app
                 _prev_gnd = pin;
 
                 /// !!! cross thread update
-                Invoke(new Action(() => { lbl_app_mode.Text = frw_mode+" gnd:"+pin.Text; }));
+                //Invoke(new Action(() => { lbl_app_mode.Text = frw_mode+" gnd:"+pin.Text; }));
             }
 
             if (_act == "gpio.info")
@@ -99,7 +92,7 @@ namespace app
                 _prev_gnd = pin_ctrl;
                 /// !!! cross thread update
                 frw_mode = a;
-                Invoke(new Action(() => { lbl_app_mode.Text = frw_mode + " gnd:" + pin_ctrl.Text; }));
+                //Invoke(new Action(() => { lbl_app_mode.Text = frw_mode + " gnd:" + pin_ctrl.Text; }));
             }
         }
 
@@ -110,17 +103,24 @@ namespace app
             var T = utils.json.Encode(pack);
             intercom._serial.Write( T );
         }
+
+
+  
         private void pin_group(object sender, EventArgs e)
         {
-            Button btn = (Button)sender;
-            int pin_num = Int32.Parse( btn.Text );
+            win32_serial.SetRtsControlToggle(intercom._serial);
+            Thread.Sleep( 50 );
+            win32_serial.ClearRtsControlToggle(intercom._serial);
 
-            Hashtable pack = new Hashtable();
-            pack.Add("act", "gpio.touch");
-            pack.Add("did", pin_num.ToString());
+            //Button btn = (Button)sender;
+            //int pin_num = Int32.Parse( btn.Text );
 
-            var T = utils.json.Encode(pack);
-            intercom._serial.Write( T );
+            //Hashtable pack = new Hashtable();
+            //pack.Add("act", "gpio.touch");
+            //pack.Add("did", pin_num.ToString());
+
+            //var T = utils.json.Encode(pack);
+            //intercom._serial.Write( T );
         }
 
         private void app_state_group(object sender, EventArgs e)
