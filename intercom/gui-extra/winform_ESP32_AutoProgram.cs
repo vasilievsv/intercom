@@ -98,19 +98,17 @@ namespace app
 
         private void act_wire_info(object sender, EventArgs e)
         {
-            Hashtable pack = new Hashtable();
-            pack.Add("act", "gpio.info");
-            var T = utils.json.Encode(pack);
-            intercom._serial.Write( T );
+            //Hashtable pack = new Hashtable();
+            //pack.Add("act", "gpio.info");
+            //var T = utils.json.Encode(pack);
+            //intercom._serial.Write( T );
         }
 
 
   
         private void pin_group(object sender, EventArgs e)
         {
-            win32_serial.SetCommFlag(intercom._serial,win32_serial.SETRTS);
-            Thread.Sleep( 150 );
-            win32_serial.SetCommFlag(intercom._serial, win32_serial.CLRRTS);
+
 
             //intercom._serial.RtsEnable = true;
             //intercom._serial.DtrEnable = true;
@@ -150,6 +148,26 @@ namespace app
         private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cb_dtr_Handler(object sender, EventArgs e)
+        {
+            var cb = (CheckBox)sender;
+            
+            if(cb.Checked)
+                win32_serial.SetCommFlag(intercom._serial, win32_serial.SETDTR);
+            else
+                win32_serial.SetCommFlag(intercom._serial, win32_serial.CLRDTR);
+        }
+
+        private void cb_rts_Handler(object sender, EventArgs e)
+        {
+            var cb = (CheckBox)sender;
+
+            if (cb.Checked)
+                win32_serial.SetCommFlag(intercom._serial, win32_serial.SETRTS);
+            else
+                win32_serial.SetCommFlag(intercom._serial, win32_serial.CLRRTS);
         }
     }
 }

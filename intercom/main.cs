@@ -16,6 +16,7 @@ using micro.sdk;
 
 public partial class main
 {
+
     public const string KEY_BANNER     = "-b";
     public const string KEY_HELP       = "-?";
     public const string KEY_PORT       = "--port";         // ttyUSB0:115200:8N1:42:42
@@ -47,8 +48,10 @@ public partial class main
         if (argv.check_key(KEY_TCP))
             intercom.init_socket( argv.get_str(main.KEY_TCP, _bydefault: "localhost") );
 
-
-
+        
+        //
+        //  APP LOOP
+        //
         if (argv.check_key(KEY_GUI))
         {
             switch (argv.get_num(KEY_GUI, _bydefault: 0))
@@ -88,30 +91,22 @@ public partial class main
                     intercom.usart_TX = intercom._parse( argv.get_str(KEY_HEX) );
 
                 else if (argv.check_key(KEY_TCP))
-                    intercom.socket_TX = intercom._parse(argv.get_str(KEY_HEX));
-
+                    intercom.socket_TX = intercom._parse( argv.get_str(KEY_HEX) );
             }
         }
         else
         {
             if (argv.check_key(KEY_TCP))
-            {
                 intercom.socket_TX = intercom._parse(argv.get_str(KEY_HEX));
-            }
 
-            if ( argv.check_key(KEY_PORT) )
-            {
-                //intercom._serial = intercom._parse(argv.get_str(KEY_HEX));
-            }
+            //if ( argv.check_key(KEY_PORT) )
+            //    intercom._serial = intercom._parse(argv.get_str(KEY_HEX));
         }
         
         Thread.Sleep( 150 );
         
-        if(argv.check_key( KEY_DEBUG ))
-        {
-            intercom.usart_DumpLast(ref intercom.usart_RX);
-        }
-        
+        //if(argv.check_key( KEY_DEBUG ))
+        //    intercom.usart_DumpLast(ref intercom.usart_RX);
     }
 
 

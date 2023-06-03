@@ -46,11 +46,11 @@ namespace utils
         static public void SetCommFlag(SerialPort port, int value)
         {
             // Get the base stream and its type
-            object baseStream = port.BaseStream;
-            Type baseStreamType = baseStream.GetType();
-
             try
             {
+                object baseStream = port.BaseStream;
+                Type baseStreamType = baseStream.GetType();
+
                 // Get the Win32 file handle for the port
                 SafeFileHandle _handle = (SafeFileHandle)baseStreamType.GetField("_handle", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(baseStream);
 
@@ -58,8 +58,13 @@ namespace utils
             }
             catch
             {
-                throw;
+                //throw;
+                log.begin(ConsoleColor.Red);
+                log.print("!!! SetCommFlag : SerialPort broken");
+                log.end();
             }
         }
+
+
     }
 }
