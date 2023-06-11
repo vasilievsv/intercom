@@ -20,25 +20,42 @@ using utils;
 
 namespace app
 {
-    public partial class winform_ESP32_AutoProgram : Form
+    public partial class winform_ESP32_Configurator : Form
     {
         Button _prev_pin = null;
         Button _prev_gnd = null;
 
         string frw_mode = "";
+        System.Windows.Forms.Timer _timer;
 
-        public winform_ESP32_AutoProgram()
+        public winform_ESP32_Configurator()
         {
             InitializeComponent();
-            
+
             //intercom._resetPort();
+            _timer = new System.Windows.Forms.Timer();
+            _timer.Interval = 1100;
+            _timer.Tick += _timer_Tick;
+            _timer.Start();
         }
+   
 
         private void winform_remote_backdoor_Load(object sender, EventArgs e)
         {
             intercom.eventDataEncoded += IRQ_DataIncoming;
-            act_wire_info(null,null);
+            //act_wire_info(null,null);
+            //btn_tab1_read_Click(null, null);
         }
+
+
+        private void _timer_Tick(object sender, EventArgs e)
+        {
+            Hashtable pack = new Hashtable();
+            pack.Add("act", "get_chip_info");
+
+            intercom._serial.Write(utils.json.Encode(pack));
+        }
+
 
         unsafe private void IRQ_DataIncoming(object sender, string str)
         {
@@ -50,6 +67,30 @@ namespace app
             var _act        = json_array["act"] as string;
             var _did        = json_array["did"] as string;
             var _data       = json_array["data"] as Hashtable;
+
+            if (_act == "get_chip_info")
+            {
+                var a1 = _data["cores"].ToString();
+                var a2 = _data["features"].ToString();
+                var a3 = _data["model"].ToString();
+                var a4 = _data["revision"].ToString();
+                var a5 = _data["cpu_freq"].ToString();
+                var a6 = _data["free_heap"].ToString();
+                var a7 = _data["time"].ToString();
+                var a8 = _data["date"].ToString();
+
+                Invoke(new Action(() => { var_esp_cores.Text = a1; }));
+                Invoke(new Action(() => { var_esp_feature.Text = a2; }));
+                Invoke(new Action(() => { var_esp_mode.Text = a3; }));
+                Invoke(new Action(() => { var_esp_revision.Text = a4; }));
+                Invoke(new Action(() => { var_esp_cpu_freq.Text = a5; }));
+                Invoke(new Action(() => { var_esp_free_heap.Text = a6; }));
+
+                Invoke(new Action(() => { var_esp_time.Text = a7; }));
+                Invoke(new Action(() => { var_esp_date.Text = a8; }));
+            }
+
+
 
             if (_act == "pin.toggle" && _did != "0")
             {
@@ -108,7 +149,8 @@ namespace app
   
         private void pin_group(object sender, EventArgs e)
         {
-
+            panel_tab1.Visible = true;
+            panel_tab2.Visible = false;
 
             //intercom._serial.RtsEnable = true;
             //intercom._serial.DtrEnable = true;
@@ -135,20 +177,6 @@ namespace app
             intercom._serial.Write(utils.json.Encode(pack));
         }
 
-        private void groupBox7_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void cb_dtr_Handler(object sender, EventArgs e)
         {
@@ -168,6 +196,37 @@ namespace app
                 win32_serial.SetCommFlag(intercom._serial, win32_serial.SETRTS);
             else
                 win32_serial.SetCommFlag(intercom._serial, win32_serial.CLRRTS);
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_tab1_read_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+
+            Hashtable pack = new Hashtable();
+            pack.Add("act", "get_chip_info");
+
+            intercom._serial.Write(utils.json.Encode(pack));
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            panel_tab2.Location = panel_tab1.Location;
+            panel_tab2.Visible = true;
         }
     }
 }

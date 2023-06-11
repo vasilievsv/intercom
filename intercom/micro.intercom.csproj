@@ -86,11 +86,11 @@
     <Compile Include="embedded\intercom\__pack.cs" />
     <Compile Include="embedded\intercom\__serial.cs" />
     <Compile Include="embedded\intercom\__socket.cs" />
-    <Compile Include="gui-extra\winform_ESP32_AutoProgram.cs">
+    <Compile Include="gui-extra\winform_ESP32_Configurator.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="gui-extra\winform_ESP32_AutoProgram.Designer.cs">
-      <DependentUpon>winform_ESP32_AutoProgram.cs</DependentUpon>
+    <Compile Include="gui-extra\winform_ESP32_Configurator.Designer.cs">
+      <DependentUpon>winform_ESP32_Configurator.cs</DependentUpon>
     </Compile>
     <Compile Include="main.cs" />
     <Compile Include="embedded\micro.utils\argv.cs" />
@@ -101,21 +101,21 @@
     <Compile Include="embedded\micro.utils\utils.cs" />
     <Compile Include="embedded\micro.utils\win32.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="embedded\SQLite.cs" />
+    <Compile Include="embedded\SQLiteAsync.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="embedded\SQLite.cs" />
-    <Compile Include="embedded\SQLiteAsync.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="gui-extra\winform_ESP32_AutoProgram.resx">
-      <DependentUpon>winform_ESP32_AutoProgram.cs</DependentUpon>
+    <EmbeddedResource Include="gui-extra\winform_ESP32_Configurator.resx">
+      <DependentUpon>winform_ESP32_Configurator.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -142,6 +142,8 @@
   <ItemGroup>
     <None Include="assets\bg.bmp" />
     <Content Include="assets\dragdrop-1-256.png" />
+    <None Include="assets\esp32_bg\esp32_wroom.bmp" />
+    <None Include="assets\esp32_bg\esp32_wroom.png" />
     <Content Include="assets\spectr\bkg_green.png" />
     <Content Include="assets\spectr\bkg_red.png" />
     <Content Include="assets\spectr\example.txt" />

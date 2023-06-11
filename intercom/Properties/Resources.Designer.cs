@@ -143,9 +143,19 @@ namespace app.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap dragdrop_1_256 {
+        internal static System.Drawing.Bitmap esp32_wroom {
             get {
-                object obj = ResourceManager.GetObject("dragdrop_1_256", resourceCulture);
+                object obj = ResourceManager.GetObject("esp32_wroom", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap esp32_wroom1 {
+            get {
+                object obj = ResourceManager.GetObject("esp32_wroom1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

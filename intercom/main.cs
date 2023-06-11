@@ -57,7 +57,7 @@ public partial class main
             switch (argv.get_num(KEY_GUI, _bydefault: 0))
             {
                 case 1: break;
-                case 2: Application.Run(new app.winform_ESP32_AutoProgram()); break;
+                case 2: Application.Run(new app.winform_ESP32_Configurator()); break;
             }
         }
         else if (argv.check_key(KEY_FILE))
