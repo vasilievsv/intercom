@@ -44,7 +44,7 @@ namespace app
         {
             intercom.eventDataEncoded += IRQ_DataIncoming;
             //act_wire_info(null,null);
-            //btn_tab1_read_Click(null, null);
+            //btn_pin_Click(null, null);
         }
 
 
@@ -147,10 +147,11 @@ namespace app
 
 
   
-        private void pin_group(object sender, EventArgs e)
+        private void btn_pin_group_Click(object sender, EventArgs e)
         {
             panel_tab1.Visible = true;
             panel_tab2.Visible = false;
+            panel_tab3.Visible = false;
 
             //intercom._serial.RtsEnable = true;
             //intercom._serial.DtrEnable = true;
@@ -198,35 +199,40 @@ namespace app
                 win32_serial.SetCommFlag(intercom._serial, win32_serial.CLRRTS);
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void btn_pin_Click(object sender, EventArgs e)
         {
+            var _label = (Label)sender;
 
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
+            panel_tab1.Visible = false;
+            panel_tab3.Visible = false;
             
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_tab1_read_Click(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-
-            Hashtable pack = new Hashtable();
-            pack.Add("act", "get_chip_info");
-
-            intercom._serial.Write(utils.json.Encode(pack));
+            panel_tab2.Location = panel_tab1.Location;
+            panel_tab2.Visible = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             panel_tab2.Location = panel_tab1.Location;
             panel_tab2.Visible = true;
+            panel_tab3.Visible = false;
+            panel_tab1.Visible = false;
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            panel_tab3.Location = panel_tab1.Location;
+            panel_tab3.Visible = true;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

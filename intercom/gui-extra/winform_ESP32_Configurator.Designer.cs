@@ -35,7 +35,7 @@ namespace app
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.check_rts_1 = new System.Windows.Forms.CheckBox();
             this.check_dtr_1 = new System.Windows.Forms.CheckBox();
-            this.pin_3 = new System.Windows.Forms.Button();
+            this.btn_tab1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -49,9 +49,37 @@ namespace app
             this.check_dtr_4 = new System.Windows.Forms.CheckBox();
             this.group_host = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_tab2 = new System.Windows.Forms.Button();
+            this.btn_tab3 = new System.Windows.Forms.Button();
             this.panel_tab1 = new System.Windows.Forms.Panel();
             this.var_esp_date = new System.Windows.Forms.Label();
             this.var_esp_time = new System.Windows.Forms.Label();
@@ -67,7 +95,6 @@ namespace app
             this.var_esp_mode = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.btn_tab1_read = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -75,6 +102,8 @@ namespace app
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel_tab2 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
+            this.panel_tab3 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -87,6 +116,7 @@ namespace app
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel_tab2.SuspendLayout();
+            this.panel_tab3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -129,21 +159,21 @@ namespace app
             this.check_dtr_1.UseVisualStyleBackColor = true;
             this.check_dtr_1.CheckedChanged += new System.EventHandler(this.cb_dtr_Handler);
             // 
-            // pin_3
+            // btn_tab1
             // 
-            this.pin_3.FlatAppearance.BorderSize = 0;
-            this.pin_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.pin_3.Font = new System.Drawing.Font("OCR A Extended", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pin_3.ForeColor = System.Drawing.Color.Black;
-            this.pin_3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.pin_3.Location = new System.Drawing.Point(438, 6);
-            this.pin_3.Margin = new System.Windows.Forms.Padding(2);
-            this.pin_3.Name = "pin_3";
-            this.pin_3.Size = new System.Drawing.Size(103, 35);
-            this.pin_3.TabIndex = 98;
-            this.pin_3.Text = "TAB";
-            this.pin_3.UseVisualStyleBackColor = true;
-            this.pin_3.Click += new System.EventHandler(this.pin_group);
+            this.btn_tab1.FlatAppearance.BorderSize = 0;
+            this.btn_tab1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_tab1.Font = new System.Drawing.Font("OCR A Extended", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_tab1.ForeColor = System.Drawing.Color.Black;
+            this.btn_tab1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_tab1.Location = new System.Drawing.Point(438, 6);
+            this.btn_tab1.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_tab1.Name = "btn_tab1";
+            this.btn_tab1.Size = new System.Drawing.Size(103, 35);
+            this.btn_tab1.TabIndex = 98;
+            this.btn_tab1.Text = "TAB";
+            this.btn_tab1.UseVisualStyleBackColor = true;
+            this.btn_tab1.Click += new System.EventHandler(this.btn_pin_group_Click);
             // 
             // label1
             // 
@@ -279,7 +309,7 @@ namespace app
             this.group_host.Controls.Add(this.groupBox5);
             this.group_host.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.group_host.Font = new System.Drawing.Font("OCR A Extended", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.group_host.Location = new System.Drawing.Point(202, 559);
+            this.group_host.Location = new System.Drawing.Point(23, 50);
             this.group_host.Margin = new System.Windows.Forms.Padding(2);
             this.group_host.Name = "group_host";
             this.group_host.Padding = new System.Windows.Forms.Padding(2);
@@ -290,54 +320,502 @@ namespace app
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label39);
+            this.panel1.Controls.Add(this.label38);
+            this.panel1.Controls.Add(this.label37);
+            this.panel1.Controls.Add(this.label36);
+            this.panel1.Controls.Add(this.label35);
+            this.panel1.Controls.Add(this.label34);
+            this.panel1.Controls.Add(this.label33);
+            this.panel1.Controls.Add(this.label32);
+            this.panel1.Controls.Add(this.label30);
+            this.panel1.Controls.Add(this.label29);
+            this.panel1.Controls.Add(this.label28);
+            this.panel1.Controls.Add(this.label27);
+            this.panel1.Controls.Add(this.label26);
+            this.panel1.Controls.Add(this.label25);
+            this.panel1.Controls.Add(this.label24);
+            this.panel1.Controls.Add(this.label23);
+            this.panel1.Controls.Add(this.label22);
+            this.panel1.Controls.Add(this.label21);
+            this.panel1.Controls.Add(this.label20);
+            this.panel1.Controls.Add(this.label19);
+            this.panel1.Controls.Add(this.label18);
+            this.panel1.Controls.Add(this.label17);
+            this.panel1.Controls.Add(this.label16);
+            this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Location = new System.Drawing.Point(5, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(420, 440);
             this.panel1.TabIndex = 109;
             // 
+            // label39
+            // 
+            this.label39.AutoEllipsis = true;
+            this.label39.BackColor = System.Drawing.Color.Salmon;
+            this.label39.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.Location = new System.Drawing.Point(296, 362);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(40, 16);
+            this.label39.TabIndex = 153;
+            this.label39.Text = "SD0";
+            this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label39.UseCompatibleTextRendering = true;
+            this.label39.Click += new System.EventHandler(this.btn_pin_Click);
+            // 
+            // label38
+            // 
+            this.label38.AutoEllipsis = true;
+            this.label38.BackColor = System.Drawing.Color.Salmon;
+            this.label38.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.Location = new System.Drawing.Point(296, 345);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(40, 16);
+            this.label38.TabIndex = 152;
+            this.label38.Text = "SD1";
+            this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label38.UseCompatibleTextRendering = true;
+            this.label38.Click += new System.EventHandler(this.btn_pin_Click);
+            // 
+            // label37
+            // 
+            this.label37.AutoEllipsis = true;
+            this.label37.BackColor = System.Drawing.Color.Salmon;
+            this.label37.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Location = new System.Drawing.Point(296, 328);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(40, 16);
+            this.label37.TabIndex = 151;
+            this.label37.Text = "IO15";
+            this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label37.UseCompatibleTextRendering = true;
+            this.label37.Click += new System.EventHandler(this.btn_pin_Click);
+            // 
+            // label36
+            // 
+            this.label36.AutoEllipsis = true;
+            this.label36.BackColor = System.Drawing.Color.Salmon;
+            this.label36.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Location = new System.Drawing.Point(296, 311);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(40, 16);
+            this.label36.TabIndex = 150;
+            this.label36.Text = "IO2";
+            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label36.UseCompatibleTextRendering = true;
+            this.label36.Click += new System.EventHandler(this.btn_pin_Click);
+            // 
+            // label35
+            // 
+            this.label35.AutoEllipsis = true;
+            this.label35.BackColor = System.Drawing.Color.Salmon;
+            this.label35.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(296, 293);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(40, 16);
+            this.label35.TabIndex = 149;
+            this.label35.Text = "IO0";
+            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label35.UseCompatibleTextRendering = true;
+            this.label35.Click += new System.EventHandler(this.btn_pin_Click);
+            // 
+            // label34
+            // 
+            this.label34.AutoEllipsis = true;
+            this.label34.BackColor = System.Drawing.Color.Salmon;
+            this.label34.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(84, 362);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(40, 16);
+            this.label34.TabIndex = 148;
+            this.label34.Text = "SD3";
+            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label34.UseCompatibleTextRendering = true;
+            this.label34.Click += new System.EventHandler(this.btn_pin_Click);
+            // 
+            // label33
+            // 
+            this.label33.AutoEllipsis = true;
+            this.label33.BackColor = System.Drawing.Color.Salmon;
+            this.label33.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(84, 345);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(40, 16);
+            this.label33.TabIndex = 147;
+            this.label33.Text = "SD2";
+            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label33.UseCompatibleTextRendering = true;
+            this.label33.Click += new System.EventHandler(this.btn_pin_Click);
+            // 
+            // label32
+            // 
+            this.label32.AutoEllipsis = true;
+            this.label32.BackColor = System.Drawing.Color.Salmon;
+            this.label32.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(84, 328);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(40, 16);
+            this.label32.TabIndex = 146;
+            this.label32.Text = "IO13";
+            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label32.UseCompatibleTextRendering = true;
+            this.label32.Click += new System.EventHandler(this.btn_pin_Click);
+            // 
+            // label30
+            // 
+            this.label30.AutoEllipsis = true;
+            this.label30.BackColor = System.Drawing.Color.Salmon;
+            this.label30.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(296, 88);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(40, 16);
+            this.label30.TabIndex = 145;
+            this.label30.Text = "IO23";
+            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label30.UseCompatibleTextRendering = true;
+            this.label30.Click += new System.EventHandler(this.btn_pin_Click);
+            // 
+            // label29
+            // 
+            this.label29.AutoEllipsis = true;
+            this.label29.BackColor = System.Drawing.Color.Salmon;
+            this.label29.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(296, 105);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(40, 16);
+            this.label29.TabIndex = 144;
+            this.label29.Text = "IO22";
+            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label29.UseCompatibleTextRendering = true;
+            this.label29.Click += new System.EventHandler(this.btn_pin_Click);
+            // 
+            // label28
+            // 
+            this.label28.AutoEllipsis = true;
+            this.label28.BackColor = System.Drawing.Color.Salmon;
+            this.label28.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(296, 122);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(40, 16);
+            this.label28.TabIndex = 143;
+            this.label28.Text = "TX0";
+            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label28.UseCompatibleTextRendering = true;
+            this.label28.Click += new System.EventHandler(this.btn_pin_Click);
+            // 
+            // label27
+            // 
+            this.label27.AutoEllipsis = true;
+            this.label27.BackColor = System.Drawing.Color.Salmon;
+            this.label27.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(296, 138);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(40, 16);
+            this.label27.TabIndex = 142;
+            this.label27.Text = "RX0";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label27.UseCompatibleTextRendering = true;
+            this.label27.Click += new System.EventHandler(this.btn_pin_Click);
+            // 
+            // label26
+            // 
+            this.label26.AutoEllipsis = true;
+            this.label26.BackColor = System.Drawing.Color.Salmon;
+            this.label26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(296, 155);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(40, 16);
+            this.label26.TabIndex = 141;
+            this.label26.Text = "IO21";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label26.UseCompatibleTextRendering = true;
+            this.label26.Click += new System.EventHandler(this.btn_pin_Click);
+            // 
+            // label25
+            // 
+            this.label25.AutoEllipsis = true;
+            this.label25.BackColor = System.Drawing.Color.Salmon;
+            this.label25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(296, 192);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(40, 16);
+            this.label25.TabIndex = 140;
+            this.label25.Text = "IO19";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label25.UseCompatibleTextRendering = true;
+            this.label25.Click += new System.EventHandler(this.btn_pin_Click);
+            // 
+            // label24
+            // 
+            this.label24.AutoEllipsis = true;
+            this.label24.BackColor = System.Drawing.Color.Salmon;
+            this.label24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(296, 209);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(40, 16);
+            this.label24.TabIndex = 139;
+            this.label24.Text = "IO18";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label24.UseCompatibleTextRendering = true;
+            this.label24.Click += new System.EventHandler(this.btn_pin_Click);
+            // 
+            // label23
+            // 
+            this.label23.AutoEllipsis = true;
+            this.label23.BackColor = System.Drawing.Color.Salmon;
+            this.label23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(296, 226);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(40, 16);
+            this.label23.TabIndex = 138;
+            this.label23.Text = "IO5";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label23.UseCompatibleTextRendering = true;
+            this.label23.Click += new System.EventHandler(this.btn_pin_Click);
+            // 
+            // label22
+            // 
+            this.label22.AutoEllipsis = true;
+            this.label22.BackColor = System.Drawing.Color.Salmon;
+            this.label22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(296, 243);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(40, 16);
+            this.label22.TabIndex = 137;
+            this.label22.Text = "IO17";
+            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label22.UseCompatibleTextRendering = true;
+            this.label22.Click += new System.EventHandler(this.btn_pin_Click);
+            // 
+            // label21
+            // 
+            this.label21.AutoEllipsis = true;
+            this.label21.BackColor = System.Drawing.Color.Salmon;
+            this.label21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(296, 259);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(40, 16);
+            this.label21.TabIndex = 136;
+            this.label21.Text = "IO16";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label21.UseCompatibleTextRendering = true;
+            this.label21.Click += new System.EventHandler(this.btn_pin_Click);
+            // 
+            // label20
+            // 
+            this.label20.AutoEllipsis = true;
+            this.label20.BackColor = System.Drawing.Color.Salmon;
+            this.label20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(296, 276);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(40, 16);
+            this.label20.TabIndex = 135;
+            this.label20.Text = "IO4";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label20.UseCompatibleTextRendering = true;
+            this.label20.Click += new System.EventHandler(this.btn_pin_Click);
+            // 
+            // label19
+            // 
+            this.label19.AutoEllipsis = true;
+            this.label19.BackColor = System.Drawing.Color.Salmon;
+            this.label19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(84, 157);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(40, 16);
+            this.label19.TabIndex = 134;
+            this.label19.Text = "IO34";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label19.UseCompatibleTextRendering = true;
+            this.label19.Click += new System.EventHandler(this.btn_pin_Click);
+            // 
+            // label18
+            // 
+            this.label18.AutoEllipsis = true;
+            this.label18.BackColor = System.Drawing.Color.Salmon;
+            this.label18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(84, 174);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(40, 16);
+            this.label18.TabIndex = 133;
+            this.label18.Text = "IO35";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label18.UseCompatibleTextRendering = true;
+            this.label18.Click += new System.EventHandler(this.btn_pin_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoEllipsis = true;
+            this.label17.BackColor = System.Drawing.Color.Salmon;
+            this.label17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(84, 208);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(40, 16);
+            this.label17.TabIndex = 132;
+            this.label17.Text = "IO33";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label17.UseCompatibleTextRendering = true;
+            this.label17.Click += new System.EventHandler(this.btn_pin_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoEllipsis = true;
+            this.label16.BackColor = System.Drawing.Color.Salmon;
+            this.label16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(84, 191);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(40, 16);
+            this.label16.TabIndex = 131;
+            this.label16.Text = "IO32";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label16.UseCompatibleTextRendering = true;
+            // 
+            // label15
+            // 
+            this.label15.AutoEllipsis = true;
+            this.label15.BackColor = System.Drawing.Color.Salmon;
+            this.label15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(84, 226);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(40, 16);
+            this.label15.TabIndex = 130;
+            this.label15.Text = "IO25";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label15.UseCompatibleTextRendering = true;
+            this.label15.Click += new System.EventHandler(this.btn_pin_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoEllipsis = true;
+            this.label14.BackColor = System.Drawing.Color.Salmon;
+            this.label14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(84, 243);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(40, 16);
+            this.label14.TabIndex = 129;
+            this.label14.Text = "IO26";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label14.UseCompatibleTextRendering = true;
+            this.label14.Click += new System.EventHandler(this.btn_pin_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoEllipsis = true;
+            this.label13.BackColor = System.Drawing.Color.Salmon;
+            this.label13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(84, 260);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(40, 16);
+            this.label13.TabIndex = 128;
+            this.label13.Text = "IO27";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label13.UseCompatibleTextRendering = true;
+            this.label13.Click += new System.EventHandler(this.btn_pin_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoEllipsis = true;
+            this.label12.BackColor = System.Drawing.Color.Salmon;
+            this.label12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(84, 277);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(40, 16);
+            this.label12.TabIndex = 128;
+            this.label12.Text = "IO14";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label12.UseCompatibleTextRendering = true;
+            this.label12.Click += new System.EventHandler(this.btn_pin_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoEllipsis = true;
+            this.label11.BackColor = System.Drawing.Color.Salmon;
+            this.label11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(84, 294);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(40, 16);
+            this.label11.TabIndex = 127;
+            this.label11.Text = "IO12";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label11.UseCompatibleTextRendering = true;
+            this.label11.Click += new System.EventHandler(this.btn_pin_Click);
+            // 
             // pictureBox4
             // 
-            this.pictureBox4.BackColor = System.Drawing.Color.MistyRose;
+            this.pictureBox4.BackColor = System.Drawing.Color.White;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.InitialImage")));
-            this.pictureBox4.Location = new System.Drawing.Point(82, 92);
+            this.pictureBox4.Location = new System.Drawing.Point(31, 48);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(256, 256);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox4.Size = new System.Drawing.Size(360, 360);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
             // 
-            // button1
+            // btn_tab2
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("OCR A Extended", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(560, 6);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 35);
-            this.button1.TabIndex = 110;
-            this.button1.Text = "TAB";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_tab2.FlatAppearance.BorderSize = 0;
+            this.btn_tab2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_tab2.Font = new System.Drawing.Font("OCR A Extended", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_tab2.ForeColor = System.Drawing.Color.Black;
+            this.btn_tab2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_tab2.Location = new System.Drawing.Point(560, 6);
+            this.btn_tab2.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_tab2.Name = "btn_tab2";
+            this.btn_tab2.Size = new System.Drawing.Size(103, 35);
+            this.btn_tab2.TabIndex = 110;
+            this.btn_tab2.Text = "TAB";
+            this.btn_tab2.UseVisualStyleBackColor = true;
+            this.btn_tab2.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btn_tab3
             // 
-            this.button2.Enabled = false;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("OCR A Extended", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(682, 6);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(118, 35);
-            this.button2.TabIndex = 111;
-            this.button2.Text = "TAB";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_tab3.FlatAppearance.BorderSize = 0;
+            this.btn_tab3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_tab3.Font = new System.Drawing.Font("OCR A Extended", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_tab3.ForeColor = System.Drawing.Color.Black;
+            this.btn_tab3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_tab3.Location = new System.Drawing.Point(682, 6);
+            this.btn_tab3.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_tab3.Name = "btn_tab3";
+            this.btn_tab3.Size = new System.Drawing.Size(118, 35);
+            this.btn_tab3.TabIndex = 111;
+            this.btn_tab3.Text = "TAB";
+            this.btn_tab3.UseVisualStyleBackColor = true;
+            this.btn_tab3.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel_tab1
             // 
@@ -356,7 +834,6 @@ namespace app
             this.panel_tab1.Controls.Add(this.var_esp_mode);
             this.panel_tab1.Controls.Add(this.label6);
             this.panel_tab1.Controls.Add(this.label5);
-            this.panel_tab1.Controls.Add(this.btn_tab1_read);
             this.panel_tab1.Controls.Add(this.label2);
             this.panel_tab1.Controls.Add(this.label4);
             this.panel_tab1.Location = new System.Drawing.Point(438, 52);
@@ -368,7 +845,7 @@ namespace app
             // 
             this.var_esp_date.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.var_esp_date.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.var_esp_date.Location = new System.Drawing.Point(200, 242);
+            this.var_esp_date.Location = new System.Drawing.Point(168, 144);
             this.var_esp_date.Name = "var_esp_date";
             this.var_esp_date.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.var_esp_date.Size = new System.Drawing.Size(143, 17);
@@ -380,7 +857,7 @@ namespace app
             // 
             this.var_esp_time.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.var_esp_time.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.var_esp_time.Location = new System.Drawing.Point(200, 210);
+            this.var_esp_time.Location = new System.Drawing.Point(168, 126);
             this.var_esp_time.Name = "var_esp_time";
             this.var_esp_time.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.var_esp_time.Size = new System.Drawing.Size(143, 17);
@@ -392,18 +869,19 @@ namespace app
             // 
             this.label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label10.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(16, 242);
+            this.label10.Location = new System.Drawing.Point(16, 144);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(148, 17);
             this.label10.TabIndex = 122;
             this.label10.Text = "esp_date";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label9
             // 
             this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label9.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(16, 210);
+            this.label9.Location = new System.Drawing.Point(16, 126);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(148, 17);
             this.label9.TabIndex = 121;
@@ -414,7 +892,7 @@ namespace app
             // 
             this.var_esp_free_heap.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.var_esp_free_heap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.var_esp_free_heap.Location = new System.Drawing.Point(200, 178);
+            this.var_esp_free_heap.Location = new System.Drawing.Point(168, 109);
             this.var_esp_free_heap.Name = "var_esp_free_heap";
             this.var_esp_free_heap.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.var_esp_free_heap.Size = new System.Drawing.Size(143, 17);
@@ -426,7 +904,7 @@ namespace app
             // 
             this.var_esp_cpu_freq.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.var_esp_cpu_freq.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.var_esp_cpu_freq.Location = new System.Drawing.Point(200, 146);
+            this.var_esp_cpu_freq.Location = new System.Drawing.Point(168, 91);
             this.var_esp_cpu_freq.Name = "var_esp_cpu_freq";
             this.var_esp_cpu_freq.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.var_esp_cpu_freq.Size = new System.Drawing.Size(143, 17);
@@ -438,7 +916,7 @@ namespace app
             // 
             this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label8.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(16, 178);
+            this.label8.Location = new System.Drawing.Point(16, 109);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(148, 17);
             this.label8.TabIndex = 118;
@@ -449,7 +927,7 @@ namespace app
             // 
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label7.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(16, 146);
+            this.label7.Location = new System.Drawing.Point(16, 91);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(148, 17);
             this.label7.TabIndex = 117;
@@ -460,7 +938,7 @@ namespace app
             // 
             this.var_esp_revision.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.var_esp_revision.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.var_esp_revision.Location = new System.Drawing.Point(200, 114);
+            this.var_esp_revision.Location = new System.Drawing.Point(168, 74);
             this.var_esp_revision.Name = "var_esp_revision";
             this.var_esp_revision.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.var_esp_revision.Size = new System.Drawing.Size(143, 17);
@@ -472,7 +950,7 @@ namespace app
             // 
             this.var_esp_cores.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.var_esp_cores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.var_esp_cores.Location = new System.Drawing.Point(200, 82);
+            this.var_esp_cores.Location = new System.Drawing.Point(168, 57);
             this.var_esp_cores.Name = "var_esp_cores";
             this.var_esp_cores.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.var_esp_cores.Size = new System.Drawing.Size(143, 17);
@@ -484,7 +962,7 @@ namespace app
             // 
             this.var_esp_feature.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.var_esp_feature.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.var_esp_feature.Location = new System.Drawing.Point(200, 50);
+            this.var_esp_feature.Location = new System.Drawing.Point(168, 39);
             this.var_esp_feature.Name = "var_esp_feature";
             this.var_esp_feature.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.var_esp_feature.Size = new System.Drawing.Size(143, 17);
@@ -496,7 +974,7 @@ namespace app
             // 
             this.var_esp_mode.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.var_esp_mode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.var_esp_mode.Location = new System.Drawing.Point(200, 18);
+            this.var_esp_mode.Location = new System.Drawing.Point(168, 18);
             this.var_esp_mode.Name = "var_esp_mode";
             this.var_esp_mode.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.var_esp_mode.Size = new System.Drawing.Size(143, 17);
@@ -508,46 +986,29 @@ namespace app
             // 
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label6.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(16, 114);
+            this.label6.Location = new System.Drawing.Point(16, 74);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(148, 17);
             this.label6.TabIndex = 4;
             this.label6.Text = "revision:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label5.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(16, 82);
+            this.label5.Location = new System.Drawing.Point(16, 57);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(148, 17);
             this.label5.TabIndex = 3;
             this.label5.Text = "cores:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // btn_tab1_read
-            // 
-            this.btn_tab1_read.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_tab1_read.Font = new System.Drawing.Font("OCR A Extended", 10.2F);
-            this.btn_tab1_read.ForeColor = System.Drawing.Color.Black;
-            this.btn_tab1_read.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_tab1_read.Location = new System.Drawing.Point(122, 343);
-            this.btn_tab1_read.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_tab1_read.Name = "btn_tab1_read";
-            this.btn_tab1_read.Size = new System.Drawing.Size(118, 35);
-            this.btn_tab1_read.TabIndex = 112;
-            this.btn_tab1_read.Text = "READ";
-            this.btn_tab1_read.UseVisualStyleBackColor = true;
-            this.btn_tab1_read.Click += new System.EventHandler(this.btn_tab1_read_Click);
             // 
             // label2
             // 
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 50);
+            this.label2.Location = new System.Drawing.Point(16, 39);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(148, 17);
             this.label2.TabIndex = 2;
@@ -565,7 +1026,6 @@ namespace app
             this.label4.TabIndex = 1;
             this.label4.Text = "model:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // pictureBox3
             // 
@@ -616,23 +1076,48 @@ namespace app
             this.button3.TabIndex = 112;
             this.button3.Text = "APPLY";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // panel_tab3
+            // 
+            this.panel_tab3.BackColor = System.Drawing.Color.White;
+            this.panel_tab3.Controls.Add(this.button4);
+            this.panel_tab3.Controls.Add(this.group_host);
+            this.panel_tab3.Location = new System.Drawing.Point(1179, 52);
+            this.panel_tab3.Name = "panel_tab3";
+            this.panel_tab3.Size = new System.Drawing.Size(362, 392);
+            this.panel_tab3.TabIndex = 126;
+            // 
+            // button4
+            // 
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("OCR A Extended", 10.2F);
+            this.button4.ForeColor = System.Drawing.Color.Black;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.Location = new System.Drawing.Point(122, 343);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(118, 35);
+            this.button4.TabIndex = 112;
+            this.button4.Text = "APPLY";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // winform_ESP32_Configurator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(809, 458);
+            this.ClientSize = new System.Drawing.Size(810, 452);
+            this.Controls.Add(this.panel_tab3);
             this.Controls.Add(this.panel_tab2);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel_tab1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.group_host);
-            this.Controls.Add(this.pin_3);
+            this.Controls.Add(this.btn_tab3);
+            this.Controls.Add(this.btn_tab2);
+            this.Controls.Add(this.btn_tab1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "winform_ESP32_Configurator";
@@ -655,13 +1140,14 @@ namespace app
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel_tab2.ResumeLayout(false);
+            this.panel_tab3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button pin_3;
+        private System.Windows.Forms.Button btn_tab1;
 
         private System.Windows.Forms.CheckBox check_dtr_1;
         private System.Windows.Forms.CheckBox check_dtr_2;
@@ -679,10 +1165,9 @@ namespace app
         private System.Windows.Forms.CheckBox check_rts_4;
         private System.Windows.Forms.GroupBox group_host;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_tab3;
+        private System.Windows.Forms.Button btn_tab2;
         private System.Windows.Forms.Panel panel_tab1;
-        private System.Windows.Forms.Button btn_tab1_read;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -705,6 +1190,36 @@ namespace app
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel_tab2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel panel_tab3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
     }
 }
 
