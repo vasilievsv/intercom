@@ -54,7 +54,7 @@ namespace app
         private void _timer_Tick(object sender, EventArgs e)
         {
             Hashtable pack = new Hashtable();
-            pack.Add("act", "get_chip_info");
+            pack.Add("act", "api.get_chip_info");
 
             intercom._serial.Write(utils.json.Encode(pack));
         }
@@ -180,7 +180,7 @@ namespace app
             var _did = json_array["did"] as string;
             var _data = json_array["data"] as Hashtable;
 
-            if (_act == "get_chip_info")
+            if (_act == "api.get_chip_info")
             {
                 var a1 = _data["cores"].ToString();
                 var a2 = _data["features"].ToString();
