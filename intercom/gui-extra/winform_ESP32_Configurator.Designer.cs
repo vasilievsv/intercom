@@ -836,7 +836,7 @@ namespace app
             this.panel_tab1.Controls.Add(this.label5);
             this.panel_tab1.Controls.Add(this.label2);
             this.panel_tab1.Controls.Add(this.label4);
-            this.panel_tab1.Location = new System.Drawing.Point(438, 52);
+            this.panel_tab1.Location = new System.Drawing.Point(438, 50);
             this.panel_tab1.Name = "panel_tab1";
             this.panel_tab1.Size = new System.Drawing.Size(362, 392);
             this.panel_tab1.TabIndex = 110;

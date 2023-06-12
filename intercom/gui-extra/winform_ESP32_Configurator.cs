@@ -85,7 +85,6 @@ namespace app
                 Invoke(new Action(() => { var_esp_revision.Text = a4; }));
                 Invoke(new Action(() => { var_esp_cpu_freq.Text = a5; }));
                 Invoke(new Action(() => { var_esp_free_heap.Text = a6; }));
-
                 Invoke(new Action(() => { var_esp_time.Text = a7; }));
                 Invoke(new Action(() => { var_esp_date.Text = a8; }));
             }
