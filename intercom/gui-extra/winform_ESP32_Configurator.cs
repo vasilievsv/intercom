@@ -34,7 +34,7 @@ namespace app
             _timer = new System.Windows.Forms.Timer();
             _timer.Interval = 1100;
             _timer.Tick += _timer_Tick;
-            //_timer.Start();
+            _timer.Start();
 
             Hashtable pack = new Hashtable();
             pack.Add("act", "api.gpio_struct_meta");
@@ -55,7 +55,7 @@ namespace app
         private void _timer_Tick(object sender, EventArgs e)
         {
             Hashtable pack = new Hashtable();
-                pack.Add("act", "api.get_chip_info");
+                pack.Add("act", "api.get_mcu_info");
                 pack.Add("did", "");
             intercom._serial.Write(utils.json.Encode(pack));
         }
