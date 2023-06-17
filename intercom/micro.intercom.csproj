@@ -112,6 +112,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\winform_ESP32_Configurator.datasource" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="gui-extra\winform_ESP32_Configurator.resx">

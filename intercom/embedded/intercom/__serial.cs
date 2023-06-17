@@ -82,10 +82,10 @@ namespace micro.sdk
             {
                 intercom._serial.BaudRate = (1 >= port_arg_buff.Length) ? (115200) : int.Parse(port_arg_buff[1]);
 
-                var _buff = (2 >= port_arg_buff.Length) ? new char[0] : port_arg_buff[2].ToCharArray();
-                intercom._serial.DataBits = (0 >= _buff.Length) ? 8 : intercom.GetDataBit(_buff[0]);
-                intercom._serial.Parity = (1 >= _buff.Length) ? Parity.Even : intercom.GetParityFrom(_buff[1]);
-                intercom._serial.StopBits = (2 >= _buff.Length) ? StopBits.One : intercom.GetStopBit(_buff[2]);
+                var _buff                   = (2 >= port_arg_buff.Length) ? new char[0] : port_arg_buff[2].ToCharArray();
+                intercom._serial.DataBits   = (0 >= _buff.Length) ? 8 : intercom.GetDataBit(_buff[0]);
+                intercom._serial.Parity     = (1 >= _buff.Length) ? Parity.Even : intercom.GetParityFrom(_buff[1]);
+                intercom._serial.StopBits   = (2 >= _buff.Length) ? StopBits.One : intercom.GetStopBit(_buff[2]);
                // intercom._serial.Handshake = Handshake.RequestToSend;
                 intercom._serial.Open();
             }

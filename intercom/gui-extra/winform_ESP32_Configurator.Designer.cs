@@ -5,6 +5,12 @@ namespace app
 {
     partial class winform_ESP32_Configurator
     {
+        object values = new object[]
+        {
+                        new { Text = "ENABLE", Value = "1" },
+                        new { Text = "DISABLE", Value = "0" }
+        };
+
         /// <summary>
         /// Обязательная переменная конструктора.
         /// </summary>
@@ -31,6 +37,7 @@ namespace app
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(winform_ESP32_Configurator));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.check_rts_1 = new System.Windows.Forms.CheckBox();
@@ -101,18 +108,20 @@ namespace app
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel_tab2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.var_esp_gpio_mode = new System.Windows.Forms.ComboBox();
+            this.var_esp_gpio_intr_type = new System.Windows.Forms.ComboBox();
+            this.var_esp_gpio_pull_up_en = new System.Windows.Forms.ComboBox();
+            this.var_esp_gpio_pull_down_en = new System.Windows.Forms.ComboBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.var_esp_gpio_pin_bit_mask = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
             this.panel_tab3 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.var_esp_gpio_mode = new System.Windows.Forms.Label();
-            this.var_esp_gpio_pin_bit_mask = new System.Windows.Forms.Label();
-            this.var_esp_gpio_pull_up_en = new System.Windows.Forms.Label();
-            this.var_esp_gpio_pull_up_down = new System.Windows.Forms.Label();
-            this.var_esp_gpio_intr_type = new System.Windows.Forms.Label();
+            this.winformESP32ConfiguratorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -126,6 +135,7 @@ namespace app
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel_tab2.SuspendLayout();
             this.panel_tab3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.winformESP32ConfiguratorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -493,7 +503,7 @@ namespace app
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(40, 16);
             this.label30.TabIndex = 145;
-            this.label30.Text = "IO23";
+            this.label30.Text = "IO5";
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label30.UseCompatibleTextRendering = true;
             this.label30.Click += new System.EventHandler(this.btn_pin_Click);
@@ -1066,20 +1076,155 @@ namespace app
             // panel_tab2
             // 
             this.panel_tab2.BackColor = System.Drawing.Color.White;
-            this.panel_tab2.Controls.Add(this.var_esp_gpio_pull_up_down);
+            this.panel_tab2.Controls.Add(this.button1);
+            this.panel_tab2.Controls.Add(this.var_esp_gpio_mode);
             this.panel_tab2.Controls.Add(this.var_esp_gpio_intr_type);
             this.panel_tab2.Controls.Add(this.var_esp_gpio_pull_up_en);
+            this.panel_tab2.Controls.Add(this.var_esp_gpio_pull_down_en);
             this.panel_tab2.Controls.Add(this.label43);
             this.panel_tab2.Controls.Add(this.var_esp_gpio_pin_bit_mask);
             this.panel_tab2.Controls.Add(this.label42);
-            this.panel_tab2.Controls.Add(this.var_esp_gpio_mode);
             this.panel_tab2.Controls.Add(this.label41);
             this.panel_tab2.Controls.Add(this.label40);
             this.panel_tab2.Controls.Add(this.label31);
-            this.panel_tab2.Location = new System.Drawing.Point(12, 459);
+            this.panel_tab2.Location = new System.Drawing.Point(435, 46);
             this.panel_tab2.Name = "panel_tab2";
             this.panel_tab2.Size = new System.Drawing.Size(362, 392);
             this.panel_tab2.TabIndex = 125;
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("OCR A Extended", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.Location = new System.Drawing.Point(122, 325);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(103, 35);
+            this.button1.TabIndex = 127;
+            this.button1.Text = "APPLY";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // var_esp_gpio_mode
+            // 
+            this.var_esp_gpio_mode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.var_esp_gpio_mode.FormattingEnabled = true;
+            this.var_esp_gpio_mode.Location = new System.Drawing.Point(159, 177);
+            this.var_esp_gpio_mode.Name = "var_esp_gpio_mode";
+            this.var_esp_gpio_mode.Size = new System.Drawing.Size(200, 21);
+            this.var_esp_gpio_mode.TabIndex = 134;
+            // 
+            // var_esp_gpio_intr_type
+            // 
+            this.var_esp_gpio_intr_type.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.var_esp_gpio_intr_type.FormattingEnabled = true;
+            this.var_esp_gpio_intr_type.Items.AddRange(new object[] {
+            "DISABLE",
+            "POSEDGE",
+            "NEGEDGE",
+            "ANYEDGE",
+            "LOW_LEVEL",
+            "HIGH_LEVEL"});
+            this.var_esp_gpio_intr_type.Location = new System.Drawing.Point(159, 141);
+            this.var_esp_gpio_intr_type.Name = "var_esp_gpio_intr_type";
+            this.var_esp_gpio_intr_type.Size = new System.Drawing.Size(200, 21);
+            this.var_esp_gpio_intr_type.TabIndex = 133;
+            // 
+            // var_esp_gpio_pull_up_en
+            // 
+            this.var_esp_gpio_pull_up_en.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.var_esp_gpio_pull_up_en.FormattingEnabled = true;
+            this.var_esp_gpio_pull_up_en.Items.AddRange(new object[] {
+            "ENABLE",
+            "DISABLE"});
+            this.var_esp_gpio_pull_up_en.Location = new System.Drawing.Point(159, 83);
+            this.var_esp_gpio_pull_up_en.Name = "var_esp_gpio_pull_up_en";
+            this.var_esp_gpio_pull_up_en.Size = new System.Drawing.Size(200, 21);
+            this.var_esp_gpio_pull_up_en.TabIndex = 132;
+            this.var_esp_gpio_pull_up_en.ValueMember = "Key";
+            // 
+            // var_esp_gpio_pull_down_en
+            // 
+            this.var_esp_gpio_pull_down_en.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
+            this.var_esp_gpio_pull_down_en.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.var_esp_gpio_pull_down_en.Items.AddRange(new object[] {
+            "ENABLE",
+            "DISABLE"});
+            this.var_esp_gpio_pull_down_en.Location = new System.Drawing.Point(159, 109);
+            this.var_esp_gpio_pull_down_en.Name = "var_esp_gpio_pull_down_en";
+            this.var_esp_gpio_pull_down_en.Size = new System.Drawing.Size(200, 21);
+            this.var_esp_gpio_pull_down_en.TabIndex = 131;
+            // 
+            // label43
+            // 
+            this.label43.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label43.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(5, 111);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(148, 17);
+            this.label43.TabIndex = 127;
+            this.label43.Text = "pull_down_en:";
+            this.label43.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // var_esp_gpio_pin_bit_mask
+            // 
+            this.var_esp_gpio_pin_bit_mask.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.var_esp_gpio_pin_bit_mask.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.var_esp_gpio_pin_bit_mask.Location = new System.Drawing.Point(159, 35);
+            this.var_esp_gpio_pin_bit_mask.Name = "var_esp_gpio_pin_bit_mask";
+            this.var_esp_gpio_pin_bit_mask.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.var_esp_gpio_pin_bit_mask.Size = new System.Drawing.Size(143, 17);
+            this.var_esp_gpio_pin_bit_mask.TabIndex = 127;
+            this.var_esp_gpio_pin_bit_mask.Text = "-";
+            this.var_esp_gpio_pin_bit_mask.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label42
+            // 
+            this.label42.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label42.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.Location = new System.Drawing.Point(5, 85);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(148, 17);
+            this.label42.TabIndex = 126;
+            this.label42.Text = "pull_up_en:";
+            this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label41
+            // 
+            this.label41.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label41.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Location = new System.Drawing.Point(5, 35);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(148, 17);
+            this.label41.TabIndex = 125;
+            this.label41.Text = "pin_bit_mask:";
+            this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label40
+            // 
+            this.label40.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label40.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.Location = new System.Drawing.Point(5, 179);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(148, 17);
+            this.label40.TabIndex = 125;
+            this.label40.Text = "mode:";
+            this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label31
+            // 
+            this.label31.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label31.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(5, 143);
+            this.label31.Name = "label31";
+            this.label31.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label31.Size = new System.Drawing.Size(148, 17);
+            this.label31.TabIndex = 113;
+            this.label31.Text = "intr_type:";
+            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel_tab3
             // 
@@ -1105,128 +1250,16 @@ namespace app
             this.button4.Text = "APPLY";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // label31
+            // winformESP32ConfiguratorBindingSource
             // 
-            this.label31.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label31.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(37, 32);
-            this.label31.Name = "label31";
-            this.label31.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label31.Size = new System.Drawing.Size(148, 17);
-            this.label31.TabIndex = 113;
-            this.label31.Text = "intr_type:";
-            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label40
-            // 
-            this.label40.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label40.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(37, 49);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(148, 17);
-            this.label40.TabIndex = 125;
-            this.label40.Text = "mode:";
-            this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label41
-            // 
-            this.label41.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label41.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.Location = new System.Drawing.Point(37, 68);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(148, 17);
-            this.label41.TabIndex = 125;
-            this.label41.Text = "pin_bit_mask:";
-            this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label42
-            // 
-            this.label42.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label42.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(37, 85);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(148, 17);
-            this.label42.TabIndex = 126;
-            this.label42.Text = "pull_up_en:";
-            this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label43
-            // 
-            this.label43.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label43.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(37, 102);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(148, 17);
-            this.label43.TabIndex = 127;
-            this.label43.Text = "pull_down_en:";
-            this.label43.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // var_esp_gpio_mode
-            // 
-            this.var_esp_gpio_mode.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.var_esp_gpio_mode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.var_esp_gpio_mode.Location = new System.Drawing.Point(191, 49);
-            this.var_esp_gpio_mode.Name = "var_esp_gpio_mode";
-            this.var_esp_gpio_mode.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.var_esp_gpio_mode.Size = new System.Drawing.Size(143, 17);
-            this.var_esp_gpio_mode.TabIndex = 125;
-            this.var_esp_gpio_mode.Text = "-";
-            this.var_esp_gpio_mode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // var_esp_gpio_pin_bit_mask
-            // 
-            this.var_esp_gpio_pin_bit_mask.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.var_esp_gpio_pin_bit_mask.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.var_esp_gpio_pin_bit_mask.Location = new System.Drawing.Point(191, 68);
-            this.var_esp_gpio_pin_bit_mask.Name = "var_esp_gpio_pin_bit_mask";
-            this.var_esp_gpio_pin_bit_mask.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.var_esp_gpio_pin_bit_mask.Size = new System.Drawing.Size(143, 17);
-            this.var_esp_gpio_pin_bit_mask.TabIndex = 127;
-            this.var_esp_gpio_pin_bit_mask.Text = "-";
-            this.var_esp_gpio_pin_bit_mask.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // var_esp_gpio_pull_up_en
-            // 
-            this.var_esp_gpio_pull_up_en.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.var_esp_gpio_pull_up_en.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.var_esp_gpio_pull_up_en.Location = new System.Drawing.Point(191, 85);
-            this.var_esp_gpio_pull_up_en.Name = "var_esp_gpio_pull_up_en";
-            this.var_esp_gpio_pull_up_en.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.var_esp_gpio_pull_up_en.Size = new System.Drawing.Size(143, 17);
-            this.var_esp_gpio_pull_up_en.TabIndex = 128;
-            this.var_esp_gpio_pull_up_en.Text = "-";
-            this.var_esp_gpio_pull_up_en.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // var_esp_gpio_pull_up_down
-            // 
-            this.var_esp_gpio_pull_up_down.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.var_esp_gpio_pull_up_down.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.var_esp_gpio_pull_up_down.Location = new System.Drawing.Point(191, 102);
-            this.var_esp_gpio_pull_up_down.Name = "var_esp_gpio_pull_up_down";
-            this.var_esp_gpio_pull_up_down.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.var_esp_gpio_pull_up_down.Size = new System.Drawing.Size(143, 17);
-            this.var_esp_gpio_pull_up_down.TabIndex = 129;
-            this.var_esp_gpio_pull_up_down.Text = "-";
-            this.var_esp_gpio_pull_up_down.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // var_esp_gpio_intr_type
-            // 
-            this.var_esp_gpio_intr_type.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.var_esp_gpio_intr_type.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.var_esp_gpio_intr_type.Location = new System.Drawing.Point(191, 32);
-            this.var_esp_gpio_intr_type.Name = "var_esp_gpio_intr_type";
-            this.var_esp_gpio_intr_type.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.var_esp_gpio_intr_type.Size = new System.Drawing.Size(143, 17);
-            this.var_esp_gpio_intr_type.TabIndex = 130;
-            this.var_esp_gpio_intr_type.Text = "-";
-            this.var_esp_gpio_intr_type.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.winformESP32ConfiguratorBindingSource.DataSource = typeof(app.winform_ESP32_Configurator);
             // 
             // winform_ESP32_Configurator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(813, 456);
+            this.ClientSize = new System.Drawing.Size(813, 655);
             this.Controls.Add(this.panel_tab3);
             this.Controls.Add(this.panel_tab2);
             this.Controls.Add(this.pictureBox3);
@@ -1260,6 +1293,7 @@ namespace app
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel_tab2.ResumeLayout(false);
             this.panel_tab3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.winformESP32ConfiguratorBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1338,16 +1372,18 @@ namespace app
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label var_esp_gpio_pull_up_down;
-        private System.Windows.Forms.Label var_esp_gpio_intr_type;
-        private System.Windows.Forms.Label var_esp_gpio_pull_up_en;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label var_esp_gpio_pin_bit_mask;
         private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.Label var_esp_gpio_mode;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.ComboBox var_esp_gpio_pull_up_en;
+        private System.Windows.Forms.ComboBox var_esp_gpio_pull_down_en;
+        private System.Windows.Forms.ComboBox var_esp_gpio_intr_type;
+        private System.Windows.Forms.ComboBox var_esp_gpio_mode;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.BindingSource winformESP32ConfiguratorBindingSource;
     }
 }
 
