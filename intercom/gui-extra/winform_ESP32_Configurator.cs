@@ -182,7 +182,7 @@ namespace app
                 { "intr_type"   , helper_cb_get(ref var_esp_gpio_intr_type)},
                 { "pull_up_en"  , helper_cb_get(ref var_esp_gpio_pull_up_en) },
                 { "pull_down_en", helper_cb_get(ref var_esp_gpio_pull_down_en) },
-                { "pin_bit_mask", var_esp_gpio_pin_bit_mask.Text }
+                { "pin_bit_mask", int.Parse( var_esp_gpio_pin_bit_mask.Text ) }
             };
 
             // Заголовок
