@@ -84,25 +84,16 @@ namespace app
 
             if (_act == API_GET_MCU_INFO && _data.Count > 0)
             {
-                var a1 = _data["cores"].ToString();
-                var a2 = _data["features"].ToString();
-                var a3 = _data["model"].ToString();
-                var a4 = _data["revision"].ToString();
-                var a5 = _data["cpu_freq"].ToString();
-                var a6 = _data["free_heap"].ToString();
-                var a7 = _data["time"].ToString();
-                var a8 = _data["date"].ToString();
-
                 Invoke(new Action(() =>
                 {
-                    var_esp_mode.Text = a3;
-                    var_esp_time.Text = a7;
-                    var_esp_date.Text = a8;
-                    var_esp_cores.Text = a1;
-                    var_esp_feature.Text = a2;
-                    var_esp_revision.Text = a4;
-                    var_esp_cpu_freq.Text = a5;
-                    var_esp_free_heap.Text = a6;
+                    var_esp_cores.Text = _data["cores"].ToString();
+                    var_esp_feature.Text = _data["features"].ToString();
+                    var_esp_mode.Text = _data["model"].ToString();
+                    var_esp_revision.Text = _data["revision"].ToString();
+                    var_esp_cpu_freq.Text = _data["cpu_freq"].ToString();
+                    var_esp_free_heap.Text = _data["free_heap"].ToString();
+                    var_esp_time.Text = _data["time"].ToString();
+                    var_esp_date.Text = _data["date"].ToString();
                 }));
             }
 
@@ -113,10 +104,10 @@ namespace app
             {
                 Invoke(new Action(() =>
                 {
-                    _kindex(ref var_esp_gpio_mode           , _data["mode"]);
-                    _kindex(ref var_esp_gpio_intr_type      , _data["intr_type"]);
-                    _kindex(ref var_esp_gpio_pull_up_en     , _data["pull_up_en"]);
-                    _kindex(ref var_esp_gpio_pull_down_en   , _data["pull_down_en"]);
+                    helper_cb_set(ref var_esp_gpio_mode           , _data["mode"]);
+                    helper_cb_set(ref var_esp_gpio_intr_type      , _data["intr_type"]);
+                    helper_cb_set(ref var_esp_gpio_pull_up_en     , _data["pull_up_en"]);
+                    helper_cb_set(ref var_esp_gpio_pull_down_en   , _data["pull_down_en"]);
          
                     var_esp_gpio_pin_bit_mask.Text = _data["pin_bit_mask"].ToString();
                 }));
@@ -141,9 +132,11 @@ namespace app
             }
 
         }//func:IRQ_DataIncoming
-        
+        #endregion
+
+        #region HELPER_COMBOBOX
         // Установка выбранного элемента по Custom Value 
-        int _kindex(ref ComboBox cb,object pack_value) 
+        void helper_cb_set(ref ComboBox cb, object pack_value)
         {
             var arg1_ = int.Parse(pack_value.ToString());
             foreach (var item in cb.Items)
@@ -153,15 +146,17 @@ namespace app
                 {
                     var T1 = cb.Items.IndexOf(item);
                     cb.SelectedIndex = T1;
-                    return T1;
                 }
             }
-            return 0;
         }
-
+        int helper_cb_get(ref ComboBox cb) 
+        { 
+            return int.Parse(((DictionaryEntry)cb.SelectedItem).Value.ToString()); 
+        }
         #endregion
 
         #region COMMAND
+
         private void cmd_select_pin(object sender, EventArgs e)
         {
             var _pin_name = (Label)sender;
@@ -177,22 +172,26 @@ namespace app
             
             intercom._serial.Write(utils.json.Encode(pack));
         }
+
         private void cmd_write_gpio(object sender, EventArgs e)
         {
             // Данные
-            Hashtable data_pack = new Hashtable();
-            
-            data_pack.Add("mode"        , var_esp_gpio_mode.SelectedValue.ToString());
-            data_pack.Add("intr_type"   , var_esp_gpio_intr_type.SelectedValue.ToString());
-            data_pack.Add("pull_up_en"  , var_esp_gpio_pull_up_en.SelectedValue.ToString());
-            data_pack.Add("pull_down_en", var_esp_gpio_pull_down_en.SelectedValue.ToString());
-            data_pack.Add("pin_bit_mask", var_esp_gpio_pin_bit_mask.Text);
+            Hashtable data_pack = new Hashtable
+            {
+                { "mode"        , helper_cb_get(ref var_esp_gpio_mode) },
+                { "intr_type"   , helper_cb_get(ref var_esp_gpio_intr_type)},
+                { "pull_up_en"  , helper_cb_get(ref var_esp_gpio_pull_up_en) },
+                { "pull_down_en", helper_cb_get(ref var_esp_gpio_pull_down_en) },
+                { "pin_bit_mask", var_esp_gpio_pin_bit_mask.Text }
+            };
 
             // Заголовок
-            Hashtable pack = new Hashtable();
-            pack.Add("act"      , API_GPIO_STRUCT_WRITE);
-            pack.Add("target"   , "IO"+var_esp_gpio_pin_bit_mask.Text);
-            pack.Add("data"     , data_pack);
+            Hashtable pack = new Hashtable
+            {
+                { "act"     , API_GPIO_STRUCT_WRITE },
+                { "target"  , "IO" + var_esp_gpio_pin_bit_mask.Text },
+                { "data"    , data_pack }
+            };
 
             var _encode = utils.json.Encode(pack);
             intercom._serial.Write( _encode );
