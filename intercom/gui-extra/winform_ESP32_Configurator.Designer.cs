@@ -1087,7 +1087,7 @@ namespace app
             this.panel_tab2.Controls.Add(this.label41);
             this.panel_tab2.Controls.Add(this.label40);
             this.panel_tab2.Controls.Add(this.label31);
-            this.panel_tab2.Location = new System.Drawing.Point(435, 46);
+            this.panel_tab2.Location = new System.Drawing.Point(12, 470);
             this.panel_tab2.Name = "panel_tab2";
             this.panel_tab2.Size = new System.Drawing.Size(362, 392);
             this.panel_tab2.TabIndex = 125;
@@ -1135,8 +1135,8 @@ namespace app
             // 
             // var_esp_gpio_pull_up_en
             // 
+            this.var_esp_gpio_pull_up_en.DisplayMember = "Key";
             this.var_esp_gpio_pull_up_en.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.var_esp_gpio_pull_up_en.FormattingEnabled = true;
             this.var_esp_gpio_pull_up_en.Items.AddRange(new object[] {
             "ENABLE",
             "DISABLE"});
@@ -1259,7 +1259,7 @@ namespace app
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(813, 655);
+            this.ClientSize = new System.Drawing.Size(813, 450);
             this.Controls.Add(this.panel_tab3);
             this.Controls.Add(this.panel_tab2);
             this.Controls.Add(this.pictureBox3);

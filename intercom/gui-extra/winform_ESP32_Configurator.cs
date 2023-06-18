@@ -18,10 +18,6 @@ namespace app
 {
     public partial class winform_ESP32_Configurator : Form
     {
-        Button _prev_pin = null;
-        Button _prev_gnd = null;
-
-        string frw_mode = "";
         System.Windows.Forms.Timer _timer;
 
         #region INITIALIZE
@@ -36,10 +32,6 @@ namespace app
             _timer.Tick += _timer_Tick;
             _timer.Start();
 
-            Hashtable pack = new Hashtable();
-            pack.Add("act", "api.gpio_struct_meta");
-            pack.Add("did", "");
-            intercom._serial.Write(utils.json.Encode(pack));
 
         }
    
@@ -54,11 +46,19 @@ namespace app
         #region PACKAGE_ROUTINE
         private void _timer_Tick(object sender, EventArgs e)
         {
-            Hashtable pack = new Hashtable();
+            Hashtable pack;
+            
+            pack= new Hashtable();
                 pack.Add("act", "api.get_mcu_info");
                 pack.Add("did", "");
             intercom._serial.Write(utils.json.Encode(pack));
+
+            pack = new Hashtable();
+                pack.Add("act", "api.gpio_struct_meta");
+                pack.Add("did", "");
+            intercom._serial.Write(utils.json.Encode(pack));
         }
+
         unsafe private void IRQ_DataIncoming(object sender, string str)
         {
             var json_array = utils.json.Decode(str) as Hashtable;
@@ -136,49 +136,6 @@ namespace app
 
             }
 
-            if (_act == "pin.toggle" && _did != "0")
-            {
-                var pin_ctrl = ((Button)this.Controls.Find("pin_" + _did, true)[0]);
-
-                // Сброс пред-щего пина
-                if (_prev_pin != null && _prev_pin.BackColor == Color.Red)
-                    _prev_pin.BackColor = Color.LightGray;
-
-                pin_ctrl.BackColor = Color.Red;
-
-                _prev_pin = pin_ctrl;
-            }
-
-            if (_act == "pin.gnd" && _did != "0")
-            {
-                var pin = ((Button)this.Controls.Find("pin_" + _did, true)[0]);
-
-                if (_prev_gnd != null)
-                    _prev_gnd.ForeColor = Color.Black;
-
-                pin.ForeColor = Color.Magenta;
-                _prev_gnd = pin;
-
-                /// !!! cross thread update
-                //Invoke(new Action(() => { lbl_app_mode.Text = frw_mode+" gnd:"+pin.Text; }));
-            }
-
-            if (_act == "gpio.info")
-            {
-                var a = _data["app_mode"] as string;
-                var b = _data["pin_ground"];
-
-                var pin_ctrl = ((Button)this.Controls.Find("pin_" + b, true)[0]);
-                if (pin_ctrl.ForeColor == Color.Magenta)
-                    pin_ctrl.ForeColor = Color.White;
-                else
-                    pin_ctrl.ForeColor = Color.Magenta;
-
-                _prev_gnd = pin_ctrl;
-                /// !!! cross thread update
-                frw_mode = a;
-                //Invoke(new Action(() => { lbl_app_mode.Text = frw_mode + " gnd:" + pin_ctrl.Text; }));
-            }
         }// Func
 
         #endregion
@@ -215,12 +172,12 @@ namespace app
             pack.Add("data"     , data_pack);
 
             var foo = utils.json.Encode(pack);
-            int a = 0;
+            
             intercom._serial.Write(foo);
         }
         #endregion
 
-        #region Action
+        #region COMMAND
         private void act_wire_info(object sender, EventArgs e)
         {
             //Hashtable pack = new Hashtable();
