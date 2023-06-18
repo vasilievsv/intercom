@@ -54,15 +54,15 @@ namespace app
         private void _timer_Tick(object sender, EventArgs e)
         {
             Hashtable pack;
-            
-            //pack= new Hashtable();
-            //    pack.Add("act", "api.get_mcu_info");
-            //    pack.Add("did", "");
-            //intercom._serial.Write(utils.json.Encode(pack));
+
+            pack = new Hashtable();
+            pack.Add("act", "api.get_mcu_info");
+            pack.Add("did", "");
+            intercom._serial.Write(utils.json.Encode(pack));
 
             if (flag_gpio_enum_ready == false)
             {
-                //Thread.Sleep(1100);
+                Thread.Sleep(100);
 
                 pack = new Hashtable();
                 pack.Add("act", "api.gpio_struct_meta");
