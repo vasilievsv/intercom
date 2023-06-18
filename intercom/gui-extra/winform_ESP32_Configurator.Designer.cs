@@ -386,7 +386,7 @@ namespace app
             this.label39.Text = "SD0";
             this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label39.UseCompatibleTextRendering = true;
-            this.label39.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label39.Click += new System.EventHandler(this.cmd_select_pin);
             // 
             // label38
             // 
@@ -401,7 +401,7 @@ namespace app
             this.label38.Text = "SD1";
             this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label38.UseCompatibleTextRendering = true;
-            this.label38.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label38.Click += new System.EventHandler(this.cmd_select_pin);
             // 
             // label37
             // 
@@ -416,7 +416,7 @@ namespace app
             this.label37.Text = "IO15";
             this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label37.UseCompatibleTextRendering = true;
-            this.label37.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label37.Click += new System.EventHandler(this.cmd_select_pin);
             // 
             // label36
             // 
@@ -431,7 +431,7 @@ namespace app
             this.label36.Text = "IO2";
             this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label36.UseCompatibleTextRendering = true;
-            this.label36.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label36.Click += new System.EventHandler(this.cmd_select_pin);
             // 
             // label35
             // 
@@ -446,7 +446,7 @@ namespace app
             this.label35.Text = "IO0";
             this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label35.UseCompatibleTextRendering = true;
-            this.label35.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label35.Click += new System.EventHandler(this.cmd_select_pin);
             // 
             // label34
             // 
@@ -461,7 +461,7 @@ namespace app
             this.label34.Text = "SD3";
             this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label34.UseCompatibleTextRendering = true;
-            this.label34.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label34.Click += new System.EventHandler(this.cmd_select_pin);
             // 
             // label33
             // 
@@ -476,7 +476,7 @@ namespace app
             this.label33.Text = "SD2";
             this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label33.UseCompatibleTextRendering = true;
-            this.label33.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label33.Click += new System.EventHandler(this.cmd_select_pin);
             // 
             // label32
             // 
@@ -491,7 +491,7 @@ namespace app
             this.label32.Text = "IO13";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label32.UseCompatibleTextRendering = true;
-            this.label32.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label32.Click += new System.EventHandler(this.cmd_select_pin);
             // 
             // label30
             // 
@@ -506,7 +506,7 @@ namespace app
             this.label30.Text = "IO5";
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label30.UseCompatibleTextRendering = true;
-            this.label30.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label30.Click += new System.EventHandler(this.cmd_select_pin);
             // 
             // label29
             // 
@@ -521,7 +521,7 @@ namespace app
             this.label29.Text = "IO22";
             this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label29.UseCompatibleTextRendering = true;
-            this.label29.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label29.Click += new System.EventHandler(this.cmd_select_pin);
             // 
             // label28
             // 
@@ -536,7 +536,7 @@ namespace app
             this.label28.Text = "TX0";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label28.UseCompatibleTextRendering = true;
-            this.label28.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label28.Click += new System.EventHandler(this.cmd_select_pin);
             // 
             // label27
             // 
@@ -551,7 +551,7 @@ namespace app
             this.label27.Text = "RX0";
             this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label27.UseCompatibleTextRendering = true;
-            this.label27.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label27.Click += new System.EventHandler(this.cmd_select_pin);
             // 
             // label26
             // 
@@ -566,7 +566,7 @@ namespace app
             this.label26.Text = "IO21";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label26.UseCompatibleTextRendering = true;
-            this.label26.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label26.Click += new System.EventHandler(this.cmd_select_pin);
             // 
             // label25
             // 
@@ -581,7 +581,7 @@ namespace app
             this.label25.Text = "IO19";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label25.UseCompatibleTextRendering = true;
-            this.label25.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label25.Click += new System.EventHandler(this.cmd_select_pin);
             // 
             // label24
             // 
@@ -596,7 +596,7 @@ namespace app
             this.label24.Text = "IO18";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label24.UseCompatibleTextRendering = true;
-            this.label24.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label24.Click += new System.EventHandler(this.cmd_select_pin);
             // 
             // label23
             // 
@@ -611,7 +611,7 @@ namespace app
             this.label23.Text = "IO5";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label23.UseCompatibleTextRendering = true;
-            this.label23.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label23.Click += new System.EventHandler(this.cmd_select_pin);
             // 
             // label22
             // 
@@ -626,7 +626,7 @@ namespace app
             this.label22.Text = "IO17";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label22.UseCompatibleTextRendering = true;
-            this.label22.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label22.Click += new System.EventHandler(this.cmd_select_pin);
             // 
             // label21
             // 
@@ -641,7 +641,7 @@ namespace app
             this.label21.Text = "IO16";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label21.UseCompatibleTextRendering = true;
-            this.label21.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label21.Click += new System.EventHandler(this.cmd_select_pin);
             // 
             // label20
             // 
@@ -656,7 +656,7 @@ namespace app
             this.label20.Text = "IO4";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label20.UseCompatibleTextRendering = true;
-            this.label20.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label20.Click += new System.EventHandler(this.cmd_select_pin);
             // 
             // label19
             // 
@@ -671,7 +671,7 @@ namespace app
             this.label19.Text = "IO34";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label19.UseCompatibleTextRendering = true;
-            this.label19.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label19.Click += new System.EventHandler(this.cmd_select_pin);
             // 
             // label18
             // 
@@ -686,7 +686,7 @@ namespace app
             this.label18.Text = "IO35";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label18.UseCompatibleTextRendering = true;
-            this.label18.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label18.Click += new System.EventHandler(this.cmd_select_pin);
             // 
             // label17
             // 
@@ -701,7 +701,7 @@ namespace app
             this.label17.Text = "IO33";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label17.UseCompatibleTextRendering = true;
-            this.label17.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label17.Click += new System.EventHandler(this.cmd_select_pin);
             // 
             // label16
             // 
@@ -730,7 +730,7 @@ namespace app
             this.label15.Text = "IO25";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label15.UseCompatibleTextRendering = true;
-            this.label15.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label15.Click += new System.EventHandler(this.cmd_select_pin);
             // 
             // label14
             // 
@@ -745,7 +745,7 @@ namespace app
             this.label14.Text = "IO26";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label14.UseCompatibleTextRendering = true;
-            this.label14.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label14.Click += new System.EventHandler(this.cmd_select_pin);
             // 
             // label13
             // 
@@ -760,7 +760,7 @@ namespace app
             this.label13.Text = "IO27";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label13.UseCompatibleTextRendering = true;
-            this.label13.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label13.Click += new System.EventHandler(this.cmd_select_pin);
             // 
             // label12
             // 
@@ -775,7 +775,7 @@ namespace app
             this.label12.Text = "IO14";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label12.UseCompatibleTextRendering = true;
-            this.label12.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label12.Click += new System.EventHandler(this.cmd_select_pin);
             // 
             // label11
             // 
@@ -790,13 +790,13 @@ namespace app
             this.label11.Text = "IO12";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label11.UseCompatibleTextRendering = true;
-            this.label11.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label11.Click += new System.EventHandler(this.cmd_select_pin);
             // 
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.White;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.InitialImage")));
+            this.pictureBox4.InitialImage = null;
             this.pictureBox4.Location = new System.Drawing.Point(31, 48);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(360, 360);
@@ -1106,19 +1106,22 @@ namespace app
             this.button1.TabIndex = 127;
             this.button1.Text = "APPLY";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.button1.Click += new System.EventHandler(this.cmd_write_gpio);
             // 
             // var_esp_gpio_mode
             // 
+            this.var_esp_gpio_mode.DisplayMember = "Key";
             this.var_esp_gpio_mode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.var_esp_gpio_mode.FormattingEnabled = true;
             this.var_esp_gpio_mode.Location = new System.Drawing.Point(159, 177);
             this.var_esp_gpio_mode.Name = "var_esp_gpio_mode";
             this.var_esp_gpio_mode.Size = new System.Drawing.Size(200, 21);
             this.var_esp_gpio_mode.TabIndex = 134;
+            this.var_esp_gpio_mode.ValueMember = "Value";
             // 
             // var_esp_gpio_intr_type
             // 
+            this.var_esp_gpio_intr_type.DisplayMember = "Key";
             this.var_esp_gpio_intr_type.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.var_esp_gpio_intr_type.FormattingEnabled = true;
             this.var_esp_gpio_intr_type.Items.AddRange(new object[] {
@@ -1132,6 +1135,7 @@ namespace app
             this.var_esp_gpio_intr_type.Name = "var_esp_gpio_intr_type";
             this.var_esp_gpio_intr_type.Size = new System.Drawing.Size(200, 21);
             this.var_esp_gpio_intr_type.TabIndex = 133;
+            this.var_esp_gpio_intr_type.ValueMember = "Value";
             // 
             // var_esp_gpio_pull_up_en
             // 
@@ -1149,6 +1153,7 @@ namespace app
             // var_esp_gpio_pull_down_en
             // 
             this.var_esp_gpio_pull_down_en.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
+            this.var_esp_gpio_pull_down_en.DisplayMember = "Key";
             this.var_esp_gpio_pull_down_en.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.var_esp_gpio_pull_down_en.Items.AddRange(new object[] {
             "ENABLE",
@@ -1157,6 +1162,7 @@ namespace app
             this.var_esp_gpio_pull_down_en.Name = "var_esp_gpio_pull_down_en";
             this.var_esp_gpio_pull_down_en.Size = new System.Drawing.Size(200, 21);
             this.var_esp_gpio_pull_down_en.TabIndex = 131;
+            this.var_esp_gpio_pull_down_en.ValueMember = "Value";
             // 
             // label43
             // 
@@ -1259,7 +1265,7 @@ namespace app
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(813, 450);
+            this.ClientSize = new System.Drawing.Size(813, 453);
             this.Controls.Add(this.panel_tab3);
             this.Controls.Add(this.panel_tab2);
             this.Controls.Add(this.pictureBox3);

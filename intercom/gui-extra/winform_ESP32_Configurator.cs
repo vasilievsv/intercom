@@ -10,6 +10,7 @@
 using System;
 using System.Collections;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 using micro.sdk;
 using utils;
@@ -18,7 +19,14 @@ namespace app
 {
     public partial class winform_ESP32_Configurator : Form
     {
+        const string API_GET_MCU_INFO       = "api.get_mcu_info";
+        const string API_GPIO_STRUCT_META   = "api.gpio_struct_meta";
+        const string API_GPIO_STRUCT_READ   = "api.gpio_struct_read";
+        const string API_GPIO_STRUCT_WRITE  = "api.gpio_struct_write";
+
         System.Windows.Forms.Timer _timer;
+
+        bool flag_gpio_enum_ready = false;
 
         #region INITIALIZE
         public winform_ESP32_Configurator()
@@ -31,15 +39,13 @@ namespace app
             _timer.Interval = 1100;
             _timer.Tick += _timer_Tick;
             _timer.Start();
-
-
         }
    
         private void winform_remote_backdoor_Load(object sender, EventArgs e)
         {
             intercom.eventDataEncoded += IRQ_DataIncoming;
             //act_wire_info(null,null);
-            //btn_pin_Click(null, null);
+            //cmd_select_pin(null, null);
         }
         #endregion
 
@@ -53,10 +59,15 @@ namespace app
                 pack.Add("did", "");
             intercom._serial.Write(utils.json.Encode(pack));
 
-            pack = new Hashtable();
+            if (flag_gpio_enum_ready == false)
+            {
+                Thread.Sleep(1100);
+
+                pack = new Hashtable();
                 pack.Add("act", "api.gpio_struct_meta");
                 pack.Add("did", "");
-            intercom._serial.Write(utils.json.Encode(pack));
+                intercom._serial.Write(utils.json.Encode(pack));
+            }
         }
 
         unsafe private void IRQ_DataIncoming(object sender, string str)
@@ -70,7 +81,7 @@ namespace app
             var _did = json_array["did"] as string;
             var _data= json_array["data"] as Hashtable;
 
-            if (_act == "api.get_mcu_info" && _data.Count > 0)
+            if (_act == API_GET_MCU_INFO && _data.Count > 0)
             {
                 var a1 = _data["cores"].ToString();
                 var a2 = _data["features"].ToString();
@@ -81,17 +92,20 @@ namespace app
                 var a7 = _data["time"].ToString();
                 var a8 = _data["date"].ToString();
 
-                Invoke(new Action(() => { var_esp_mode.Text = a3; }));
-                Invoke(new Action(() => { var_esp_time.Text = a7; }));
-                Invoke(new Action(() => { var_esp_date.Text = a8; }));
-                Invoke(new Action(() => { var_esp_cores.Text = a1; }));
-                Invoke(new Action(() => { var_esp_feature.Text = a2; }));
-                Invoke(new Action(() => { var_esp_revision.Text = a4; }));
-                Invoke(new Action(() => { var_esp_cpu_freq.Text = a5; }));
-                Invoke(new Action(() => { var_esp_free_heap.Text = a6; }));
+                Invoke(new Action(() =>
+                {
+                    var_esp_mode.Text = a3;
+                    var_esp_time.Text = a7;
+                    var_esp_date.Text = a8;
+                    var_esp_cores.Text = a1;
+                    var_esp_feature.Text = a2;
+                    var_esp_revision.Text = a4;
+                    var_esp_cpu_freq.Text = a5;
+                    var_esp_free_heap.Text = a6;
+                }));
             }
 
-            if (_act == "api.gpio_struct_read")
+            if (_act == API_GPIO_STRUCT_READ )
             {
                 var a1 = _data["intr_type"].ToString();
                 var a2 = _data["mode"].ToString();
@@ -106,42 +120,30 @@ namespace app
                 Invoke(new Action(() => { var_esp_gpio_pin_bit_mask.Text = a3; }));
             }
 
-            if (_act == "api.gpio_struct_meta")
+            if (_act == API_GPIO_STRUCT_META)
             {
                 var a1 = _data["gpio_meta"] as Hashtable;
                 var b1 = a1["intr_type"] as Hashtable;
                 var b2 = a1["mode"] as Hashtable;
                 var b3 = a1["pull"] as Hashtable;
 
-                Invoke(new Action(() =>{
-                    var_esp_gpio_mode.DisplayMember = "Key";
-                    var_esp_gpio_mode.ValueMember = "Value";
+                Invoke(new Action(() =>
+                {
                     var_esp_gpio_mode.DataSource = new BindingSource(b2, null);
-
-                    var_esp_gpio_intr_type.DisplayMember = "Key";
-                    var_esp_gpio_intr_type.ValueMember = "Value";
                     var_esp_gpio_intr_type.DataSource = new BindingSource(b1, null);
-
-
-                    var_esp_gpio_pull_down_en.DisplayMember = "Key";
-                    var_esp_gpio_pull_down_en.ValueMember = "Value";
                     var_esp_gpio_pull_down_en.DataSource = new BindingSource(b3, null);
-
-
-                    var_esp_gpio_pull_up_en.DisplayMember = "Key";
-                    var_esp_gpio_pull_up_en.ValueMember = "Value";
                     var_esp_gpio_pull_up_en.DataSource = new BindingSource(b3, null);
+
+                    flag_gpio_enum_ready = true;
                 }));
-
-
             }
 
-        }// Func
+        }//func:IRQ_DataIncoming
 
         #endregion
 
         #region BASE_ACTION
-        private void btn_pin_Click(object sender, EventArgs e)
+        private void cmd_select_pin(object sender, EventArgs e)
         {
             var _pin_name = (Label)sender;
 
@@ -150,14 +152,15 @@ namespace app
             panel_tab2.Visible = true;
             panel_tab2.Location = panel_tab1.Location;
 
-
             Hashtable pack = new Hashtable();
-            pack.Add("act", "api.gpio_struct_read");
+            pack.Add("act", API_GPIO_STRUCT_READ);
             pack.Add("target", _pin_name.Text);
+            
             intercom._serial.Write(utils.json.Encode(pack));
         }
-        private void button1_Click_1(object sender, EventArgs e)
+        private void cmd_write_gpio(object sender, EventArgs e)
         {
+            // Данные
             Hashtable data_pack = new Hashtable();
             
             data_pack.Add("mode"        , var_esp_gpio_mode.SelectedValue.ToString());
@@ -166,14 +169,14 @@ namespace app
             data_pack.Add("pull_down_en", var_esp_gpio_pull_down_en.SelectedValue.ToString());
             data_pack.Add("pin_bit_mask", var_esp_gpio_pin_bit_mask.Text);
 
+            // Заголовок
             Hashtable pack = new Hashtable();
-            pack.Add("act"      , "api.gpio_struct_write");
+            pack.Add("act"      , API_GPIO_STRUCT_WRITE);
             pack.Add("target"   , "IO"+var_esp_gpio_pin_bit_mask.Text);
             pack.Add("data"     , data_pack);
 
-            var foo = utils.json.Encode(pack);
-            
-            intercom._serial.Write(foo);
+            var _encode = utils.json.Encode(pack);
+            intercom._serial.Write( _encode );
         }
         #endregion
 
