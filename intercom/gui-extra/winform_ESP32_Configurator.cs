@@ -10,6 +10,7 @@
 using System;
 using System.Collections;
 using System.Drawing;
+using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 using micro.sdk;
@@ -54,14 +55,14 @@ namespace app
         {
             Hashtable pack;
             
-            pack= new Hashtable();
-                pack.Add("act", "api.get_mcu_info");
-                pack.Add("did", "");
-            intercom._serial.Write(utils.json.Encode(pack));
+            //pack= new Hashtable();
+            //    pack.Add("act", "api.get_mcu_info");
+            //    pack.Add("did", "");
+            //intercom._serial.Write(utils.json.Encode(pack));
 
             if (flag_gpio_enum_ready == false)
             {
-                Thread.Sleep(1100);
+                //Thread.Sleep(1100);
 
                 pack = new Hashtable();
                 pack.Add("act", "api.gpio_struct_meta");
@@ -105,19 +106,20 @@ namespace app
                 }));
             }
 
+            //
+            // Данные от ESP32
+            //
             if (_act == API_GPIO_STRUCT_READ )
             {
-                var a1 = _data["intr_type"].ToString();
-                var a2 = _data["mode"].ToString();
-                var a3 = _data["pin_bit_mask"].ToString();
-                var a4 = _data["pull_up_en"].ToString();
-                var a5 = _data["pull_down_en"].ToString();
-
-                Invoke(new Action(() => { var_esp_gpio_mode.SelectedIndex =int.Parse( a2); }));
-                Invoke(new Action(() => { var_esp_gpio_intr_type.SelectedIndex = int.Parse(a1); }));
-                Invoke(new Action(() => { var_esp_gpio_pull_up_en.SelectedIndex = int.Parse(a4); }));
-                Invoke(new Action(() => { var_esp_gpio_pull_down_en.SelectedIndex = int.Parse(a5); }));
-                Invoke(new Action(() => { var_esp_gpio_pin_bit_mask.Text = a3; }));
+                Invoke(new Action(() =>
+                {
+                    _kindex(ref var_esp_gpio_mode           , _data["mode"]);
+                    _kindex(ref var_esp_gpio_intr_type      , _data["intr_type"]);
+                    _kindex(ref var_esp_gpio_pull_up_en     , _data["pull_up_en"]);
+                    _kindex(ref var_esp_gpio_pull_down_en   , _data["pull_down_en"]);
+         
+                    var_esp_gpio_pin_bit_mask.Text = _data["pin_bit_mask"].ToString();
+                }));
             }
 
             if (_act == API_GPIO_STRUCT_META)
@@ -130,19 +132,36 @@ namespace app
                 Invoke(new Action(() =>
                 {
                     var_esp_gpio_mode.DataSource = new BindingSource(b2, null);
-                    var_esp_gpio_intr_type.DataSource = new BindingSource(b1, null);
                     var_esp_gpio_pull_down_en.DataSource = new BindingSource(b3, null);
                     var_esp_gpio_pull_up_en.DataSource = new BindingSource(b3, null);
+                    var_esp_gpio_intr_type.DataSource = new BindingSource(b1, null);
 
                     flag_gpio_enum_ready = true;
                 }));
             }
 
         }//func:IRQ_DataIncoming
+        
+        // Установка выбранного элемента по Custom Value 
+        int _kindex(ref ComboBox cb,object pack_value) 
+        {
+            var arg1_ = int.Parse(pack_value.ToString());
+            foreach (var item in cb.Items)
+            {
+                var T = (DictionaryEntry)item;
+                if (arg1_ == int.Parse(T.Value.ToString()))
+                {
+                    var T1 = cb.Items.IndexOf(item);
+                    cb.SelectedIndex = T1;
+                    return T1;
+                }
+            }
+            return 0;
+        }
 
         #endregion
 
-        #region BASE_ACTION
+        #region COMMAND
         private void cmd_select_pin(object sender, EventArgs e)
         {
             var _pin_name = (Label)sender;

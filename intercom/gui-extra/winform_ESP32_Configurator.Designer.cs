@@ -1124,13 +1124,6 @@ namespace app
             this.var_esp_gpio_intr_type.DisplayMember = "Key";
             this.var_esp_gpio_intr_type.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.var_esp_gpio_intr_type.FormattingEnabled = true;
-            this.var_esp_gpio_intr_type.Items.AddRange(new object[] {
-            "DISABLE",
-            "POSEDGE",
-            "NEGEDGE",
-            "ANYEDGE",
-            "LOW_LEVEL",
-            "HIGH_LEVEL"});
             this.var_esp_gpio_intr_type.Location = new System.Drawing.Point(159, 141);
             this.var_esp_gpio_intr_type.Name = "var_esp_gpio_intr_type";
             this.var_esp_gpio_intr_type.Size = new System.Drawing.Size(200, 21);
@@ -1265,7 +1258,7 @@ namespace app
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(813, 453);
+            this.ClientSize = new System.Drawing.Size(813, 449);
             this.Controls.Add(this.panel_tab3);
             this.Controls.Add(this.panel_tab2);
             this.Controls.Add(this.pictureBox3);
