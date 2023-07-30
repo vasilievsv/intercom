@@ -39,22 +39,7 @@ namespace app
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(winform_ESP32_Configurator));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.check_rts_1 = new System.Windows.Forms.CheckBox();
-            this.check_dtr_1 = new System.Windows.Forms.CheckBox();
             this.btn_tab1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.check_rts_2 = new System.Windows.Forms.CheckBox();
-            this.check_dtr_2 = new System.Windows.Forms.CheckBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.check_rts_3 = new System.Windows.Forms.CheckBox();
-            this.check_dtr_3 = new System.Windows.Forms.CheckBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.check_rts_4 = new System.Windows.Forms.CheckBox();
-            this.check_dtr_4 = new System.Windows.Forms.CheckBox();
-            this.group_host = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label39 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
@@ -120,13 +105,13 @@ namespace app
             this.label40 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.panel_tab3 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btn_ota_start = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.var_ota_curent_version = new System.Windows.Forms.Label();
+            this.var_ota_last_firmware = new System.Windows.Forms.Label();
+            this.var_ota_last_version = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.winformESP32ConfiguratorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.groupBox1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.group_host.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel_tab1.SuspendLayout();
@@ -137,46 +122,6 @@ namespace app
             this.panel_tab3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.winformESP32ConfiguratorBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.groupBox1.Controls.Add(this.check_rts_1);
-            this.groupBox1.Controls.Add(this.check_dtr_1);
-            this.groupBox1.Font = new System.Drawing.Font("OCR A Extended", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.groupBox1.Location = new System.Drawing.Point(10, 38);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(97, 45);
-            this.groupBox1.TabIndex = 86;
-            this.groupBox1.TabStop = false;
-            // 
-            // check_rts_1
-            // 
-            this.check_rts_1.AutoSize = true;
-            this.check_rts_1.Checked = true;
-            this.check_rts_1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.check_rts_1.Location = new System.Drawing.Point(63, 19);
-            this.check_rts_1.Name = "check_rts_1";
-            this.check_rts_1.Size = new System.Drawing.Size(15, 14);
-            this.check_rts_1.TabIndex = 100;
-            this.check_rts_1.UseVisualStyleBackColor = true;
-            this.check_rts_1.CheckedChanged += new System.EventHandler(this.cb_rts_Handler);
-            // 
-            // check_dtr_1
-            // 
-            this.check_dtr_1.AutoSize = true;
-            this.check_dtr_1.Checked = true;
-            this.check_dtr_1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.check_dtr_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.check_dtr_1.Location = new System.Drawing.Point(16, 19);
-            this.check_dtr_1.Name = "check_dtr_1";
-            this.check_dtr_1.Size = new System.Drawing.Size(12, 11);
-            this.check_dtr_1.TabIndex = 99;
-            this.check_dtr_1.UseVisualStyleBackColor = true;
-            this.check_dtr_1.CheckedChanged += new System.EventHandler(this.cb_dtr_Handler);
             // 
             // btn_tab1
             // 
@@ -193,148 +138,6 @@ namespace app
             this.btn_tab1.Text = "TAB";
             this.btn_tab1.UseVisualStyleBackColor = true;
             this.btn_tab1.Click += new System.EventHandler(this.btn_pin_group_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 15);
-            this.label1.TabIndex = 102;
-            this.label1.Text = "DTR";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(78, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 15);
-            this.label3.TabIndex = 103;
-            this.label3.Text = "RTS";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.check_rts_2);
-            this.groupBox3.Controls.Add(this.check_dtr_2);
-            this.groupBox3.Font = new System.Drawing.Font("OCR A Extended", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(10, 87);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(97, 45);
-            this.groupBox3.TabIndex = 101;
-            this.groupBox3.TabStop = false;
-            // 
-            // check_rts_2
-            // 
-            this.check_rts_2.AutoSize = true;
-            this.check_rts_2.Location = new System.Drawing.Point(63, 19);
-            this.check_rts_2.Name = "check_rts_2";
-            this.check_rts_2.Size = new System.Drawing.Size(15, 14);
-            this.check_rts_2.TabIndex = 100;
-            this.check_rts_2.UseVisualStyleBackColor = true;
-            this.check_rts_2.CheckedChanged += new System.EventHandler(this.cb_rts_Handler);
-            // 
-            // check_dtr_2
-            // 
-            this.check_dtr_2.AutoSize = true;
-            this.check_dtr_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.check_dtr_2.Location = new System.Drawing.Point(16, 19);
-            this.check_dtr_2.Name = "check_dtr_2";
-            this.check_dtr_2.Size = new System.Drawing.Size(12, 11);
-            this.check_dtr_2.TabIndex = 99;
-            this.check_dtr_2.UseVisualStyleBackColor = true;
-            this.check_dtr_2.CheckedChanged += new System.EventHandler(this.cb_dtr_Handler);
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.check_rts_3);
-            this.groupBox4.Controls.Add(this.check_dtr_3);
-            this.groupBox4.Font = new System.Drawing.Font("OCR A Extended", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(10, 136);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox4.Size = new System.Drawing.Size(97, 45);
-            this.groupBox4.TabIndex = 101;
-            this.groupBox4.TabStop = false;
-            // 
-            // check_rts_3
-            // 
-            this.check_rts_3.AutoSize = true;
-            this.check_rts_3.Location = new System.Drawing.Point(63, 19);
-            this.check_rts_3.Name = "check_rts_3";
-            this.check_rts_3.Size = new System.Drawing.Size(15, 14);
-            this.check_rts_3.TabIndex = 100;
-            this.check_rts_3.UseVisualStyleBackColor = true;
-            this.check_rts_3.CheckedChanged += new System.EventHandler(this.cb_rts_Handler);
-            // 
-            // check_dtr_3
-            // 
-            this.check_dtr_3.AutoSize = true;
-            this.check_dtr_3.Checked = true;
-            this.check_dtr_3.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.check_dtr_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.check_dtr_3.Location = new System.Drawing.Point(16, 19);
-            this.check_dtr_3.Name = "check_dtr_3";
-            this.check_dtr_3.Size = new System.Drawing.Size(12, 11);
-            this.check_dtr_3.TabIndex = 99;
-            this.check_dtr_3.UseVisualStyleBackColor = true;
-            this.check_dtr_3.CheckedChanged += new System.EventHandler(this.cb_dtr_Handler);
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.check_rts_4);
-            this.groupBox5.Controls.Add(this.check_dtr_4);
-            this.groupBox5.Font = new System.Drawing.Font("OCR A Extended", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(10, 185);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox5.Size = new System.Drawing.Size(97, 45);
-            this.groupBox5.TabIndex = 101;
-            this.groupBox5.TabStop = false;
-            // 
-            // check_rts_4
-            // 
-            this.check_rts_4.AutoSize = true;
-            this.check_rts_4.Checked = true;
-            this.check_rts_4.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.check_rts_4.Location = new System.Drawing.Point(63, 19);
-            this.check_rts_4.Name = "check_rts_4";
-            this.check_rts_4.Size = new System.Drawing.Size(15, 14);
-            this.check_rts_4.TabIndex = 100;
-            this.check_rts_4.UseVisualStyleBackColor = true;
-            this.check_rts_4.CheckedChanged += new System.EventHandler(this.cb_rts_Handler);
-            // 
-            // check_dtr_4
-            // 
-            this.check_dtr_4.AutoSize = true;
-            this.check_dtr_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.check_dtr_4.Location = new System.Drawing.Point(16, 19);
-            this.check_dtr_4.Name = "check_dtr_4";
-            this.check_dtr_4.Size = new System.Drawing.Size(12, 11);
-            this.check_dtr_4.TabIndex = 99;
-            this.check_dtr_4.UseVisualStyleBackColor = true;
-            this.check_dtr_4.CheckedChanged += new System.EventHandler(this.cb_dtr_Handler);
-            // 
-            // group_host
-            // 
-            this.group_host.Controls.Add(this.groupBox1);
-            this.group_host.Controls.Add(this.label3);
-            this.group_host.Controls.Add(this.groupBox3);
-            this.group_host.Controls.Add(this.label1);
-            this.group_host.Controls.Add(this.groupBox4);
-            this.group_host.Controls.Add(this.groupBox5);
-            this.group_host.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.group_host.Font = new System.Drawing.Font("OCR A Extended", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.group_host.Location = new System.Drawing.Point(23, 50);
-            this.group_host.Margin = new System.Windows.Forms.Padding(2);
-            this.group_host.Name = "group_host";
-            this.group_host.Padding = new System.Windows.Forms.Padding(2);
-            this.group_host.Size = new System.Drawing.Size(118, 264);
-            this.group_host.TabIndex = 103;
-            this.group_host.TabStop = false;
             // 
             // panel1
             // 
@@ -1228,26 +1031,93 @@ namespace app
             // panel_tab3
             // 
             this.panel_tab3.BackColor = System.Drawing.Color.White;
-            this.panel_tab3.Controls.Add(this.button4);
-            this.panel_tab3.Controls.Add(this.group_host);
+            this.panel_tab3.Controls.Add(this.button2);
+            this.panel_tab3.Controls.Add(this.var_ota_last_version);
+            this.panel_tab3.Controls.Add(this.var_ota_last_firmware);
+            this.panel_tab3.Controls.Add(this.var_ota_curent_version);
+            this.panel_tab3.Controls.Add(this.label1);
+            this.panel_tab3.Controls.Add(this.btn_ota_start);
             this.panel_tab3.Location = new System.Drawing.Point(821, 52);
             this.panel_tab3.Name = "panel_tab3";
             this.panel_tab3.Size = new System.Drawing.Size(362, 392);
             this.panel_tab3.TabIndex = 126;
             // 
-            // button4
+            // btn_ota_start
             // 
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("OCR A Extended", 10.2F);
-            this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.Location = new System.Drawing.Point(122, 343);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(118, 35);
-            this.button4.TabIndex = 112;
-            this.button4.Text = "APPLY";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_ota_start.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ota_start.Font = new System.Drawing.Font("OCR A Extended", 10.2F);
+            this.btn_ota_start.ForeColor = System.Drawing.Color.Black;
+            this.btn_ota_start.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_ota_start.Location = new System.Drawing.Point(84, 152);
+            this.btn_ota_start.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_ota_start.Name = "btn_ota_start";
+            this.btn_ota_start.Size = new System.Drawing.Size(186, 35);
+            this.btn_ota_start.TabIndex = 113;
+            this.btn_ota_start.Text = "Start Update";
+            this.btn_ota_start.UseVisualStyleBackColor = true;
+            this.btn_ota_start.Click += new System.EventHandler(this.btn_ota_start_Click);
+            // 
+            // label1
+            // 
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 37);
+            this.label1.Name = "label1";
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label1.Size = new System.Drawing.Size(207, 17);
+            this.label1.TabIndex = 125;
+            this.label1.Text = "current_firmware:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // var_ota_curent_version
+            // 
+            this.var_ota_curent_version.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.var_ota_curent_version.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.var_ota_curent_version.Location = new System.Drawing.Point(216, 40);
+            this.var_ota_curent_version.Name = "var_ota_curent_version";
+            this.var_ota_curent_version.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.var_ota_curent_version.Size = new System.Drawing.Size(143, 16);
+            this.var_ota_curent_version.TabIndex = 125;
+            this.var_ota_curent_version.Text = "-";
+            this.var_ota_curent_version.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // var_ota_last_firmware
+            // 
+            this.var_ota_last_firmware.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.var_ota_last_firmware.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.var_ota_last_firmware.Location = new System.Drawing.Point(3, 57);
+            this.var_ota_last_firmware.Name = "var_ota_last_firmware";
+            this.var_ota_last_firmware.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.var_ota_last_firmware.Size = new System.Drawing.Size(207, 17);
+            this.var_ota_last_firmware.TabIndex = 126;
+            this.var_ota_last_firmware.Text = "new_firmware:";
+            this.var_ota_last_firmware.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // var_ota_last_version
+            // 
+            this.var_ota_last_version.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.var_ota_last_version.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.var_ota_last_version.Location = new System.Drawing.Point(216, 57);
+            this.var_ota_last_version.Name = "var_ota_last_version";
+            this.var_ota_last_version.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.var_ota_last_version.Size = new System.Drawing.Size(143, 17);
+            this.var_ota_last_version.TabIndex = 127;
+            this.var_ota_last_version.Text = "-";
+            this.var_ota_last_version.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // button2
+            // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("OCR A Extended", 10.2F);
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.Location = new System.Drawing.Point(84, 195);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(186, 35);
+            this.button2.TabIndex = 128;
+            this.button2.Text = "Check Update";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // winformESP32ConfiguratorBindingSource
             // 
@@ -1258,7 +1128,7 @@ namespace app
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(813, 452);
+            this.ClientSize = new System.Drawing.Size(1315, 465);
             this.Controls.Add(this.panel_tab3);
             this.Controls.Add(this.panel_tab2);
             this.Controls.Add(this.pictureBox3);
@@ -1274,16 +1144,6 @@ namespace app
             this.Name = "winform_ESP32_Configurator";
             this.Text = "ESP32 - Configurator";
             this.Load += new System.EventHandler(this.winform_remote_backdoor_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            this.group_host.ResumeLayout(false);
-            this.group_host.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel_tab1.ResumeLayout(false);
@@ -1298,24 +1158,7 @@ namespace app
         }
 
         #endregion
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btn_tab1;
-
-        private System.Windows.Forms.CheckBox check_dtr_1;
-        private System.Windows.Forms.CheckBox check_dtr_2;
-        private System.Windows.Forms.CheckBox check_dtr_3;
-        private System.Windows.Forms.CheckBox check_dtr_4;
-        
-        private System.Windows.Forms.CheckBox check_rts_1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.CheckBox check_rts_2;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.CheckBox check_rts_3;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.CheckBox check_rts_4;
-        private System.Windows.Forms.GroupBox group_host;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_tab3;
         private System.Windows.Forms.Button btn_tab2;
@@ -1342,7 +1185,6 @@ namespace app
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel_tab2;
         private System.Windows.Forms.Panel panel_tab3;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label38;
@@ -1383,6 +1225,12 @@ namespace app
         private System.Windows.Forms.ComboBox var_esp_gpio_mode;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.BindingSource winformESP32ConfiguratorBindingSource;
+        private System.Windows.Forms.Button btn_ota_start;
+        private System.Windows.Forms.Label var_ota_last_version;
+        private System.Windows.Forms.Label var_ota_last_firmware;
+        private System.Windows.Forms.Label var_ota_curent_version;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

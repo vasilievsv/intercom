@@ -39,7 +39,7 @@ namespace app
             _timer = new System.Windows.Forms.Timer();
             _timer.Interval = 1100;
             _timer.Tick += _timer_Tick;
-            _timer.Start();
+            //_timer.Start();
         }
    
         private void winform_remote_backdoor_Load(object sender, EventArgs e)
@@ -285,8 +285,16 @@ namespace app
         {
 
         }
+
         #endregion
 
+        private void btn_ota_start_Click(object sender, EventArgs e)
+        {
+            Hashtable pack = new Hashtable();
+            pack.Add("act", "api.ota_start_update");
+            pack.Add("target", "123");
 
+            intercom._serial.Write(utils.json.Encode(pack));
+        }
     }// class
 }
