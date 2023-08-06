@@ -105,12 +105,15 @@ namespace app
             this.label40 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.panel_tab3 = new System.Windows.Forms.Panel();
-            this.btn_ota_start = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.var_ota_curent_version = new System.Windows.Forms.Label();
-            this.var_ota_last_firmware = new System.Windows.Forms.Label();
-            this.var_ota_last_version = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label44 = new System.Windows.Forms.Label();
+            this.var_ota_path = new System.Windows.Forms.TextBox();
+            this.var_ota_port = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.var_ota_host = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.var_ota_last_firmware = new System.Windows.Forms.Label();
+            this.btn_ota_start = new System.Windows.Forms.Button();
             this.winformESP32ConfiguratorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -135,7 +138,7 @@ namespace app
             this.btn_tab1.Name = "btn_tab1";
             this.btn_tab1.Size = new System.Drawing.Size(103, 35);
             this.btn_tab1.TabIndex = 98;
-            this.btn_tab1.Text = "TAB";
+            this.btn_tab1.Text = "INFO";
             this.btn_tab1.UseVisualStyleBackColor = true;
             this.btn_tab1.Click += new System.EventHandler(this.btn_pin_group_Click);
             // 
@@ -619,7 +622,7 @@ namespace app
             this.btn_tab2.Name = "btn_tab2";
             this.btn_tab2.Size = new System.Drawing.Size(103, 35);
             this.btn_tab2.TabIndex = 110;
-            this.btn_tab2.Text = "TAB";
+            this.btn_tab2.Text = "GPIO";
             this.btn_tab2.UseVisualStyleBackColor = true;
             this.btn_tab2.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -635,7 +638,7 @@ namespace app
             this.btn_tab3.Name = "btn_tab3";
             this.btn_tab3.Size = new System.Drawing.Size(118, 35);
             this.btn_tab3.TabIndex = 111;
-            this.btn_tab3.Text = "TAB";
+            this.btn_tab3.Text = "OTA";
             this.btn_tab3.UseVisualStyleBackColor = true;
             this.btn_tab3.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -695,7 +698,7 @@ namespace app
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(148, 17);
             this.label10.TabIndex = 122;
-            this.label10.Text = "esp_date";
+            this.label10.Text = "esp_date:";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
@@ -1031,79 +1034,91 @@ namespace app
             // panel_tab3
             // 
             this.panel_tab3.BackColor = System.Drawing.Color.White;
+            this.panel_tab3.Controls.Add(this.button3);
+            this.panel_tab3.Controls.Add(this.label44);
+            this.panel_tab3.Controls.Add(this.var_ota_path);
+            this.panel_tab3.Controls.Add(this.var_ota_port);
+            this.panel_tab3.Controls.Add(this.label3);
+            this.panel_tab3.Controls.Add(this.var_ota_host);
             this.panel_tab3.Controls.Add(this.button2);
-            this.panel_tab3.Controls.Add(this.var_ota_last_version);
             this.panel_tab3.Controls.Add(this.var_ota_last_firmware);
-            this.panel_tab3.Controls.Add(this.var_ota_curent_version);
-            this.panel_tab3.Controls.Add(this.label1);
             this.panel_tab3.Controls.Add(this.btn_ota_start);
-            this.panel_tab3.Location = new System.Drawing.Point(821, 52);
+            this.panel_tab3.Location = new System.Drawing.Point(437, 50);
             this.panel_tab3.Name = "panel_tab3";
             this.panel_tab3.Size = new System.Drawing.Size(362, 392);
             this.panel_tab3.TabIndex = 126;
             // 
-            // btn_ota_start
+            // button3
             // 
-            this.btn_ota_start.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ota_start.Font = new System.Drawing.Font("OCR A Extended", 10.2F);
-            this.btn_ota_start.ForeColor = System.Drawing.Color.Black;
-            this.btn_ota_start.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_ota_start.Location = new System.Drawing.Point(84, 152);
-            this.btn_ota_start.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_ota_start.Name = "btn_ota_start";
-            this.btn_ota_start.Size = new System.Drawing.Size(186, 35);
-            this.btn_ota_start.TabIndex = 113;
-            this.btn_ota_start.Text = "Start Update";
-            this.btn_ota_start.UseVisualStyleBackColor = true;
-            this.btn_ota_start.Click += new System.EventHandler(this.btn_ota_start_Click);
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("OCR A Extended", 10.2F);
+            this.button3.ForeColor = System.Drawing.Color.Black;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.Location = new System.Drawing.Point(14, 195);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(139, 35);
+            this.button3.TabIndex = 135;
+            this.button3.Text = "READ";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.btn_ota_struct_read);
             // 
-            // label1
+            // label44
             // 
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 37);
-            this.label1.Name = "label1";
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label1.Size = new System.Drawing.Size(207, 17);
-            this.label1.TabIndex = 125;
-            this.label1.Text = "current_firmware:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label44.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label44.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.Location = new System.Drawing.Point(6, 98);
+            this.label44.Name = "label44";
+            this.label44.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label44.Size = new System.Drawing.Size(113, 17);
+            this.label44.TabIndex = 133;
+            this.label44.Text = "path";
+            this.label44.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // var_ota_curent_version
+            // var_ota_path
             // 
-            this.var_ota_curent_version.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.var_ota_curent_version.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.var_ota_curent_version.Location = new System.Drawing.Point(216, 40);
-            this.var_ota_curent_version.Name = "var_ota_curent_version";
-            this.var_ota_curent_version.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.var_ota_curent_version.Size = new System.Drawing.Size(143, 16);
-            this.var_ota_curent_version.TabIndex = 125;
-            this.var_ota_curent_version.Text = "-";
-            this.var_ota_curent_version.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.var_ota_path.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.var_ota_path.Font = new System.Drawing.Font("OCR A Extended", 12F);
+            this.var_ota_path.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.var_ota_path.Location = new System.Drawing.Point(128, 96);
+            this.var_ota_path.Name = "var_ota_path";
+            this.var_ota_path.Size = new System.Drawing.Size(197, 24);
+            this.var_ota_path.TabIndex = 132;
+            this.var_ota_path.Text = "firmware.bin";
             // 
-            // var_ota_last_firmware
+            // var_ota_port
             // 
-            this.var_ota_last_firmware.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.var_ota_last_firmware.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.var_ota_last_firmware.Location = new System.Drawing.Point(3, 57);
-            this.var_ota_last_firmware.Name = "var_ota_last_firmware";
-            this.var_ota_last_firmware.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.var_ota_last_firmware.Size = new System.Drawing.Size(207, 17);
-            this.var_ota_last_firmware.TabIndex = 126;
-            this.var_ota_last_firmware.Text = "new_firmware:";
-            this.var_ota_last_firmware.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.var_ota_port.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.var_ota_port.Font = new System.Drawing.Font("OCR A Extended", 12F);
+            this.var_ota_port.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.var_ota_port.Location = new System.Drawing.Point(128, 65);
+            this.var_ota_port.Name = "var_ota_port";
+            this.var_ota_port.Size = new System.Drawing.Size(197, 24);
+            this.var_ota_port.TabIndex = 131;
+            this.var_ota_port.Text = "80";
             // 
-            // var_ota_last_version
+            // label3
             // 
-            this.var_ota_last_version.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.var_ota_last_version.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.var_ota_last_version.Location = new System.Drawing.Point(216, 57);
-            this.var_ota_last_version.Name = "var_ota_last_version";
-            this.var_ota_last_version.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.var_ota_last_version.Size = new System.Drawing.Size(143, 17);
-            this.var_ota_last_version.TabIndex = 127;
-            this.var_ota_last_version.Text = "-";
-            this.var_ota_last_version.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label3.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(9, 69);
+            this.label3.Name = "label3";
+            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label3.Size = new System.Drawing.Size(110, 17);
+            this.label3.TabIndex = 130;
+            this.label3.Text = "port";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // var_ota_host
+            // 
+            this.var_ota_host.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.var_ota_host.Font = new System.Drawing.Font("OCR A Extended", 12F);
+            this.var_ota_host.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.var_ota_host.Location = new System.Drawing.Point(128, 36);
+            this.var_ota_host.Name = "var_ota_host";
+            this.var_ota_host.Size = new System.Drawing.Size(197, 24);
+            this.var_ota_host.TabIndex = 129;
+            this.var_ota_host.Text = "localhost";
             // 
             // button2
             // 
@@ -1111,13 +1126,41 @@ namespace app
             this.button2.Font = new System.Drawing.Font("OCR A Extended", 10.2F);
             this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(84, 195);
+            this.button2.Location = new System.Drawing.Point(214, 197);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(186, 35);
+            this.button2.Size = new System.Drawing.Size(139, 35);
             this.button2.TabIndex = 128;
-            this.button2.Text = "Check Update";
+            this.button2.Text = "WRITE";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.btn_ota_struct_write);
+            // 
+            // var_ota_last_firmware
+            // 
+            this.var_ota_last_firmware.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.var_ota_last_firmware.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.var_ota_last_firmware.Location = new System.Drawing.Point(9, 40);
+            this.var_ota_last_firmware.Name = "var_ota_last_firmware";
+            this.var_ota_last_firmware.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.var_ota_last_firmware.Size = new System.Drawing.Size(110, 17);
+            this.var_ota_last_firmware.TabIndex = 126;
+            this.var_ota_last_firmware.Text = "host";
+            this.var_ota_last_firmware.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // btn_ota_start
+            // 
+            this.btn_ota_start.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ota_start.Font = new System.Drawing.Font("OCR A Extended", 10.2F);
+            this.btn_ota_start.ForeColor = System.Drawing.Color.Black;
+            this.btn_ota_start.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_ota_start.Location = new System.Drawing.Point(214, 256);
+            this.btn_ota_start.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_ota_start.Name = "btn_ota_start";
+            this.btn_ota_start.Size = new System.Drawing.Size(139, 35);
+            this.btn_ota_start.TabIndex = 113;
+            this.btn_ota_start.Text = "DO_UPDATE";
+            this.btn_ota_start.UseVisualStyleBackColor = true;
+            this.btn_ota_start.Click += new System.EventHandler(this.btn_ota_do_update);
             // 
             // winformESP32ConfiguratorBindingSource
             // 
@@ -1128,7 +1171,7 @@ namespace app
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1315, 465);
+            this.ClientSize = new System.Drawing.Size(806, 465);
             this.Controls.Add(this.panel_tab3);
             this.Controls.Add(this.panel_tab2);
             this.Controls.Add(this.pictureBox3);
@@ -1152,6 +1195,7 @@ namespace app
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel_tab2.ResumeLayout(false);
             this.panel_tab3.ResumeLayout(false);
+            this.panel_tab3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.winformESP32ConfiguratorBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -1226,11 +1270,14 @@ namespace app
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.BindingSource winformESP32ConfiguratorBindingSource;
         private System.Windows.Forms.Button btn_ota_start;
-        private System.Windows.Forms.Label var_ota_last_version;
         private System.Windows.Forms.Label var_ota_last_firmware;
-        private System.Windows.Forms.Label var_ota_curent_version;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.TextBox var_ota_path;
+        private System.Windows.Forms.TextBox var_ota_port;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox var_ota_host;
+        private System.Windows.Forms.Button button3;
     }
 }
 

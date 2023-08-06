@@ -20,12 +20,17 @@ namespace app
 {
     public partial class winform_ESP32_Configurator : Form
     {
+        System.Windows.Forms.Timer _timer;
+
         const string API_GET_MCU_INFO       = "api.get_mcu_info";
         const string API_GPIO_STRUCT_META   = "api.gpio_struct_meta";
         const string API_GPIO_STRUCT_READ   = "api.gpio_struct_read";
         const string API_GPIO_STRUCT_WRITE  = "api.gpio_struct_write";
 
-        System.Windows.Forms.Timer _timer;
+        const string API_OTA_STRUCT_WRITE   = "api.ota_struct_write";
+        const string API_OTA_STRUCT_READ    = "api.ota_struct_read";
+        const string API_OTA_STRUCT_SAVE    = "api.ota_struct_save";
+        const string API_OTA_DO_UPDATE      = "api.ota_do_update";
 
         bool flag_gpio_enum_ready = false;
 
@@ -50,7 +55,7 @@ namespace app
         }
         #endregion
 
-        #region PACKAGE_ROUTINE
+        #region SERIAL_PORT
         private void _timer_Tick(object sender, EventArgs e)
         {
             Hashtable pack;
@@ -96,7 +101,8 @@ namespace app
                     var_esp_date.Text = _data["date"].ToString();
                 }));
             }
-
+            
+            #region PACKAGE_HANDLER_API_GPIO
             //
             // Данные от ESP32
             //
@@ -130,6 +136,23 @@ namespace app
                     flag_gpio_enum_ready = true;
                 }));
             }
+            #endregion
+
+            #region PACKAGE_HANDLER_API_OTA
+            if (_act == API_OTA_STRUCT_READ)
+            {
+                var a1 = _data["host"].ToString();
+                var b1 = _data["host_port"].ToString();
+                var b2 = _data["host_file"].ToString();
+
+                Invoke(new Action(() =>
+                {
+                    var_ota_host.Text = a1;
+                    var_ota_port.Text = b1;
+                    var_ota_path.Text = b2;
+                }));
+            }
+            #endregion
 
         }//func:IRQ_DataIncoming
         #endregion
@@ -198,7 +221,7 @@ namespace app
         }
         #endregion
 
-        #region COMMAND
+        #region CONTROLS
         private void act_wire_info(object sender, EventArgs e)
         {
             //Hashtable pack = new Hashtable();
@@ -288,13 +311,61 @@ namespace app
 
         #endregion
 
-        private void btn_ota_start_Click(object sender, EventArgs e)
+        #region COMMAND_OTA
+        private void btn_ota_struct_read(object sender, EventArgs e)
         {
-            Hashtable pack = new Hashtable();
-            pack.Add("act", "api.ota_start_update");
-            pack.Add("target", "123");
+            // Данные
+            Hashtable data_pack = new Hashtable
+            {
+                { "param_1", "?" },
+                { "param_2", "?" },
+                { "param_3", "?" }
+            };
+
+            // Заголовок
+            Hashtable pack = new Hashtable
+            {
+                { "act"     , API_OTA_STRUCT_READ },
+                { "did"     , "root.ctrl.ota"},
+                { "target"  , "table_var" },
+                { "data"    , data_pack }
+            };
 
             intercom._serial.Write(utils.json.Encode(pack));
         }
+        private void btn_ota_struct_write(object sender, EventArgs e)
+        {
+            Hashtable pack = new Hashtable
+            {
+                { "act"     , API_OTA_STRUCT_WRITE },
+                { "target"  , "table_var" },
+                { "did"     , "root.ctrl.ota"},
+                { "data"    , new Hashtable{
+                    { "host", var_ota_host.Text },
+                    { "host_port", var_ota_port.Text },
+                    { "host_file", var_ota_path.Text },
+                    { "use_https", true }
+                } }
+            };
+
+            intercom._serial.Write(utils.json.Encode(pack));
+        }
+        private void btn_ota_do_update(object sender, EventArgs e)
+        {
+            // Заголовок
+            Hashtable pack = new Hashtable
+            {
+                { "act"     , API_OTA_DO_UPDATE },
+                { "target"  , "table_var" },
+                { "did"     , "root.ctrl.ota"},
+                { "data"    , new Hashtable{
+                    { "flag_do_update", 1 } 
+                } }
+            };
+
+            intercom._serial.Write(utils.json.Encode(pack));
+        }
+        #endregion
+
     }// class
 }
