@@ -5,6 +5,12 @@ namespace app
 {
     partial class winform_ESP32_Configurator
     {
+        object values = new object[]
+        {
+                        new { Text = "ENABLE", Value = "1" },
+                        new { Text = "DISABLE", Value = "0" }
+        };
+
         /// <summary>
         /// Обязательная переменная конструктора.
         /// </summary>
@@ -31,23 +37,9 @@ namespace app
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(winform_ESP32_Configurator));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.check_rts_1 = new System.Windows.Forms.CheckBox();
-            this.check_dtr_1 = new System.Windows.Forms.CheckBox();
             this.btn_tab1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.check_rts_2 = new System.Windows.Forms.CheckBox();
-            this.check_dtr_2 = new System.Windows.Forms.CheckBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.check_rts_3 = new System.Windows.Forms.CheckBox();
-            this.check_dtr_3 = new System.Windows.Forms.CheckBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.check_rts_4 = new System.Windows.Forms.CheckBox();
-            this.check_dtr_4 = new System.Windows.Forms.CheckBox();
-            this.group_host = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label39 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
@@ -101,23 +93,29 @@ namespace app
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel_tab2 = new System.Windows.Forms.Panel();
-            this.panel_tab3 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.var_esp_gpio_mode = new System.Windows.Forms.ComboBox();
+            this.var_esp_gpio_intr_type = new System.Windows.Forms.ComboBox();
+            this.var_esp_gpio_pull_up_en = new System.Windows.Forms.ComboBox();
+            this.var_esp_gpio_pull_down_en = new System.Windows.Forms.ComboBox();
             this.label43 = new System.Windows.Forms.Label();
-            this.var_esp_gpio_mode = new System.Windows.Forms.Label();
             this.var_esp_gpio_pin_bit_mask = new System.Windows.Forms.Label();
-            this.var_esp_gpio_pull_up_en = new System.Windows.Forms.Label();
-            this.var_esp_gpio_pull_up_down = new System.Windows.Forms.Label();
-            this.var_esp_gpio_intr_type = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.group_host.SuspendLayout();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.panel_tab3 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label44 = new System.Windows.Forms.Label();
+            this.var_ota_path = new System.Windows.Forms.TextBox();
+            this.var_ota_port = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.var_ota_host = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.var_ota_last_firmware = new System.Windows.Forms.Label();
+            this.btn_ota_start = new System.Windows.Forms.Button();
+            this.tab_render = new System.Windows.Forms.PictureBox();
+            this.winformESP32ConfiguratorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel_tab1.SuspendLayout();
@@ -126,47 +124,9 @@ namespace app
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel_tab2.SuspendLayout();
             this.panel_tab3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tab_render)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.winformESP32ConfiguratorBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.groupBox1.Controls.Add(this.check_rts_1);
-            this.groupBox1.Controls.Add(this.check_dtr_1);
-            this.groupBox1.Font = new System.Drawing.Font("OCR A Extended", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.groupBox1.Location = new System.Drawing.Point(10, 38);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(97, 45);
-            this.groupBox1.TabIndex = 86;
-            this.groupBox1.TabStop = false;
-            // 
-            // check_rts_1
-            // 
-            this.check_rts_1.AutoSize = true;
-            this.check_rts_1.Checked = true;
-            this.check_rts_1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.check_rts_1.Location = new System.Drawing.Point(63, 19);
-            this.check_rts_1.Name = "check_rts_1";
-            this.check_rts_1.Size = new System.Drawing.Size(15, 14);
-            this.check_rts_1.TabIndex = 100;
-            this.check_rts_1.UseVisualStyleBackColor = true;
-            this.check_rts_1.CheckedChanged += new System.EventHandler(this.cb_rts_Handler);
-            // 
-            // check_dtr_1
-            // 
-            this.check_dtr_1.AutoSize = true;
-            this.check_dtr_1.Checked = true;
-            this.check_dtr_1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.check_dtr_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.check_dtr_1.Location = new System.Drawing.Point(16, 19);
-            this.check_dtr_1.Name = "check_dtr_1";
-            this.check_dtr_1.Size = new System.Drawing.Size(12, 11);
-            this.check_dtr_1.TabIndex = 99;
-            this.check_dtr_1.UseVisualStyleBackColor = true;
-            this.check_dtr_1.CheckedChanged += new System.EventHandler(this.cb_dtr_Handler);
             // 
             // btn_tab1
             // 
@@ -180,151 +140,9 @@ namespace app
             this.btn_tab1.Name = "btn_tab1";
             this.btn_tab1.Size = new System.Drawing.Size(103, 35);
             this.btn_tab1.TabIndex = 98;
-            this.btn_tab1.Text = "TAB";
+            this.btn_tab1.Text = "INFO";
             this.btn_tab1.UseVisualStyleBackColor = true;
             this.btn_tab1.Click += new System.EventHandler(this.btn_pin_group_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 15);
-            this.label1.TabIndex = 102;
-            this.label1.Text = "DTR";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(78, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 15);
-            this.label3.TabIndex = 103;
-            this.label3.Text = "RTS";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.check_rts_2);
-            this.groupBox3.Controls.Add(this.check_dtr_2);
-            this.groupBox3.Font = new System.Drawing.Font("OCR A Extended", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(10, 87);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(97, 45);
-            this.groupBox3.TabIndex = 101;
-            this.groupBox3.TabStop = false;
-            // 
-            // check_rts_2
-            // 
-            this.check_rts_2.AutoSize = true;
-            this.check_rts_2.Location = new System.Drawing.Point(63, 19);
-            this.check_rts_2.Name = "check_rts_2";
-            this.check_rts_2.Size = new System.Drawing.Size(15, 14);
-            this.check_rts_2.TabIndex = 100;
-            this.check_rts_2.UseVisualStyleBackColor = true;
-            this.check_rts_2.CheckedChanged += new System.EventHandler(this.cb_rts_Handler);
-            // 
-            // check_dtr_2
-            // 
-            this.check_dtr_2.AutoSize = true;
-            this.check_dtr_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.check_dtr_2.Location = new System.Drawing.Point(16, 19);
-            this.check_dtr_2.Name = "check_dtr_2";
-            this.check_dtr_2.Size = new System.Drawing.Size(12, 11);
-            this.check_dtr_2.TabIndex = 99;
-            this.check_dtr_2.UseVisualStyleBackColor = true;
-            this.check_dtr_2.CheckedChanged += new System.EventHandler(this.cb_dtr_Handler);
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.check_rts_3);
-            this.groupBox4.Controls.Add(this.check_dtr_3);
-            this.groupBox4.Font = new System.Drawing.Font("OCR A Extended", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(10, 136);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox4.Size = new System.Drawing.Size(97, 45);
-            this.groupBox4.TabIndex = 101;
-            this.groupBox4.TabStop = false;
-            // 
-            // check_rts_3
-            // 
-            this.check_rts_3.AutoSize = true;
-            this.check_rts_3.Location = new System.Drawing.Point(63, 19);
-            this.check_rts_3.Name = "check_rts_3";
-            this.check_rts_3.Size = new System.Drawing.Size(15, 14);
-            this.check_rts_3.TabIndex = 100;
-            this.check_rts_3.UseVisualStyleBackColor = true;
-            this.check_rts_3.CheckedChanged += new System.EventHandler(this.cb_rts_Handler);
-            // 
-            // check_dtr_3
-            // 
-            this.check_dtr_3.AutoSize = true;
-            this.check_dtr_3.Checked = true;
-            this.check_dtr_3.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.check_dtr_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.check_dtr_3.Location = new System.Drawing.Point(16, 19);
-            this.check_dtr_3.Name = "check_dtr_3";
-            this.check_dtr_3.Size = new System.Drawing.Size(12, 11);
-            this.check_dtr_3.TabIndex = 99;
-            this.check_dtr_3.UseVisualStyleBackColor = true;
-            this.check_dtr_3.CheckedChanged += new System.EventHandler(this.cb_dtr_Handler);
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.check_rts_4);
-            this.groupBox5.Controls.Add(this.check_dtr_4);
-            this.groupBox5.Font = new System.Drawing.Font("OCR A Extended", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(10, 185);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox5.Size = new System.Drawing.Size(97, 45);
-            this.groupBox5.TabIndex = 101;
-            this.groupBox5.TabStop = false;
-            // 
-            // check_rts_4
-            // 
-            this.check_rts_4.AutoSize = true;
-            this.check_rts_4.Checked = true;
-            this.check_rts_4.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.check_rts_4.Location = new System.Drawing.Point(63, 19);
-            this.check_rts_4.Name = "check_rts_4";
-            this.check_rts_4.Size = new System.Drawing.Size(15, 14);
-            this.check_rts_4.TabIndex = 100;
-            this.check_rts_4.UseVisualStyleBackColor = true;
-            this.check_rts_4.CheckedChanged += new System.EventHandler(this.cb_rts_Handler);
-            // 
-            // check_dtr_4
-            // 
-            this.check_dtr_4.AutoSize = true;
-            this.check_dtr_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.check_dtr_4.Location = new System.Drawing.Point(16, 19);
-            this.check_dtr_4.Name = "check_dtr_4";
-            this.check_dtr_4.Size = new System.Drawing.Size(12, 11);
-            this.check_dtr_4.TabIndex = 99;
-            this.check_dtr_4.UseVisualStyleBackColor = true;
-            this.check_dtr_4.CheckedChanged += new System.EventHandler(this.cb_dtr_Handler);
-            // 
-            // group_host
-            // 
-            this.group_host.Controls.Add(this.groupBox1);
-            this.group_host.Controls.Add(this.label3);
-            this.group_host.Controls.Add(this.groupBox3);
-            this.group_host.Controls.Add(this.label1);
-            this.group_host.Controls.Add(this.groupBox4);
-            this.group_host.Controls.Add(this.groupBox5);
-            this.group_host.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.group_host.Font = new System.Drawing.Font("OCR A Extended", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.group_host.Location = new System.Drawing.Point(23, 50);
-            this.group_host.Margin = new System.Windows.Forms.Padding(2);
-            this.group_host.Name = "group_host";
-            this.group_host.Padding = new System.Windows.Forms.Padding(2);
-            this.group_host.Size = new System.Drawing.Size(118, 264);
-            this.group_host.TabIndex = 103;
-            this.group_host.TabStop = false;
             // 
             // panel1
             // 
@@ -376,7 +194,7 @@ namespace app
             this.label39.Text = "SD0";
             this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label39.UseCompatibleTextRendering = true;
-            this.label39.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label39.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label38
             // 
@@ -391,7 +209,7 @@ namespace app
             this.label38.Text = "SD1";
             this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label38.UseCompatibleTextRendering = true;
-            this.label38.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label38.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label37
             // 
@@ -406,7 +224,7 @@ namespace app
             this.label37.Text = "IO15";
             this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label37.UseCompatibleTextRendering = true;
-            this.label37.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label37.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label36
             // 
@@ -421,7 +239,7 @@ namespace app
             this.label36.Text = "IO2";
             this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label36.UseCompatibleTextRendering = true;
-            this.label36.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label36.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label35
             // 
@@ -436,7 +254,7 @@ namespace app
             this.label35.Text = "IO0";
             this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label35.UseCompatibleTextRendering = true;
-            this.label35.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label35.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label34
             // 
@@ -451,7 +269,7 @@ namespace app
             this.label34.Text = "SD3";
             this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label34.UseCompatibleTextRendering = true;
-            this.label34.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label34.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label33
             // 
@@ -466,7 +284,7 @@ namespace app
             this.label33.Text = "SD2";
             this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label33.UseCompatibleTextRendering = true;
-            this.label33.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label33.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label32
             // 
@@ -481,7 +299,7 @@ namespace app
             this.label32.Text = "IO13";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label32.UseCompatibleTextRendering = true;
-            this.label32.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label32.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label30
             // 
@@ -496,7 +314,7 @@ namespace app
             this.label30.Text = "IO23";
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label30.UseCompatibleTextRendering = true;
-            this.label30.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label30.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label29
             // 
@@ -511,7 +329,7 @@ namespace app
             this.label29.Text = "IO22";
             this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label29.UseCompatibleTextRendering = true;
-            this.label29.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label29.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label28
             // 
@@ -526,7 +344,7 @@ namespace app
             this.label28.Text = "TX0";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label28.UseCompatibleTextRendering = true;
-            this.label28.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label28.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label27
             // 
@@ -541,7 +359,7 @@ namespace app
             this.label27.Text = "RX0";
             this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label27.UseCompatibleTextRendering = true;
-            this.label27.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label27.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label26
             // 
@@ -556,7 +374,7 @@ namespace app
             this.label26.Text = "IO21";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label26.UseCompatibleTextRendering = true;
-            this.label26.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label26.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label25
             // 
@@ -571,7 +389,7 @@ namespace app
             this.label25.Text = "IO19";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label25.UseCompatibleTextRendering = true;
-            this.label25.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label25.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label24
             // 
@@ -586,7 +404,7 @@ namespace app
             this.label24.Text = "IO18";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label24.UseCompatibleTextRendering = true;
-            this.label24.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label24.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label23
             // 
@@ -601,7 +419,7 @@ namespace app
             this.label23.Text = "IO5";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label23.UseCompatibleTextRendering = true;
-            this.label23.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label23.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label22
             // 
@@ -616,7 +434,7 @@ namespace app
             this.label22.Text = "IO17";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label22.UseCompatibleTextRendering = true;
-            this.label22.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label22.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label21
             // 
@@ -631,7 +449,7 @@ namespace app
             this.label21.Text = "IO16";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label21.UseCompatibleTextRendering = true;
-            this.label21.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label21.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label20
             // 
@@ -646,7 +464,7 @@ namespace app
             this.label20.Text = "IO4";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label20.UseCompatibleTextRendering = true;
-            this.label20.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label20.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label19
             // 
@@ -661,7 +479,7 @@ namespace app
             this.label19.Text = "IO34";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label19.UseCompatibleTextRendering = true;
-            this.label19.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label19.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label18
             // 
@@ -676,7 +494,7 @@ namespace app
             this.label18.Text = "IO35";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label18.UseCompatibleTextRendering = true;
-            this.label18.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label18.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label17
             // 
@@ -691,7 +509,7 @@ namespace app
             this.label17.Text = "IO33";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label17.UseCompatibleTextRendering = true;
-            this.label17.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label17.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label16
             // 
@@ -720,7 +538,7 @@ namespace app
             this.label15.Text = "IO25";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label15.UseCompatibleTextRendering = true;
-            this.label15.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label15.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label14
             // 
@@ -735,7 +553,7 @@ namespace app
             this.label14.Text = "IO26";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label14.UseCompatibleTextRendering = true;
-            this.label14.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label14.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label13
             // 
@@ -750,7 +568,7 @@ namespace app
             this.label13.Text = "IO27";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label13.UseCompatibleTextRendering = true;
-            this.label13.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label13.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label12
             // 
@@ -765,7 +583,7 @@ namespace app
             this.label12.Text = "IO14";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label12.UseCompatibleTextRendering = true;
-            this.label12.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label12.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label11
             // 
@@ -780,13 +598,13 @@ namespace app
             this.label11.Text = "IO12";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label11.UseCompatibleTextRendering = true;
-            this.label11.Click += new System.EventHandler(this.btn_pin_Click);
+            this.label11.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.White;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.InitialImage")));
+            this.pictureBox4.InitialImage = null;
             this.pictureBox4.Location = new System.Drawing.Point(31, 48);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(360, 360);
@@ -806,7 +624,7 @@ namespace app
             this.btn_tab2.Name = "btn_tab2";
             this.btn_tab2.Size = new System.Drawing.Size(103, 35);
             this.btn_tab2.TabIndex = 110;
-            this.btn_tab2.Text = "TAB";
+            this.btn_tab2.Text = "GPIO";
             this.btn_tab2.UseVisualStyleBackColor = true;
             this.btn_tab2.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -822,7 +640,7 @@ namespace app
             this.btn_tab3.Name = "btn_tab3";
             this.btn_tab3.Size = new System.Drawing.Size(118, 35);
             this.btn_tab3.TabIndex = 111;
-            this.btn_tab3.Text = "TAB";
+            this.btn_tab3.Text = "OTA";
             this.btn_tab3.UseVisualStyleBackColor = true;
             this.btn_tab3.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -845,7 +663,7 @@ namespace app
             this.panel_tab1.Controls.Add(this.label5);
             this.panel_tab1.Controls.Add(this.label2);
             this.panel_tab1.Controls.Add(this.label4);
-            this.panel_tab1.Location = new System.Drawing.Point(438, 50);
+            this.panel_tab1.Location = new System.Drawing.Point(497, 142);
             this.panel_tab1.Name = "panel_tab1";
             this.panel_tab1.Size = new System.Drawing.Size(362, 392);
             this.panel_tab1.TabIndex = 110;
@@ -882,7 +700,7 @@ namespace app
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(148, 17);
             this.label10.TabIndex = 122;
-            this.label10.Text = "esp_date";
+            this.label10.Text = "esp_date:";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
@@ -1066,118 +884,103 @@ namespace app
             // panel_tab2
             // 
             this.panel_tab2.BackColor = System.Drawing.Color.White;
-            this.panel_tab2.Controls.Add(this.var_esp_gpio_pull_up_down);
+            this.panel_tab2.Controls.Add(this.button1);
+            this.panel_tab2.Controls.Add(this.var_esp_gpio_mode);
             this.panel_tab2.Controls.Add(this.var_esp_gpio_intr_type);
             this.panel_tab2.Controls.Add(this.var_esp_gpio_pull_up_en);
+            this.panel_tab2.Controls.Add(this.var_esp_gpio_pull_down_en);
             this.panel_tab2.Controls.Add(this.label43);
             this.panel_tab2.Controls.Add(this.var_esp_gpio_pin_bit_mask);
             this.panel_tab2.Controls.Add(this.label42);
-            this.panel_tab2.Controls.Add(this.var_esp_gpio_mode);
             this.panel_tab2.Controls.Add(this.label41);
             this.panel_tab2.Controls.Add(this.label40);
             this.panel_tab2.Controls.Add(this.label31);
-            this.panel_tab2.Location = new System.Drawing.Point(12, 459);
+            this.panel_tab2.Location = new System.Drawing.Point(477, 126);
             this.panel_tab2.Name = "panel_tab2";
             this.panel_tab2.Size = new System.Drawing.Size(362, 392);
             this.panel_tab2.TabIndex = 125;
             // 
-            // panel_tab3
+            // button1
             // 
-            this.panel_tab3.BackColor = System.Drawing.Color.White;
-            this.panel_tab3.Controls.Add(this.button4);
-            this.panel_tab3.Controls.Add(this.group_host);
-            this.panel_tab3.Location = new System.Drawing.Point(821, 52);
-            this.panel_tab3.Name = "panel_tab3";
-            this.panel_tab3.Size = new System.Drawing.Size(362, 392);
-            this.panel_tab3.TabIndex = 126;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("OCR A Extended", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.Location = new System.Drawing.Point(122, 325);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(103, 35);
+            this.button1.TabIndex = 127;
+            this.button1.Text = "APPLY";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.cmd_write_gpio);
             // 
-            // button4
+            // var_esp_gpio_mode
             // 
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("OCR A Extended", 10.2F);
-            this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.Location = new System.Drawing.Point(122, 343);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(118, 35);
-            this.button4.TabIndex = 112;
-            this.button4.Text = "APPLY";
-            this.button4.UseVisualStyleBackColor = true;
+            this.var_esp_gpio_mode.DisplayMember = "Key";
+            this.var_esp_gpio_mode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.var_esp_gpio_mode.FormattingEnabled = true;
+            this.var_esp_gpio_mode.Location = new System.Drawing.Point(159, 177);
+            this.var_esp_gpio_mode.Name = "var_esp_gpio_mode";
+            this.var_esp_gpio_mode.Size = new System.Drawing.Size(200, 21);
+            this.var_esp_gpio_mode.TabIndex = 134;
+            this.var_esp_gpio_mode.ValueMember = "Value";
             // 
-            // label31
+            // var_esp_gpio_intr_type
             // 
-            this.label31.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label31.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(37, 32);
-            this.label31.Name = "label31";
-            this.label31.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label31.Size = new System.Drawing.Size(148, 17);
-            this.label31.TabIndex = 113;
-            this.label31.Text = "intr_type:";
-            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.var_esp_gpio_intr_type.DisplayMember = "Key";
+            this.var_esp_gpio_intr_type.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.var_esp_gpio_intr_type.FormattingEnabled = true;
+            this.var_esp_gpio_intr_type.Location = new System.Drawing.Point(159, 141);
+            this.var_esp_gpio_intr_type.Name = "var_esp_gpio_intr_type";
+            this.var_esp_gpio_intr_type.Size = new System.Drawing.Size(200, 21);
+            this.var_esp_gpio_intr_type.TabIndex = 133;
+            this.var_esp_gpio_intr_type.ValueMember = "Value";
             // 
-            // label40
+            // var_esp_gpio_pull_up_en
             // 
-            this.label40.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label40.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(37, 49);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(148, 17);
-            this.label40.TabIndex = 125;
-            this.label40.Text = "mode:";
-            this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.var_esp_gpio_pull_up_en.DisplayMember = "Key";
+            this.var_esp_gpio_pull_up_en.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.var_esp_gpio_pull_up_en.Items.AddRange(new object[] {
+            "ENABLE",
+            "DISABLE"});
+            this.var_esp_gpio_pull_up_en.Location = new System.Drawing.Point(159, 83);
+            this.var_esp_gpio_pull_up_en.Name = "var_esp_gpio_pull_up_en";
+            this.var_esp_gpio_pull_up_en.Size = new System.Drawing.Size(200, 21);
+            this.var_esp_gpio_pull_up_en.TabIndex = 132;
+            this.var_esp_gpio_pull_up_en.ValueMember = "Key";
             // 
-            // label41
+            // var_esp_gpio_pull_down_en
             // 
-            this.label41.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label41.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.Location = new System.Drawing.Point(37, 68);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(148, 17);
-            this.label41.TabIndex = 125;
-            this.label41.Text = "pin_bit_mask:";
-            this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label42
-            // 
-            this.label42.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label42.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(37, 85);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(148, 17);
-            this.label42.TabIndex = 126;
-            this.label42.Text = "pull_up_en:";
-            this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.var_esp_gpio_pull_down_en.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
+            this.var_esp_gpio_pull_down_en.DisplayMember = "Key";
+            this.var_esp_gpio_pull_down_en.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.var_esp_gpio_pull_down_en.Items.AddRange(new object[] {
+            "ENABLE",
+            "DISABLE"});
+            this.var_esp_gpio_pull_down_en.Location = new System.Drawing.Point(159, 109);
+            this.var_esp_gpio_pull_down_en.Name = "var_esp_gpio_pull_down_en";
+            this.var_esp_gpio_pull_down_en.Size = new System.Drawing.Size(200, 21);
+            this.var_esp_gpio_pull_down_en.TabIndex = 131;
+            this.var_esp_gpio_pull_down_en.ValueMember = "Value";
             // 
             // label43
             // 
             this.label43.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label43.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(37, 102);
+            this.label43.Location = new System.Drawing.Point(5, 111);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(148, 17);
             this.label43.TabIndex = 127;
             this.label43.Text = "pull_down_en:";
             this.label43.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // var_esp_gpio_mode
-            // 
-            this.var_esp_gpio_mode.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.var_esp_gpio_mode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.var_esp_gpio_mode.Location = new System.Drawing.Point(191, 49);
-            this.var_esp_gpio_mode.Name = "var_esp_gpio_mode";
-            this.var_esp_gpio_mode.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.var_esp_gpio_mode.Size = new System.Drawing.Size(143, 17);
-            this.var_esp_gpio_mode.TabIndex = 125;
-            this.var_esp_gpio_mode.Text = "-";
-            this.var_esp_gpio_mode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // var_esp_gpio_pin_bit_mask
             // 
             this.var_esp_gpio_pin_bit_mask.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.var_esp_gpio_pin_bit_mask.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.var_esp_gpio_pin_bit_mask.Location = new System.Drawing.Point(191, 68);
+            this.var_esp_gpio_pin_bit_mask.Location = new System.Drawing.Point(159, 35);
             this.var_esp_gpio_pin_bit_mask.Name = "var_esp_gpio_pin_bit_mask";
             this.var_esp_gpio_pin_bit_mask.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.var_esp_gpio_pin_bit_mask.Size = new System.Drawing.Size(143, 17);
@@ -1185,73 +988,217 @@ namespace app
             this.var_esp_gpio_pin_bit_mask.Text = "-";
             this.var_esp_gpio_pin_bit_mask.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // var_esp_gpio_pull_up_en
+            // label42
             // 
-            this.var_esp_gpio_pull_up_en.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.var_esp_gpio_pull_up_en.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.var_esp_gpio_pull_up_en.Location = new System.Drawing.Point(191, 85);
-            this.var_esp_gpio_pull_up_en.Name = "var_esp_gpio_pull_up_en";
-            this.var_esp_gpio_pull_up_en.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.var_esp_gpio_pull_up_en.Size = new System.Drawing.Size(143, 17);
-            this.var_esp_gpio_pull_up_en.TabIndex = 128;
-            this.var_esp_gpio_pull_up_en.Text = "-";
-            this.var_esp_gpio_pull_up_en.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label42.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label42.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.Location = new System.Drawing.Point(5, 85);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(148, 17);
+            this.label42.TabIndex = 126;
+            this.label42.Text = "pull_up_en:";
+            this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // var_esp_gpio_pull_up_down
+            // label41
             // 
-            this.var_esp_gpio_pull_up_down.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.var_esp_gpio_pull_up_down.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.var_esp_gpio_pull_up_down.Location = new System.Drawing.Point(191, 102);
-            this.var_esp_gpio_pull_up_down.Name = "var_esp_gpio_pull_up_down";
-            this.var_esp_gpio_pull_up_down.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.var_esp_gpio_pull_up_down.Size = new System.Drawing.Size(143, 17);
-            this.var_esp_gpio_pull_up_down.TabIndex = 129;
-            this.var_esp_gpio_pull_up_down.Text = "-";
-            this.var_esp_gpio_pull_up_down.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label41.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label41.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Location = new System.Drawing.Point(5, 35);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(148, 17);
+            this.label41.TabIndex = 125;
+            this.label41.Text = "pin_bit_mask:";
+            this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // var_esp_gpio_intr_type
+            // label40
             // 
-            this.var_esp_gpio_intr_type.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.var_esp_gpio_intr_type.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.var_esp_gpio_intr_type.Location = new System.Drawing.Point(191, 32);
-            this.var_esp_gpio_intr_type.Name = "var_esp_gpio_intr_type";
-            this.var_esp_gpio_intr_type.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.var_esp_gpio_intr_type.Size = new System.Drawing.Size(143, 17);
-            this.var_esp_gpio_intr_type.TabIndex = 130;
-            this.var_esp_gpio_intr_type.Text = "-";
-            this.var_esp_gpio_intr_type.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label40.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label40.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.Location = new System.Drawing.Point(5, 179);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(148, 17);
+            this.label40.TabIndex = 125;
+            this.label40.Text = "mode:";
+            this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label31
+            // 
+            this.label31.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label31.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(5, 143);
+            this.label31.Name = "label31";
+            this.label31.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label31.Size = new System.Drawing.Size(148, 17);
+            this.label31.TabIndex = 113;
+            this.label31.Text = "intr_type:";
+            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel_tab3
+            // 
+            this.panel_tab3.BackColor = System.Drawing.Color.White;
+            this.panel_tab3.Controls.Add(this.button3);
+            this.panel_tab3.Controls.Add(this.label44);
+            this.panel_tab3.Controls.Add(this.var_ota_path);
+            this.panel_tab3.Controls.Add(this.var_ota_port);
+            this.panel_tab3.Controls.Add(this.label3);
+            this.panel_tab3.Controls.Add(this.var_ota_host);
+            this.panel_tab3.Controls.Add(this.button2);
+            this.panel_tab3.Controls.Add(this.var_ota_last_firmware);
+            this.panel_tab3.Controls.Add(this.btn_ota_start);
+            this.panel_tab3.Location = new System.Drawing.Point(446, 92);
+            this.panel_tab3.Name = "panel_tab3";
+            this.panel_tab3.Size = new System.Drawing.Size(362, 383);
+            this.panel_tab3.TabIndex = 126;
+            // 
+            // button3
+            // 
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("OCR A Extended", 10.2F);
+            this.button3.ForeColor = System.Drawing.Color.Black;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.Location = new System.Drawing.Point(14, 195);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(139, 35);
+            this.button3.TabIndex = 135;
+            this.button3.Text = "READ";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.btn_ota_struct_read);
+            // 
+            // label44
+            // 
+            this.label44.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label44.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.Location = new System.Drawing.Point(6, 98);
+            this.label44.Name = "label44";
+            this.label44.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label44.Size = new System.Drawing.Size(113, 17);
+            this.label44.TabIndex = 133;
+            this.label44.Text = "path";
+            this.label44.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // var_ota_path
+            // 
+            this.var_ota_path.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.var_ota_path.Font = new System.Drawing.Font("OCR A Extended", 12F);
+            this.var_ota_path.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.var_ota_path.Location = new System.Drawing.Point(128, 96);
+            this.var_ota_path.Name = "var_ota_path";
+            this.var_ota_path.Size = new System.Drawing.Size(197, 24);
+            this.var_ota_path.TabIndex = 132;
+            this.var_ota_path.Text = "firmware.bin";
+            // 
+            // var_ota_port
+            // 
+            this.var_ota_port.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.var_ota_port.Font = new System.Drawing.Font("OCR A Extended", 12F);
+            this.var_ota_port.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.var_ota_port.Location = new System.Drawing.Point(128, 65);
+            this.var_ota_port.Name = "var_ota_port";
+            this.var_ota_port.Size = new System.Drawing.Size(197, 24);
+            this.var_ota_port.TabIndex = 131;
+            this.var_ota_port.Text = "80";
+            // 
+            // label3
+            // 
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label3.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(9, 69);
+            this.label3.Name = "label3";
+            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label3.Size = new System.Drawing.Size(110, 17);
+            this.label3.TabIndex = 130;
+            this.label3.Text = "port";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // var_ota_host
+            // 
+            this.var_ota_host.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.var_ota_host.Font = new System.Drawing.Font("OCR A Extended", 12F);
+            this.var_ota_host.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.var_ota_host.Location = new System.Drawing.Point(128, 36);
+            this.var_ota_host.Name = "var_ota_host";
+            this.var_ota_host.Size = new System.Drawing.Size(197, 24);
+            this.var_ota_host.TabIndex = 129;
+            this.var_ota_host.Text = "localhost";
+            // 
+            // button2
+            // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("OCR A Extended", 10.2F);
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.Location = new System.Drawing.Point(214, 197);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(139, 35);
+            this.button2.TabIndex = 128;
+            this.button2.Text = "WRITE";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.btn_ota_struct_write);
+            // 
+            // var_ota_last_firmware
+            // 
+            this.var_ota_last_firmware.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.var_ota_last_firmware.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.var_ota_last_firmware.Location = new System.Drawing.Point(9, 40);
+            this.var_ota_last_firmware.Name = "var_ota_last_firmware";
+            this.var_ota_last_firmware.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.var_ota_last_firmware.Size = new System.Drawing.Size(110, 17);
+            this.var_ota_last_firmware.TabIndex = 126;
+            this.var_ota_last_firmware.Text = "host";
+            this.var_ota_last_firmware.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // btn_ota_start
+            // 
+            this.btn_ota_start.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ota_start.Font = new System.Drawing.Font("OCR A Extended", 10.2F);
+            this.btn_ota_start.ForeColor = System.Drawing.Color.Black;
+            this.btn_ota_start.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_ota_start.Location = new System.Drawing.Point(214, 256);
+            this.btn_ota_start.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_ota_start.Name = "btn_ota_start";
+            this.btn_ota_start.Size = new System.Drawing.Size(139, 35);
+            this.btn_ota_start.TabIndex = 113;
+            this.btn_ota_start.Text = "DO_UPDATE";
+            this.btn_ota_start.UseVisualStyleBackColor = true;
+            this.btn_ota_start.Click += new System.EventHandler(this.btn_ota_do_update);
+            // 
+            // tab_render
+            // 
+            this.tab_render.BackColor = System.Drawing.Color.Chartreuse;
+            this.tab_render.Location = new System.Drawing.Point(438, 46);
+            this.tab_render.Name = "tab_render";
+            this.tab_render.Size = new System.Drawing.Size(362, 8);
+            this.tab_render.TabIndex = 127;
+            this.tab_render.TabStop = false;
+            // 
+            // winformESP32ConfiguratorBindingSource
+            // 
+            this.winformESP32ConfiguratorBindingSource.DataSource = typeof(app.winform_ESP32_Configurator);
             // 
             // winform_ESP32_Configurator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(813, 456);
+            this.ClientSize = new System.Drawing.Size(810, 451);
             this.Controls.Add(this.panel_tab3);
-            this.Controls.Add(this.panel_tab2);
+            this.Controls.Add(this.panel_tab1);
+            this.Controls.Add(this.tab_render);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.panel_tab1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_tab3);
             this.Controls.Add(this.btn_tab2);
             this.Controls.Add(this.btn_tab1);
+            this.Controls.Add(this.panel_tab2);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "winform_ESP32_Configurator";
             this.Text = "ESP32 - Configurator";
-            this.Load += new System.EventHandler(this.winform_remote_backdoor_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            this.group_host.ResumeLayout(false);
-            this.group_host.PerformLayout();
+            this.Load += new System.EventHandler(this.winform_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel_tab1.ResumeLayout(false);
@@ -1260,29 +1207,15 @@ namespace app
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel_tab2.ResumeLayout(false);
             this.panel_tab3.ResumeLayout(false);
+            this.panel_tab3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tab_render)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.winformESP32ConfiguratorBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btn_tab1;
-
-        private System.Windows.Forms.CheckBox check_dtr_1;
-        private System.Windows.Forms.CheckBox check_dtr_2;
-        private System.Windows.Forms.CheckBox check_dtr_3;
-        private System.Windows.Forms.CheckBox check_dtr_4;
-        
-        private System.Windows.Forms.CheckBox check_rts_1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.CheckBox check_rts_2;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.CheckBox check_rts_3;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.CheckBox check_rts_4;
-        private System.Windows.Forms.GroupBox group_host;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_tab3;
         private System.Windows.Forms.Button btn_tab2;
@@ -1309,7 +1242,6 @@ namespace app
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel_tab2;
         private System.Windows.Forms.Panel panel_tab3;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label38;
@@ -1338,16 +1270,28 @@ namespace app
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label var_esp_gpio_pull_up_down;
-        private System.Windows.Forms.Label var_esp_gpio_intr_type;
-        private System.Windows.Forms.Label var_esp_gpio_pull_up_en;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label var_esp_gpio_pin_bit_mask;
         private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.Label var_esp_gpio_mode;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.ComboBox var_esp_gpio_pull_up_en;
+        private System.Windows.Forms.ComboBox var_esp_gpio_pull_down_en;
+        private System.Windows.Forms.ComboBox var_esp_gpio_intr_type;
+        private System.Windows.Forms.ComboBox var_esp_gpio_mode;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.BindingSource winformESP32ConfiguratorBindingSource;
+        private System.Windows.Forms.Button btn_ota_start;
+        private System.Windows.Forms.Label var_ota_last_firmware;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.TextBox var_ota_path;
+        private System.Windows.Forms.TextBox var_ota_port;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox var_ota_host;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.PictureBox tab_render;
     }
 }
 
