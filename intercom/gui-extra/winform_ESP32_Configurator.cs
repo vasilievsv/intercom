@@ -16,6 +16,7 @@ using System.Windows.Forms;
 using micro.sdk;
 using utils;
 using System.Drawing.Imaging;
+using static System.Net.Mime.MediaTypeNames;
 
 
 namespace app
@@ -44,7 +45,7 @@ namespace app
             _timer = new System.Windows.Forms.Timer();
             _timer.Interval = 1100;
             _timer.Tick += _timer_Tick;
-            //_timer.Start();
+            _timer.Start();
         }
 
 
@@ -57,9 +58,18 @@ namespace app
                 new Button[] { btn_tab1, btn_tab2, btn_tab3 },
                 new Panel[]  { panel_tab1, panel_tab2, panel_tab3 }
             );
+
+            foreach (Control c in this.panel1.Controls)
+            {
+                if (c is Label)
+                {
+                    c.BackColor = System.Drawing.Color.Black;
+                    c.ForeColor = System.Drawing.Color.White;
+                }
+            }
+
         }
 
-        #region SERIAL_PORT
         private void _timer_Tick(object sender, EventArgs e)
         {
             Hashtable pack;
@@ -80,6 +90,8 @@ namespace app
             }
         }
 
+        #region SERIAL_PORT
+
         unsafe private void IRQ_DataIncoming(object sender, string str)
         {
             var json_array = utils.json.Decode(str) as Hashtable;
@@ -91,21 +103,23 @@ namespace app
             var _did = json_array["did"] as string;
             var _data= json_array["data"] as Hashtable;
 
+            #region PACKAGE_HANDLER_INFO
             if (_act == API_GET_MCU_INFO && _data.Count > 0)
             {
                 Invoke(new Action(() =>
                 {
-                    var_esp_cores.Text = _data["cores"].ToString();
-                    var_esp_feature.Text = _data["features"].ToString();
-                    var_esp_mode.Text = _data["model"].ToString();
-                    var_esp_revision.Text = _data["revision"].ToString();
-                    var_esp_cpu_freq.Text = _data["cpu_freq"].ToString();
-                    var_esp_free_heap.Text = _data["free_heap"].ToString();
-                    var_esp_time.Text = _data["time"].ToString();
-                    var_esp_date.Text = _data["date"].ToString();
+                    var_esp_cores.Text      = _data["cores"].ToString();
+                    var_esp_feature.Text    = _data["features"].ToString();
+                    var_esp_mode.Text       = _data["model"].ToString();
+                    var_esp_revision.Text   = _data["revision"].ToString();
+                    var_esp_cpu_freq.Text   = _data["cpu_freq"].ToString();
+                    var_esp_free_heap.Text  = _data["free_heap"].ToString();
+                    var_esp_time.Text       = _data["time"].ToString();
+                    var_esp_date.Text       = _data["date"].ToString();
                 }));
             }
-            
+            #endregion
+
             #region PACKAGE_HANDLER_API_GPIO
             //
             // Данные от ESP32
@@ -125,20 +139,51 @@ namespace app
 
             if (_act == API_GPIO_STRUCT_META)
             {
-                var a1 = _data["gpio_meta"] as Hashtable;
-                var b1 = a1["intr_type"] as Hashtable;
-                var b2 = a1["mode"] as Hashtable;
-                var b3 = a1["pull"] as Hashtable;
+                var T = _data["gpio"] as Hashtable;
+
+                var _meta = T["gpio_meta"] as Hashtable; 
+                var b1 = _meta["intr_type"] as Hashtable;
+                var b2 = _meta["mode"] as Hashtable;
+                var b3 = _meta["pull"] as Hashtable;
 
                 Invoke(new Action(() =>
                 {
-                    var_esp_gpio_mode.DataSource = new BindingSource(b2, null);
-                    var_esp_gpio_pull_down_en.DataSource = new BindingSource(b3, null);
-                    var_esp_gpio_pull_up_en.DataSource = new BindingSource(b3, null);
-                    var_esp_gpio_intr_type.DataSource = new BindingSource(b1, null);
-
                     flag_gpio_enum_ready = true;
+
+                    var_esp_gpio_mode.DataSource            = new BindingSource(b2, null);
+                    var_esp_gpio_pull_down_en.DataSource    = new BindingSource(b3, null);
+                    var_esp_gpio_pull_up_en.DataSource      = new BindingSource(b3, null);
+                    var_esp_gpio_intr_type.DataSource       = new BindingSource(b1, null);
                 }));
+
+                //
+                // Colorize Pin map
+                //
+                var _pin_array = T["gpio_default_array"] as Hashtable;
+                Invoke(new Action(() =>
+                {
+                    // my pin
+                    // https://stackoverflow.com/questions/11284113/find-the-label-which-contains-the-required-text
+
+                    foreach (Control c in this.panel1.Controls)
+                    {
+                        if (c is Label)
+                        {
+                            foreach (DictionaryEntry s in _pin_array)
+                            {
+                                if (c.Text == s.Key.ToString())
+                                { 
+                                    c.BackColor = System.Drawing.Color.LightGreen;
+                                    c.ForeColor = System.Drawing.Color.Black;
+                                    break;
+                                }
+                            }
+                       
+                        }
+                    }
+                }));
+
+
             }
             #endregion
 
@@ -183,17 +228,6 @@ namespace app
         #endregion
 
         #region COMMAND
-
-        private void cmd_select_pin(object sender, EventArgs e)
-        {
-            var _pin_name = (Label)sender;
-
-            Hashtable pack = new Hashtable();
-            pack.Add("act", API_GPIO_STRUCT_READ);
-            pack.Add("target", _pin_name.Text);
-            
-            intercom._serial.Write(utils.json.Encode(pack));
-        }
 
         private void cmd_write_gpio(object sender, EventArgs e)
         {
@@ -422,5 +456,18 @@ namespace app
         }
         #endregion
 
+        #region MY_PIN_MAP
+        private void my_pin_select_handler(object sender, EventArgs e)
+        {
+            var _pin_name = (Label)sender;
+
+            Hashtable pack = new Hashtable();
+            pack.Add("act", API_GPIO_STRUCT_READ);
+            pack.Add("target", _pin_name.Text);
+
+            intercom._serial.Write(utils.json.Encode(pack));
+        }
+
+        #endregion
     }// class
 }
