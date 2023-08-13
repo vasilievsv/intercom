@@ -114,6 +114,7 @@ namespace app
             this.button2 = new System.Windows.Forms.Button();
             this.var_ota_last_firmware = new System.Windows.Forms.Label();
             this.btn_ota_start = new System.Windows.Forms.Button();
+            this.tab_render = new System.Windows.Forms.PictureBox();
             this.winformESP32ConfiguratorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -123,6 +124,7 @@ namespace app
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel_tab2.SuspendLayout();
             this.panel_tab3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tab_render)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.winformESP32ConfiguratorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -661,7 +663,7 @@ namespace app
             this.panel_tab1.Controls.Add(this.label5);
             this.panel_tab1.Controls.Add(this.label2);
             this.panel_tab1.Controls.Add(this.label4);
-            this.panel_tab1.Location = new System.Drawing.Point(438, 50);
+            this.panel_tab1.Location = new System.Drawing.Point(497, 142);
             this.panel_tab1.Name = "panel_tab1";
             this.panel_tab1.Size = new System.Drawing.Size(362, 392);
             this.panel_tab1.TabIndex = 110;
@@ -893,7 +895,7 @@ namespace app
             this.panel_tab2.Controls.Add(this.label41);
             this.panel_tab2.Controls.Add(this.label40);
             this.panel_tab2.Controls.Add(this.label31);
-            this.panel_tab2.Location = new System.Drawing.Point(12, 470);
+            this.panel_tab2.Location = new System.Drawing.Point(477, 126);
             this.panel_tab2.Name = "panel_tab2";
             this.panel_tab2.Size = new System.Drawing.Size(362, 392);
             this.panel_tab2.TabIndex = 125;
@@ -1043,9 +1045,9 @@ namespace app
             this.panel_tab3.Controls.Add(this.button2);
             this.panel_tab3.Controls.Add(this.var_ota_last_firmware);
             this.panel_tab3.Controls.Add(this.btn_ota_start);
-            this.panel_tab3.Location = new System.Drawing.Point(437, 50);
+            this.panel_tab3.Location = new System.Drawing.Point(446, 92);
             this.panel_tab3.Name = "panel_tab3";
-            this.panel_tab3.Size = new System.Drawing.Size(362, 392);
+            this.panel_tab3.Size = new System.Drawing.Size(362, 383);
             this.panel_tab3.TabIndex = 126;
             // 
             // button3
@@ -1162,6 +1164,15 @@ namespace app
             this.btn_ota_start.UseVisualStyleBackColor = true;
             this.btn_ota_start.Click += new System.EventHandler(this.btn_ota_do_update);
             // 
+            // tab_render
+            // 
+            this.tab_render.BackColor = System.Drawing.Color.Chartreuse;
+            this.tab_render.Location = new System.Drawing.Point(438, 46);
+            this.tab_render.Name = "tab_render";
+            this.tab_render.Size = new System.Drawing.Size(362, 8);
+            this.tab_render.TabIndex = 127;
+            this.tab_render.TabStop = false;
+            // 
             // winformESP32ConfiguratorBindingSource
             // 
             this.winformESP32ConfiguratorBindingSource.DataSource = typeof(app.winform_ESP32_Configurator);
@@ -1171,22 +1182,23 @@ namespace app
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(806, 465);
+            this.ClientSize = new System.Drawing.Size(810, 451);
             this.Controls.Add(this.panel_tab3);
-            this.Controls.Add(this.panel_tab2);
+            this.Controls.Add(this.panel_tab1);
+            this.Controls.Add(this.tab_render);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.panel_tab1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_tab3);
             this.Controls.Add(this.btn_tab2);
             this.Controls.Add(this.btn_tab1);
+            this.Controls.Add(this.panel_tab2);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "winform_ESP32_Configurator";
             this.Text = "ESP32 - Configurator";
-            this.Load += new System.EventHandler(this.winform_remote_backdoor_Load);
+            this.Load += new System.EventHandler(this.winform_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel_tab1.ResumeLayout(false);
@@ -1196,6 +1208,7 @@ namespace app
             this.panel_tab2.ResumeLayout(false);
             this.panel_tab3.ResumeLayout(false);
             this.panel_tab3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tab_render)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.winformESP32ConfiguratorBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -1278,6 +1291,7 @@ namespace app
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox var_ota_host;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.PictureBox tab_render;
     }
 }
 

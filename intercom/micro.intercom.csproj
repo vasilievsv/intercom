@@ -92,6 +92,12 @@
     <Compile Include="gui-extra\winform_ESP32_Configurator.Designer.cs">
       <DependentUpon>winform_ESP32_Configurator.cs</DependentUpon>
     </Compile>
+    <Compile Include="gui\winform_BitBlt_BOOT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\winform_BitBlt_BOOT.Designer.cs">
+      <DependentUpon>winform_BitBlt_BOOT.cs</DependentUpon>
+    </Compile>
     <Compile Include="main.cs" />
     <Compile Include="embedded\micro.utils\argv.cs" />
     <Compile Include="embedded\micro.utils\file.cs" />
@@ -117,6 +123,9 @@
   <ItemGroup>
     <EmbeddedResource Include="gui-extra\winform_ESP32_Configurator.resx">
       <DependentUpon>winform_ESP32_Configurator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\winform_BitBlt_BOOT.resx">
+      <DependentUpon>winform_BitBlt_BOOT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -156,7 +165,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="embedded\micro.dhcp\" />
-    <Folder Include="gui\" />
+    <Folder Include="gui-component\" />
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>

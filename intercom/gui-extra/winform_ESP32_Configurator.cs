@@ -15,6 +15,8 @@ using System.Threading;
 using System.Windows.Forms;
 using micro.sdk;
 using utils;
+using System.Drawing.Imaging;
+
 
 namespace app
 {
@@ -34,26 +36,28 @@ namespace app
 
         bool flag_gpio_enum_ready = false;
 
-        #region INITIALIZE
+        
         public winform_ESP32_Configurator()
         {
             InitializeComponent();
             
-            //intercom._resetPort();
-
             _timer = new System.Windows.Forms.Timer();
             _timer.Interval = 1100;
             _timer.Tick += _timer_Tick;
             //_timer.Start();
         }
-   
-        private void winform_remote_backdoor_Load(object sender, EventArgs e)
+
+
+        private void winform_Load(object sender, EventArgs e)
         {
             intercom.eventDataEncoded += IRQ_DataIncoming;
-            //act_wire_info(null,null);
-            //cmd_select_pin(null, null);
+
+            MyTab_init
+            (
+                new Button[] { btn_tab1, btn_tab2, btn_tab3 },
+                new Panel[]  { panel_tab1, panel_tab2, panel_tab3 }
+            );
         }
-        #endregion
 
         #region SERIAL_PORT
         private void _timer_Tick(object sender, EventArgs e)
@@ -184,11 +188,6 @@ namespace app
         {
             var _pin_name = (Label)sender;
 
-            panel_tab1.Visible = false;
-            panel_tab3.Visible = false;
-            panel_tab2.Visible = true;
-            panel_tab2.Location = panel_tab1.Location;
-
             Hashtable pack = new Hashtable();
             pack.Add("act", API_GPIO_STRUCT_READ);
             pack.Add("target", _pin_name.Text);
@@ -232,10 +231,6 @@ namespace app
   
         private void btn_pin_group_Click(object sender, EventArgs e)
         {
-            panel_tab1.Visible = true;
-            panel_tab2.Visible = false;
-            panel_tab3.Visible = false;
-
             //intercom._serial.RtsEnable = true;
             //intercom._serial.DtrEnable = true;
             //Button btn = (Button)sender;
@@ -285,16 +280,12 @@ namespace app
 
         private void button1_Click(object sender, EventArgs e)
         {
-            panel_tab2.Location = panel_tab1.Location;
-            panel_tab2.Visible = true;
-            panel_tab3.Visible = false;
-            panel_tab1.Visible = false;
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            panel_tab3.Location = panel_tab1.Location;
-            panel_tab3.Visible = true;
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -309,7 +300,7 @@ namespace app
 
         }
 
-        #endregion
+        #endregion 
 
         #region COMMAND_OTA
         private void btn_ota_struct_read(object sender, EventArgs e)
@@ -364,6 +355,70 @@ namespace app
             };
 
             intercom._serial.Write(utils.json.Encode(pack));
+        }
+        #endregion
+
+        #region MY_TAB
+
+        Button[] _tab_buttons;
+        Panel[]  _tab_views;
+
+        private void MyTab_init(Button[] buttons, Panel[] views)
+        {
+            _tab_buttons = buttons;
+            _tab_views = views;
+
+            // События от кнопок
+            foreach (var p in buttons)
+            {
+                p.MouseDown += MyTab_SelectBy;
+            }
+
+            // Скрываем панели по дефолту
+            foreach (var _view in views)
+            {
+                _view.Location = new Point(tab_render.Location.X, tab_render.Location.Y + tab_render.Height);
+                _view.Visible = false;
+            }
+
+            // Активируем первый там
+            MyTab_SelectBy(buttons[0]);
+        }
+
+        private void MyTab_SelectBy(object sender, MouseEventArgs e = null)
+        {
+            Button T = (Button)sender;
+
+            // hide all views
+            foreach (var _view in _tab_views)
+                _view.Visible = false;
+            // Activate panel by button index
+            _tab_views[Array.IndexOf(_tab_buttons, T)].Visible = true;
+
+            Bitmap cg_canvas;
+            Graphics cg;
+            Brush cg_brush_active = new SolidBrush(Color.Red); ;
+            Brush cg_brush_inactive = new SolidBrush(Color.LightGray);
+
+            cg_canvas = new Bitmap(tab_render.Width, tab_render.Height, PixelFormat.Format24bppRgb);
+            cg = Graphics.FromImage(cg_canvas);
+
+            int _pos;
+
+            cg.Clear(Color.White);
+
+            // gray line
+            foreach (var _btns in _tab_buttons)
+            {
+                _pos = Math.Abs(tab_render.Location.X - _btns.Location.X) + (_btns.Width / 2) - (48 / 2);
+                cg.FillRectangle(cg_brush_inactive, new Rectangle(_pos, 0, 48, 4));
+            }
+
+            // active line
+            _pos = Math.Abs(tab_render.Location.X - T.Location.X) + (T.Width / 2) - (48 / 2);
+            cg.FillRectangle(cg_brush_active, new Rectangle(_pos, 0, 48, 4));
+
+            tab_render.Image = (Bitmap)cg_canvas.Clone();
         }
         #endregion
 
