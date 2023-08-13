@@ -194,7 +194,7 @@ namespace app
             this.label39.Text = "SD0";
             this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label39.UseCompatibleTextRendering = true;
-            this.label39.Click += new System.EventHandler(this.my_pin_select_handler);
+            this.label39.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label38
             // 
@@ -209,7 +209,7 @@ namespace app
             this.label38.Text = "SD1";
             this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label38.UseCompatibleTextRendering = true;
-            this.label38.Click += new System.EventHandler(this.my_pin_select_handler);
+            this.label38.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label37
             // 
@@ -224,7 +224,7 @@ namespace app
             this.label37.Text = "IO15";
             this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label37.UseCompatibleTextRendering = true;
-            this.label37.Click += new System.EventHandler(this.my_pin_select_handler);
+            this.label37.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label36
             // 
@@ -239,7 +239,7 @@ namespace app
             this.label36.Text = "IO2";
             this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label36.UseCompatibleTextRendering = true;
-            this.label36.Click += new System.EventHandler(this.my_pin_select_handler);
+            this.label36.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label35
             // 
@@ -254,7 +254,7 @@ namespace app
             this.label35.Text = "IO0";
             this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label35.UseCompatibleTextRendering = true;
-            this.label35.Click += new System.EventHandler(this.my_pin_select_handler);
+            this.label35.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label34
             // 
@@ -269,7 +269,7 @@ namespace app
             this.label34.Text = "SD3";
             this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label34.UseCompatibleTextRendering = true;
-            this.label34.Click += new System.EventHandler(this.my_pin_select_handler);
+            this.label34.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label33
             // 
@@ -284,7 +284,7 @@ namespace app
             this.label33.Text = "SD2";
             this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label33.UseCompatibleTextRendering = true;
-            this.label33.Click += new System.EventHandler(this.my_pin_select_handler);
+            this.label33.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label32
             // 
@@ -299,7 +299,7 @@ namespace app
             this.label32.Text = "IO13";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label32.UseCompatibleTextRendering = true;
-            this.label32.Click += new System.EventHandler(this.my_pin_select_handler);
+            this.label32.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label30
             // 
@@ -314,7 +314,7 @@ namespace app
             this.label30.Text = "IO23";
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label30.UseCompatibleTextRendering = true;
-            this.label30.Click += new System.EventHandler(this.my_pin_select_handler);
+            this.label30.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label29
             // 
@@ -329,7 +329,7 @@ namespace app
             this.label29.Text = "IO22";
             this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label29.UseCompatibleTextRendering = true;
-            this.label29.Click += new System.EventHandler(this.my_pin_select_handler);
+            this.label29.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label28
             // 
@@ -344,7 +344,7 @@ namespace app
             this.label28.Text = "TX0";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label28.UseCompatibleTextRendering = true;
-            this.label28.Click += new System.EventHandler(this.my_pin_select_handler);
+            this.label28.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label27
             // 
@@ -359,7 +359,7 @@ namespace app
             this.label27.Text = "RX0";
             this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label27.UseCompatibleTextRendering = true;
-            this.label27.Click += new System.EventHandler(this.my_pin_select_handler);
+            this.label27.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label26
             // 
@@ -374,7 +374,7 @@ namespace app
             this.label26.Text = "IO21";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label26.UseCompatibleTextRendering = true;
-            this.label26.Click += new System.EventHandler(this.my_pin_select_handler);
+            this.label26.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label25
             // 
@@ -389,7 +389,7 @@ namespace app
             this.label25.Text = "IO19";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label25.UseCompatibleTextRendering = true;
-            this.label25.Click += new System.EventHandler(this.my_pin_select_handler);
+            this.label25.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label24
             // 
@@ -404,7 +404,7 @@ namespace app
             this.label24.Text = "IO18";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label24.UseCompatibleTextRendering = true;
-            this.label24.Click += new System.EventHandler(this.my_pin_select_handler);
+            this.label24.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label23
             // 
@@ -419,7 +419,7 @@ namespace app
             this.label23.Text = "IO5";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label23.UseCompatibleTextRendering = true;
-            this.label23.Click += new System.EventHandler(this.my_pin_select_handler);
+            this.label23.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label22
             // 
@@ -434,7 +434,7 @@ namespace app
             this.label22.Text = "IO17";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label22.UseCompatibleTextRendering = true;
-            this.label22.Click += new System.EventHandler(this.my_pin_select_handler);
+            this.label22.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label21
             // 
@@ -449,7 +449,7 @@ namespace app
             this.label21.Text = "IO16";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label21.UseCompatibleTextRendering = true;
-            this.label21.Click += new System.EventHandler(this.my_pin_select_handler);
+            this.label21.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label20
             // 
@@ -464,7 +464,7 @@ namespace app
             this.label20.Text = "IO4";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label20.UseCompatibleTextRendering = true;
-            this.label20.Click += new System.EventHandler(this.my_pin_select_handler);
+            this.label20.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label19
             // 
@@ -479,7 +479,7 @@ namespace app
             this.label19.Text = "IO34";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label19.UseCompatibleTextRendering = true;
-            this.label19.Click += new System.EventHandler(this.my_pin_select_handler);
+            this.label19.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label18
             // 
@@ -494,7 +494,7 @@ namespace app
             this.label18.Text = "IO35";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label18.UseCompatibleTextRendering = true;
-            this.label18.Click += new System.EventHandler(this.my_pin_select_handler);
+            this.label18.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label17
             // 
@@ -509,7 +509,7 @@ namespace app
             this.label17.Text = "IO33";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label17.UseCompatibleTextRendering = true;
-            this.label17.Click += new System.EventHandler(this.my_pin_select_handler);
+            this.label17.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label16
             // 
@@ -538,7 +538,7 @@ namespace app
             this.label15.Text = "IO25";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label15.UseCompatibleTextRendering = true;
-            this.label15.Click += new System.EventHandler(this.my_pin_select_handler);
+            this.label15.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label14
             // 
@@ -553,7 +553,7 @@ namespace app
             this.label14.Text = "IO26";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label14.UseCompatibleTextRendering = true;
-            this.label14.Click += new System.EventHandler(this.my_pin_select_handler);
+            this.label14.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label13
             // 
@@ -568,7 +568,7 @@ namespace app
             this.label13.Text = "IO27";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label13.UseCompatibleTextRendering = true;
-            this.label13.Click += new System.EventHandler(this.my_pin_select_handler);
+            this.label13.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label12
             // 
@@ -583,7 +583,7 @@ namespace app
             this.label12.Text = "IO14";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label12.UseCompatibleTextRendering = true;
-            this.label12.Click += new System.EventHandler(this.my_pin_select_handler);
+            this.label12.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // label11
             // 
@@ -598,7 +598,7 @@ namespace app
             this.label11.Text = "IO12";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label11.UseCompatibleTextRendering = true;
-            this.label11.Click += new System.EventHandler(this.my_pin_select_handler);
+            this.label11.Click += new System.EventHandler(this.MyPinMap_ClickHandler);
             // 
             // pictureBox4
             // 

@@ -59,15 +59,7 @@ namespace app
                 new Panel[]  { panel_tab1, panel_tab2, panel_tab3 }
             );
 
-            foreach (Control c in this.panel1.Controls)
-            {
-                if (c is Label)
-                {
-                    c.BackColor = System.Drawing.Color.Black;
-                    c.ForeColor = System.Drawing.Color.White;
-                }
-            }
-
+            MyPinMap_init();
         }
 
         private void _timer_Tick(object sender, EventArgs e)
@@ -165,10 +157,12 @@ namespace app
                     // my pin
                     // https://stackoverflow.com/questions/11284113/find-the-label-which-contains-the-required-text
 
+                    // find label object
                     foreach (Control c in this.panel1.Controls)
                     {
                         if (c is Label)
                         {
+                            // compare json and object
                             foreach (DictionaryEntry s in _pin_array)
                             {
                                 if (c.Text == s.Key.ToString())
@@ -457,7 +451,18 @@ namespace app
         #endregion
 
         #region MY_PIN_MAP
-        private void my_pin_select_handler(object sender, EventArgs e)
+        private void MyPinMap_init() 
+        {
+            foreach (Control c in this.panel1.Controls)
+            {
+                if (c is Label)
+                {
+                    c.BackColor = System.Drawing.Color.Black;
+                    c.ForeColor = System.Drawing.Color.White;
+                }
+            }
+        }
+        private void MyPinMap_ClickHandler(object sender, EventArgs e)
         {
             var _pin_name = (Label)sender;
 
